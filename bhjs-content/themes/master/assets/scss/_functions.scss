@@ -1,0 +1,25 @@
+@mixin border-radius($radius, $background-clip: true) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius:    $radius;
+	border-radius:         $radius;
+	
+	@if $background-clip {
+		-webkit-background-clip: padding-box; 
+		-moz-background-clip:    padding; 
+		background-clip:         padding-box;
+	} 
+}
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform:	translateY(-50%);
+	-ms-transform:		translateY(-50%);
+	transform:			translateY(-50%);
+}
+
+@mixin opacity($opacity: 0.70) {
+	-khtml-opacity: $opacity;
+	-moz-opacity:   $opacity;
+	opacity:        $opacity;
+}
