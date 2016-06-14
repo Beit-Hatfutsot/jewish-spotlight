@@ -16,7 +16,7 @@
  */
 function bhjs_get_siteurl() {
 
-	$url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+	$url = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 
 	return $url;
 
@@ -31,10 +31,10 @@ function bhjs_get_siteurl() {
  */
 function bhjs_initial_constants() {
 
-	if ( !defined('BHJS_CONTENT_DIR') )
+	if ( ! defined('BHJS_CONTENT_DIR') )
 		define( 'BHJS_CONTENT_DIR', ABSPATH . 'bhjs-content' ); // no trailing slash, full paths only
 
-	if ( !defined('BHJS_CONTENT_URL') )
+	if ( ! defined('BHJS_CONTENT_URL') )
 		define( 'BHJS_CONTENT_URL', bhjs_get_siteurl() . '/bhjs-content'); // full url
 
 }
@@ -55,7 +55,7 @@ function bhjs_templating_constants() {
 	 *
 	 * @since 1.0
 	 */
-	if ( !defined('BHJS_DEFAULT_THEME') )
+	if ( ! defined('BHJS_DEFAULT_THEME') )
 		define( 'BHJS_DEFAULT_THEME', 'master' );
 
 	/**
@@ -63,13 +63,15 @@ function bhjs_templating_constants() {
 	 *
 	 * @since 1.0
 	 */
-	define('TEMPLATEPATH', BHJS_CONTENT_DIR . '/themes/' . BHJS_DEFAULT_THEME);
+	if ( ! defined('TEMPLATEPATH') )
+		define( 'TEMPLATEPATH', BHJS_CONTENT_DIR . '/themes/' . BHJS_DEFAULT_THEME );
 
 	/**
 	 * Url to the current active template directory
 	 *
 	 * @since 1.0
 	 */
-	define('TEMPLATEURL', BHJS_CONTENT_URL . '/themes/' . BHJS_DEFAULT_THEME);
+	if ( ! defined('TEMPLATEURL') )
+		define( 'TEMPLATEURL', BHJS_CONTENT_URL . '/themes/' . BHJS_DEFAULT_THEME );
 
 }
