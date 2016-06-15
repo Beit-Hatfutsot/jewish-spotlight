@@ -4,3 +4,5 @@
 <?php include ( TEMPLATEPATH . '/view/header/header-meta.php' ); ?>
 
 <body>
+
+	<?php include( TEMPLATEPATH . '/view/header/header.php' ); ?>

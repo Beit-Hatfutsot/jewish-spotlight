@@ -1,3 +1,16 @@
+<?php
+/**
+ * Header meta
+ *
+ * @author		Nir Goldberg
+ * @package		jewish-spotlight/bhjs-content/themes/master/view/header
+ * @version		1.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+?>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

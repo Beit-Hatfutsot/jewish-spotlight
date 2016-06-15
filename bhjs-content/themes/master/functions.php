@@ -9,11 +9,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Config
-require_once( 'functions/config.php' );
+// Bootstrap
+require_once( 'functions/bootstrap.php' );
 
-// Template constants
-require_once( 'functions/template-constants.php' );
-
-// Template functions
+// Template
 require_once( 'functions/template.php' );
