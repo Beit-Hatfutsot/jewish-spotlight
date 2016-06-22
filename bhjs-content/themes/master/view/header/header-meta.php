@@ -26,6 +26,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<!-- active theme -->
 	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style.css">
 
+	<?php if ( CURR_LANG == 'he' ) { ?>
+		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style-rtl.css">
+	<?php } ?>
+
+	<link rel="canonical" href="<?php echo CURR_URL; ?>" />
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

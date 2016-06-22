@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<?php
 
-			$data = dbs()->get_place_data();
+			$data = sort_place_data();
 			print_r($data);
 
 		?>
