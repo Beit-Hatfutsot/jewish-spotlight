@@ -64,11 +64,11 @@ final class bhjs_core {
 				'en'			=> 'Jewish Spotlight',
 				'he'			=> 'זרקור יהודי'
 			),
-			'place_name'		=> array(
+			'place_name'		=> array(				// TBD - take this data from dbs API
 				'en'			=> 'Czech Republic',
 				'he'			=> 'צ\'כיה'
 			),
-			'place_slug'		=> 'czech',
+			'place_slug'		=> '',
 			'template_logo'		=> IMAGES_DIR . '/logo.png',
 			'credit_image'		=> IMAGES_DIR . '/credit.png',
 			'credit_text'		=> array(
@@ -87,12 +87,15 @@ final class bhjs_core {
 			),
 			'permalink'			=> array(
 				'url'			=> '',
-				'lang'			=> '',
-				'request_uri'	=> ''
-			)
+				'request_uri'	=> '',
+				'lang'			=> ''
+			),
+			'page_template'		=> ''
 		);
 
 		$this->set_permalink();
+		$this->set_place();
+		$this->set_page_template();
 		$this->constants();
 		$this->includes();
 
@@ -112,7 +115,7 @@ final class bhjs_core {
 	 */
 	function get_attribute( $name, $default = null ) {
 
-		// return default if does not exist
+		// Return default if does not exist
 		if( ! isset( $this->settings[$name] ) ) {
 
 			// return
@@ -155,11 +158,11 @@ final class bhjs_core {
 		// URL
 		$this->settings['permalink']['url'] = $this->get_permalink_url();
 
-		// Current language
-		$this->settings['permalink']['lang'] = $this->get_permalink_lang();
-
 		// Request URI
 		$this->settings['permalink']['request_uri'] = $this->get_permalink_request_uri();
+
+		// Current language
+		$this->settings['permalink']['lang'] = $this->get_permalink_lang();
 
 	}
 
@@ -180,6 +183,41 @@ final class bhjs_core {
 	}
 
 	/**
+	 * get_permalink_request_uri
+	 *
+	 * Gets current request URI as array of strings
+	 *
+	 * @since		1.0
+	 * @param		N/A
+	 * @return		(mixed)
+	 */
+	private function get_permalink_request_uri() {
+
+		$url			= $this->settings['permalink']['url'];
+		$url_components	= parse_url( $url );
+
+		if ( ! $url_components )
+			return null;
+
+		// Remove last '/' from url path if exists
+		if ( substr($url_components['path'], -1) == '/' ) {
+			$url_components['path'] = rtrim( $url_components['path'], '/' );
+		}
+
+		$url_path = explode( '/', $url_components['path'] );
+
+		// Unset first component as it's an empty one
+		unset( $url_path[0] );
+
+		// Reindex $url_path
+		$url_path = array_values( $url_path );
+
+		// return
+		return $url_path;
+
+	}
+
+	/**
 	 * get_permalink_lang
 	 *
 	 * Gets current language according to request URI (language indicator or 'en' as default)
@@ -190,7 +228,7 @@ final class bhjs_core {
 	 */
 	private function get_permalink_lang() {
 
-		$requestURI	= explode( '/', $_SERVER["REQUEST_URI"] );
+		$requestURI	= $this->settings['permalink']['request_uri'];
 		$lang		= 'en';
 
 		if ( $requestURI[1] && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
@@ -203,42 +241,83 @@ final class bhjs_core {
 	}
 
 	/**
-	 * get_permalink_request_uri
+	 * set_place
 	 *
-	 * Gets current request URI (without language indicator)
+	 * Updates place_slug attribute according to request URI
 	 *
 	 * @since		1.0
 	 * @param		N/A
-	 * @return		(string) language code
+	 * @return		N/A
 	 */
-	private function get_permalink_request_uri() {
+	private function set_place() {
 
-		$requestURI = $_SERVER["REQUEST_URI"];
+		$this->settings['place_slug'] = $this->get_place_slug();
 
-		if ( $requestURI != '/' ) {
-			// trim first '/'
-			$requestURI = ltrim( $requestURI, '/' );
+	}
 
-			// trim language indicator
-			$lang = $this->settings['permalink']['lang'];
-			if ( substr($requestURI, 0, 3) == $lang . '/' ) {
-				$requestURI = ltrim( $requestURI, $lang . '/' );
+	/**
+	 * get_place_slug
+	 *
+	 * Gets queried place according to request URI
+	 *
+	 * @since		1.0
+	 * @param		N/A
+	 * @return		(mixed)
+	 */
+	private function get_place_slug() {
+
+		$requestURI	= $this->settings['permalink']['request_uri'];
+		$place		= $requestURI[0] ? $requestURI[0] : null;
+
+		// return
+		return $place;
+
+	}
+
+	/**
+	 * set_page_template
+	 *
+	 * Updates page_template attribute according to request URI
+	 *
+	 * @since		1.0
+	 * @param		N/A
+	 * @return		N/A
+	 */
+	private function set_page_template() {
+
+		$path = '';
+
+		if ( ! $this->settings['place_slug'] ) {
+			$path = '404.php';
+		}
+		else {
+			// Retrieve URL path
+			$requestURI = $this->settings['permalink']['request_uri'];
+
+			// Remove place slug
+			unset( $requestURI[0] );
+
+			// Remove language indicator if exists
+			if ( $requestURI[1] && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
+				unset( $requestURI[1] );
 			}
 
-			// trim query string
-			$start = strpos( $requestURI, '?' );
-			if ( $start !== false ) {
-				$requestURI = substr( $requestURI, 0, $start - strlen($requestURI) );
-			}
+			$path = implode( '/', $requestURI );
 
-			// trim last '/'
-			if ( substr($requestURI, -1) == '/' ) {
-				$requestURI = rtrim( $requestURI, '/' );
+			// Resolve path to page template
+			if ( ! $path ) {
+				// Main page template
+				$path = 'main.php';
+			}
+			elseif ( file_exists( TEMPLATEPATH . '/template/' . $path . '.php' ) ) {
+				$path = $path . '.php';
+			}
+			else {
+				$path = '404.php';
 			}
 		}
 
-		// return
-		return $requestURI;
+		$this->settings['page_template'] = $path;
 
 	}
 
@@ -313,8 +392,11 @@ $permalink = bhjs_core()->get_attribute('permalink');
 if ( ! defined( 'CURR_URL' ) )
 	define( 'CURR_URL', $permalink['url'] );
 
+if ( ! defined( 'CURR_REQUEST_URI' ) )
+	define( 'CURR_REQUEST_URI', implode( '/', $permalink['request_uri'] ) );
+
 if ( ! defined( 'CURR_LANG' ) )
 	define( 'CURR_LANG', $permalink['lang'] );
 
-if ( ! defined( 'CURR_REQUEST_URI' ) )
-	define( 'CURR_REQUEST_URI', $permalink['request_uri'] );
+if ( ! defined( 'PAGE_TEMPLATE' ) )
+	define( 'PAGE_TEMPLATE', bhjs_core()->get_attribute('page_template') );
