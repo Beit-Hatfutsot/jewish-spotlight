@@ -74,4 +74,12 @@ function bhjs_templating_constants() {
 	if ( ! defined('TEMPLATEURL') )
 		define( 'TEMPLATEURL', BHJS_CONTENT_URL . '/themes/' . BHJS_DEFAULT_THEME );
 
+	/**
+	 * Filesystem path to the places configurations directory
+	 *
+	 * @since 1.0
+	 */
+	if ( ! defined('PLACES') )
+		define( 'PLACES', BHJS_CONTENT_DIR . '/places' );
+
 }

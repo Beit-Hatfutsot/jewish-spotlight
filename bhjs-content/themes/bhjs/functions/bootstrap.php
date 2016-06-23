@@ -16,9 +16,6 @@ if ( ! defined( 'CSS_DIR' ) )
 if ( ! defined( 'JS_DIR' ) )
 	define( 'JS_DIR', TEMPLATEURL . '/assets/js' );
 
-if ( ! defined( 'IMAGES_DIR' ) )
-	define( 'IMAGES_DIR', TEMPLATEURL . '/images' );
-
 if ( ! defined( 'INCLUDES' ) )
 	define( 'INCLUDES', TEMPLATEPATH . '/includes' );
 
@@ -65,15 +62,15 @@ final class bhjs_core {
 				'he'			=> 'זרקור יהודי'
 			),
 			'place_name'		=> array(				// TBD - take this data from dbs API
-				'en'			=> 'Czech Republic',
-				'he'			=> 'צ\'כיה'
+				'en'			=> '',
+				'he'			=> ''
 			),
 			'place_slug'		=> '',
-			'template_logo'		=> IMAGES_DIR . '/logo.png',
-			'credit_image'		=> IMAGES_DIR . '/credit.png',
+			'template_logo'		=> '',
+			'credit_image'		=> '',
 			'credit_text'		=> array(
-				'en'			=> 'מוקדש לרות פדרמן (שטקלמכר) ע"י משפחת פדרמן וחברת מלונות דן',
-				'he'			=> 'מוקדש לרות פדרמן (שטקלמכר) ע"י משפחת פדרמן וחברת מלונות דן'
+				'en'			=> '',
+				'he'			=> ''
 			),
 			'languages'			=> array(
 				'en'			=> array(
@@ -94,13 +91,15 @@ final class bhjs_core {
 		);
 
 		$this->set_permalink();
-		$this->set_place();
+		$this->set_place_slug();
 		$this->set_page_template();
-		$this->constants();
+
 		$this->includes();
 
+		$this->set_place_constants();
+
 		// init
-		dbs()->set_place( TEMPLATE_PLACE );
+		dbs()->set_place( $this->settings['place_slug'] );
 
 	}
 
@@ -241,7 +240,7 @@ final class bhjs_core {
 	}
 
 	/**
-	 * set_place
+	 * set_place_slug
 	 *
 	 * Updates place_slug attribute according to request URI
 	 *
@@ -249,28 +248,12 @@ final class bhjs_core {
 	 * @param		N/A
 	 * @return		N/A
 	 */
-	private function set_place() {
-
-		$this->settings['place_slug'] = $this->get_place_slug();
-
-	}
-
-	/**
-	 * get_place_slug
-	 *
-	 * Gets queried place according to request URI
-	 *
-	 * @since		1.0
-	 * @param		N/A
-	 * @return		(mixed)
-	 */
-	private function get_place_slug() {
+	private function set_place_slug() {
 
 		$requestURI	= $this->settings['permalink']['request_uri'];
 		$place		= $requestURI[0] ? $requestURI[0] : null;
 
-		// return
-		return $place;
+		$this->settings['place_slug'] = $place;
 
 	}
 
@@ -322,21 +305,24 @@ final class bhjs_core {
 	}
 
 	/**
-	 * constants
+	 * set_place_constants
+	 *
+	 * Updates place constants attributes according to place constants configuration file
 	 *
 	 * @since		1.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
-	private function constants() {
+	private function set_place_constants() {
 
-		$lang = $this->settings['permalink']['lang'];
+		$this->settings['place_name']['en']		= PLACE_NAME_EN;
+		$this->settings['place_name']['he']		= PLACE_NAME_HE;
 
-		if ( ! defined( 'TEMPLATE_TITLE' ) )
-			define( 'TEMPLATE_TITLE', $this->settings['template_name'][$lang] . ' - ' . $this->settings['place_name'][$lang] );
+		$this->settings['template_logo']		= PLACE_LOGO;
+		$this->settings['credit_image']			= PLACE_CREDIT_IMG;
 
-		if ( ! defined( 'TEMPLATE_PLACE' ) )
-			define( 'TEMPLATE_PLACE', $this->settings['place_slug'] );
+		$this->settings['credit_text']['en']	= PLACE_CREDIT_TEXT_EN;
+		$this->settings['credit_text']['he']	= PLACE_CREDIT_TEXT_HE;
 
 	}
 
@@ -349,6 +335,14 @@ final class bhjs_core {
 	 */
 	private function includes() {
 
+		// Place constants configuration
+		$place_slug			= $this->settings['place_slug'];
+		$place_config_path	= PLACES . '/' . $place_slug . '/' . $place_slug . '.php';
+
+		if ( file_exists( $place_config_path ) )
+			include( $place_config_path );
+
+		// DBS
 		include( INCLUDES . '/class-dbs.php' );
 
 	}
@@ -387,16 +381,23 @@ bhjs_core();
 endif; // class_exists check
 
 // Additional constants
-$permalink = bhjs_core()->get_attribute('permalink');
+$template_name	= bhjs_core()->get_attribute('template_name');
+$place_name		= bhjs_core()->get_attribute('place_name');
+$place_slug		= bhjs_core()->get_attribute('place_slug');
+$permalink		= bhjs_core()->get_attribute('permalink');
+$page_template	= bhjs_core()->get_attribute('page_template');
+
+if ( ! defined( 'TEMPLATE_TITLE' ) )
+	define( 'TEMPLATE_TITLE', $template_name[ $permalink['lang'] ] . ' - ' . $place_name[ $permalink['lang'] ] );
+
+if ( ! defined( 'TEMPLATE_PLACE' ) )
+	define( 'TEMPLATE_PLACE', $place_slug );
 
 if ( ! defined( 'CURR_URL' ) )
 	define( 'CURR_URL', $permalink['url'] );
-
-if ( ! defined( 'CURR_REQUEST_URI' ) )
-	define( 'CURR_REQUEST_URI', implode( '/', $permalink['request_uri'] ) );
 
 if ( ! defined( 'CURR_LANG' ) )
 	define( 'CURR_LANG', $permalink['lang'] );
 
 if ( ! defined( 'PAGE_TEMPLATE' ) )
-	define( 'PAGE_TEMPLATE', bhjs_core()->get_attribute('page_template') );
+	define( 'PAGE_TEMPLATE', $page_template );
