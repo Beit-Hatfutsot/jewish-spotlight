@@ -3,7 +3,7 @@
  * Functions
  *
  * @author		Nir Goldberg
- * @package		jewish-spotlight/bhjs-content/themes/master
+ * @package		jewish-spotlight/bhjs-content/themes/bhjs
  * @version		1.0
  */
 

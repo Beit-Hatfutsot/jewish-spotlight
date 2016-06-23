@@ -3,7 +3,7 @@
  * Class: dbs
  *
  * @author		Nir Goldberg
- * @package		jewish-spotlight/bhjs-content/themes/master/includes
+ * @package		jewish-spotlight/bhjs-content/themes/bhjs/includes
  * @version		1.0
  */
 

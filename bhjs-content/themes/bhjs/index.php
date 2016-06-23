@@ -1,9 +1,9 @@
 <?php
 /**
- * Front to the Jewish Spotlight master theme template
+ * Front to the Jewish Spotlight BHJS theme template
  *
  * @author		Nir Goldberg
- * @package		jewish-spotlight/bhjs-content/themes/master
+ * @package		jewish-spotlight/bhjs-content/themes/bhjs
  * @version		1.0
  */
 

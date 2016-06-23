@@ -56,7 +56,7 @@ function bhjs_templating_constants() {
 	 * @since 1.0
 	 */
 	if ( ! defined('BHJS_DEFAULT_THEME') )
-		define( 'BHJS_DEFAULT_THEME', 'master' );
+		define( 'BHJS_DEFAULT_THEME', 'bhjs' );
 
 	/**
 	 * Filesystem path to the current active template directory

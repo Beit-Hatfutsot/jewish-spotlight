@@ -1,6 +1,6 @@
 <?php
 /**
- * Front to the Jewish Spotlight master theme. This file doesn't do anything, but loads
+ * Front to the Jewish Spotlight BHJS theme. This file doesn't do anything, but loads
  * bhjs-header.php which loads the environment and template
  *
  * @author		Nir Goldberg

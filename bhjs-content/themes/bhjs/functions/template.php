@@ -3,7 +3,7 @@
  * Template functions
  *
  * @author		Nir Goldberg
- * @package		jewish-spotlight/bhjs-content/themes/master/functions
+ * @package		jewish-spotlight/bhjs-content/themes/bhjs/functions
  * @version		1.0
  */
 

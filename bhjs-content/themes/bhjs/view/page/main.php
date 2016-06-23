@@ -3,7 +3,7 @@
  * Main page template
  *
  * @author		Nir Goldberg
- * @package		jewish-spotlight/bhjs-content/themes/master/view/page
+ * @package		jewish-spotlight/bhjs-content/themes/bhjs/view/page
  * @version		1.0
  */
 
