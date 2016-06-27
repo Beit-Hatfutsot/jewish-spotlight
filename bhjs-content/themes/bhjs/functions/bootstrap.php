@@ -315,14 +315,14 @@ final class bhjs_core {
 	 */
 	private function set_place_constants() {
 
-		$this->settings['place_name']['en']		= PLACE_NAME_EN;
-		$this->settings['place_name']['he']		= PLACE_NAME_HE;
+		$this->settings['place_name']['en']		= ( defined( 'PLACE_NAME_EN' ) ) ? PLACE_NAME_EN : '';
+		$this->settings['place_name']['he']		= ( defined( 'PLACE_NAME_HE' ) ) ? PLACE_NAME_HE : '';
 
-		$this->settings['template_logo']		= PLACE_LOGO;
-		$this->settings['credit_image']			= PLACE_CREDIT_IMG;
+		$this->settings['template_logo']		= ( defined( 'PLACE_LOGO' ) ) ? PLACE_LOGO : '';
+		$this->settings['credit_image']			= ( defined( 'PLACE_CREDIT_IMG' ) ) ? PLACE_CREDIT_IMG : '';
 
-		$this->settings['credit_text']['en']	= PLACE_CREDIT_TEXT_EN;
-		$this->settings['credit_text']['he']	= PLACE_CREDIT_TEXT_HE;
+		$this->settings['credit_text']['en']	= ( defined( 'PLACE_CREDIT_TEXT_EN' ) ) ? PLACE_CREDIT_TEXT_EN : '';
+		$this->settings['credit_text']['he']	= ( defined( 'PLACE_CREDIT_TEXT_HE' ) ) ? PLACE_CREDIT_TEXT_HE : '';
 
 	}
 
