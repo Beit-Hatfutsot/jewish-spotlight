@@ -53,6 +53,7 @@ class dbs {
 			'types'					=> array(
 				// community
 				'5'					=> array(
+					'slug'			=> 'community',
 					'menu_title'	=> array(
 						'en'		=> 'Communities',
 						'he'		=> 'קהילות'
@@ -65,6 +66,7 @@ class dbs {
 
 				// photo
 				'1'					=> array(
+					'slug'			=> 'photo',
 					'menu_title'	=> array(
 						'en'		=> 'Gallery',
 						'he'		=> 'גלריה'
@@ -77,6 +79,7 @@ class dbs {
 
 				// video
 				'9'					=> array(
+					'slug'			=> 'video',
 					'menu_title'	=> array(
 						'en'		=> 'Video',
 						'he'		=> 'וידאו'
@@ -89,6 +92,7 @@ class dbs {
 
 				// personality
 				'8'					=> array(
+					'slug'			=> 'personality',
 					'menu_title'	=> array(
 						'en'		=> 'Personalities',
 						'he'		=> 'אישים'
@@ -112,7 +116,7 @@ class dbs {
 	 * @param		$name (string) the attribute name to return
 	 * @return		(mixed)
 	 */
-	private function get_attribute( $name, $default = null ) {
+	function get_attribute( $name, $default = null ) {
 
 		// return default if does not exist
 		if( ! isset( $this->settings[$name] ) ) {
@@ -137,7 +141,7 @@ class dbs {
 	 * @param		$value (mixed) the attribute value to update
 	 * @return		N/A
 	 */
-	private function set_attribute( $name, $value ) {
+	function set_attribute( $name, $value ) {
 
 		$this->settings[$name] = $value;
 
@@ -169,8 +173,8 @@ class dbs {
 	 */
 	private function get_api_url() {
 
-		$api_host	= $this->get_attribute('api_host');
-		$place		= $this->get_attribute('place');
+		$api_host	= $this->get_attribute( 'api_host' );
+		$place		= $this->get_attribute( 'place' );
 
 		if ( ! $api_host || ! $place ) {
 
@@ -204,7 +208,7 @@ class dbs {
 
 		}
 
-		// get place data
+		// Get place data
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -279,7 +283,7 @@ class dbs {
 function cmp($a, $b) {
 
 	// Get current language
-	$permalink = bhjs_core()->get_attribute('permalink');
+	$permalink = bhjs_core()->get_attribute( 'permalink' );
 
 	if ( $permalink ) {
 		$lang = $permalink['lang'];

@@ -251,7 +251,7 @@ final class bhjs_core {
 	private function set_place_slug() {
 
 		$requestURI	= $this->settings['permalink']['request_uri'];
-		$place		= $requestURI[0] ? $requestURI[0] : null;
+		$place		= isset( $requestURI[0] ) ? $requestURI[0] : null;
 
 		$this->settings['place_slug'] = $place;
 
@@ -381,11 +381,11 @@ bhjs_core();
 endif; // class_exists check
 
 // Additional constants
-$template_name	= bhjs_core()->get_attribute('template_name');
-$place_name		= bhjs_core()->get_attribute('place_name');
-$place_slug		= bhjs_core()->get_attribute('place_slug');
-$permalink		= bhjs_core()->get_attribute('permalink');
-$page_template	= bhjs_core()->get_attribute('page_template');
+$template_name	= bhjs_core()->get_attribute( 'template_name' );
+$place_name		= bhjs_core()->get_attribute( 'place_name' );
+$place_slug		= bhjs_core()->get_attribute( 'place_slug' );
+$permalink		= bhjs_core()->get_attribute( 'permalink' );
+$page_template	= bhjs_core()->get_attribute( 'page_template' );
 
 if ( ! defined( 'TEMPLATE_TITLE' ) )
 	define( 'TEMPLATE_TITLE', $template_name[ $permalink['lang'] ] . ' - ' . $place_name[ $permalink['lang'] ] );

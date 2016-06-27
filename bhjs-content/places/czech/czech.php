@@ -23,7 +23,7 @@ if ( ! defined( 'PLACE_CREDIT_IMG' ) )
 	define( 'PLACE_CREDIT_IMG', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/credit.jpg' );
 
 if ( ! defined( 'PLACE_CREDIT_TEXT_EN' ) )
-	define( 'PLACE_CREDIT_TEXT_EN', 'מוקדש לרות פדרמן (שטקלמכר) ע"י משפחת פדרמן וחברת מלונות דן' );
+	define( 'PLACE_CREDIT_TEXT_EN', 'In honor of Ruth Federmann nee Steckelmacher, presented by the Federmann Family and Dan Hotels Group' );
 
 if ( ! defined( 'PLACE_CREDIT_TEXT_HE' ) )
-	define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן (שטקלמכר) ע"י משפחת פדרמן וחברת מלונות דן' );
+	define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן לבית שטקלמכר ע"י משפחת פדרמן וחברת מלונות דן' );
