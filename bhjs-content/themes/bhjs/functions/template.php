@@ -40,16 +40,20 @@ function get_footer() {
 }
 
 /**
- * get_main_page_template
+ * get_page_template
  *
- * Displays main page template
+ * Loads and displays page template
  *
  * @since		1.0
  * @param		N/A
  * @return		N/A
  */
-function get_main_page_template() {
+function get_page_template() {
 
-	include( TEMPLATEPATH . '/view/page/main.php' );
+	$page_template = bhjs_core()->get_attribute('page_template');
+
+	if ( $page_template && file_exists( TEMPLATEPATH . '/template/' . $page_template ) ) {
+		include( TEMPLATEPATH . '/template/' . $page_template );
+	}
 
 }

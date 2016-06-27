@@ -14,6 +14,3 @@ require_once( 'functions/bootstrap.php' );
 
 // Template
 require_once( 'functions/template.php' );
-
-// DBS
-require_once( 'functions/dbs.php' );

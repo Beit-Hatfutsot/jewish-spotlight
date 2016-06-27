@@ -50,11 +50,54 @@ class dbs {
 			'place'		=> '',
 
 			// Unit types
-			'types'		=> array(
-				'community'		=> '5',
-				'photo'			=> '1',
-				'video'			=> '9',
-				'personality'	=> '8'
+			'types'					=> array(
+				// community
+				'5'					=> array(
+					'menu_title'	=> array(
+						'en'		=> 'Communities',
+						'he'		=> 'קהילות'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Jewish Communities in {place_name}',
+						'he'		=> 'הקהילות היהודיות ב{place_name}'
+					)
+				),
+
+				// photo
+				'1'					=> array(
+					'menu_title'	=> array(
+						'en'		=> 'Gallery',
+						'he'		=> 'גלריה'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Photo Gallery',
+						'he'		=> 'גלריית תמונות'
+					)
+				),
+
+				// video
+				'9'					=> array(
+					'menu_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					)
+				),
+
+				// personality
+				'8'					=> array(
+					'menu_title'	=> array(
+						'en'		=> 'Personalities',
+						'he'		=> 'אישים'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Personalities',
+						'he'		=> 'אישים'
+					)
+				)
 			)
 		);
 
@@ -174,6 +217,80 @@ class dbs {
 		return $data;
 
 	}
+
+	/**
+	 * get_place_sorted_data
+	 *
+	 * Retrieves place's types based sorted data
+	 *
+	 * @since		1.0
+	 * @param		N/A
+	 * @return		(mixed)
+	 */
+	function get_place_sorted_data() {
+
+		// Get unsorted data
+		$place_data = $this->get_place_data();
+
+		if ( ! $place_data ) {
+
+			// return
+			return null;
+
+		}
+
+		// Initiate sorted data array
+		$place_sorted_data = array();
+
+		foreach ( $this->settings['types'] as $id => $type ) {
+			$place_sorted_data[$id] = array();
+		}
+
+		// Insert items
+		if ( $place_data['items'] ) {
+			foreach ( $place_data['items'] as $item ) {
+				$place_sorted_data[ $item['UnitType'] ][] = $item;
+			}
+		}
+
+		// Sort items
+		foreach ( $place_sorted_data as $id => $items ) {
+			usort( $place_sorted_data[$id], 'cmp' );
+		}
+
+		// return
+		return $place_sorted_data;
+
+	}
+
+}
+
+/**
+ * cmp
+ *
+ * Sorts array by specific array item value
+ * Used to sort unit types array by Header value
+ *
+ * @since		1.0
+ * @param		(array)
+ * @param		(array)
+ * @return		(int)
+ */
+function cmp($a, $b) {
+
+	// Get current language
+	$permalink = bhjs_core()->get_attribute('permalink');
+
+	if ( $permalink ) {
+		$lang = $permalink['lang'];
+	}
+
+	if ( ! $lang ) {
+		$lang = 'en';
+	}
+
+	// return
+	return strcmp( strtolower( $a['Header'][ucfirst($lang)] ), strtolower( $b['Header'][ucfirst($lang)] ) );
 
 }
 

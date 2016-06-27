@@ -230,7 +230,7 @@ final class bhjs_core {
 		$requestURI	= $this->settings['permalink']['request_uri'];
 		$lang		= 'en';
 
-		if ( $requestURI[1] && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
+		if ( isset( $requestURI[1] ) && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
 			$lang = $requestURI[1];
 		}
 
@@ -281,7 +281,7 @@ final class bhjs_core {
 			unset( $requestURI[0] );
 
 			// Remove language indicator if exists
-			if ( $requestURI[1] && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
+			if ( isset( $requestURI[1] ) && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
 				unset( $requestURI[1] );
 			}
 

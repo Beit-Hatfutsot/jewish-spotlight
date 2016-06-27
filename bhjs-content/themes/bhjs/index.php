@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header();
 
 /**
- * Main page template
+ * Load page template
  */
-get_main_page_template();
+get_page_template();
 
 /**
  * Footer
