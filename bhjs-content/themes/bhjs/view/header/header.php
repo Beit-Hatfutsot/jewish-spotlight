@@ -27,6 +27,10 @@ $data	= dbs()->get_place_sorted_data();
 
 	<div id="header-top">
 		<div class="container">
+			<?php if ( $template_logo ) { ?>
+				<div id="logo"><a href="#top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
+			<?php } ?>
+
 			<div id="credit">
 				<?php if ( $credit_image ) { ?>
 					<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
@@ -39,9 +43,9 @@ $data	= dbs()->get_place_sorted_data();
 				<?php } ?>
 			</div>
 
-			<div id="language-switcher"><?php echo languages_switcher(); ?></div>
+			<div class="language-switcher"><?php echo languages_switcher(); ?></div>
 
-			<div id="bh-logo"><a href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
+			<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 		</div>
 	</div>
 
@@ -75,9 +79,5 @@ $data	= dbs()->get_place_sorted_data();
 
 		<?php } ?>
 	</div>
-
-	<?php if ( $template_logo ) { ?>
-		<div id="logo"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></div>
-	<?php } ?>
 
 </header>

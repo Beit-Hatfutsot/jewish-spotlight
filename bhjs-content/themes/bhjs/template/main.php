@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
+<a name="top"></a>
 <div class="container">
 
 	<div class="starter-template">

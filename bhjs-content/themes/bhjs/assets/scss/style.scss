@@ -2,6 +2,7 @@
 /* imports */
 /***********/
 
+@import "params";
 @import "functions";
 
 /*
@@ -25,11 +26,161 @@
 /***********/
 
 body {
-	padding-top: 50px;
+	@include font;
+	font-size: 18px;
+	color: $font-color;
+	background-color: $content-bg;
 	word-wrap: break-word;
 }
 
-.starter-template {
-	padding: 40px 15px;
-	text-align: center;
+/**********/
+/* header */
+/**********/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+
+	/**************/
+	/* header top */
+	/**************/
+
+	#header-top {
+		height: 110px;
+		background-color: $header-bg;
+		border-bottom: 10px solid $blue-color2;
+
+		/**************/
+		/* place logo */
+		/**************/
+
+		#logo {
+			float: left;
+			position: relative;
+			margin-right: 20px;
+			width: 205px;
+			height: 184px;
+			text-align: center;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 100px;
+				left: 0;
+				width: 205px;
+				height: 85px;
+				border-left: 10px solid $blue-color2;
+				border-right: 10px solid $blue-color2;
+				border-bottom: 10px solid $blue-color2;
+				background-color: $white;
+			}
+
+			img {
+				position: relative;
+				max-width: 165px;
+				height: auto;
+			}
+		}
+
+		/**********/
+		/* credit */
+		/**********/
+
+		#credit {
+			float: left;
+			margin-right: 15px;
+			width: 685px;
+
+			#credit-image {
+				float: left;
+				margin-right: 15px;
+				width: 50px;
+				height: 100px;
+
+				img {
+					max-width: 100%;
+					height: auto;
+					@include vertical-align;
+				}
+			}
+
+			h1 {
+				margin: 10px 0 2px;
+				font-size: 32px;
+				font-weight: $font-normal;
+			}
+
+			#credit-text {
+				font-size: 16px;
+			}
+		}
+
+		/**********************/
+		/* languages switcher */
+		/**********************/
+
+		.language-switcher {
+			float: left;
+			height: 100px;
+		}
+
+		/***********/
+		/* BH logo */
+		/***********/
+
+		#bh-logo a {
+			float: right;
+			width: 140px;
+			height: 100px;
+			display: block;
+
+			&.en {
+				@include image("logo-bh-en.png", 100%, 50% 50%);
+			}
+
+			&.he {
+				@include image("logo-bh-he.png", 100%, 50% 50%);
+			}
+		}
+	}
+
+	/*****************/
+	/* header bottom */
+	/*****************/
+
+	#header-bottom {
+		height: 40px;
+		background-color: $gray-color6;
+		display: none;
+	}
+}
+
+/**************************/
+/* languages switcher btn */
+/**************************/
+
+.language-switcher-btn {
+	float: left;
+	margin-right: 10px;
+	@include vertical-align;
+
+	a {
+		width: 30px;
+		line-height: 30px;
+		font-size: 12px;
+		color: $font-invert-color;
+		font-weight: $font-bold;
+		background-color: $gray-color4;
+		@include border-radius(50%);
+		text-align: center;
+		text-decoration: none;
+		display: block;
+
+		&:hover {
+			background-color: $gray-color3;
+		}
+	}
 }

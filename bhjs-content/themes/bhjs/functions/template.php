@@ -103,15 +103,16 @@ function languages_switcher() {
 
 	if ( ! empty($languages) ) {
 
-		$output .= '<div class="languages-switcher-btn">';
-			foreach ( $languages as $l ) {
-				if ( $l['slug'] != $curr_lang ) {
-					$output .= '<a href="' . bhjs_get_siteurl() . '/' . $place_slug . '/' . $l['slug'] . '">' .
-						strtoupper( mb_substr($l['name'], 0, 3, 'UTF-8') ) .
-					'</a>';
-				}
+		foreach ( $languages as $l ) {
+			if ( $l['slug'] != $curr_lang ) {
+				$output .=
+					'<div class="language-switcher-btn">' .
+						'<a href="' . bhjs_get_siteurl() . '/' . $place_slug . '/' . $l['slug'] . '">' .
+							strtoupper( mb_substr($l['name'], 0, 3, 'UTF-8') ) .
+						'</a>' .
+					'</div>';
 			}
-		$output .= '</div>';
+		}
 
 	}
 
