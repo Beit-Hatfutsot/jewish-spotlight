@@ -12,18 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
 <a name="top"></a>
+
+<a class="menu-item-section" name="community"></a>
 <div class="container">
+	<h1>community</h1>
+</div>
 
-	<div class="starter-template">
-		<h1>Bootstrap starter template</h1>
-		<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<a class="menu-item-section" name="photo"></a>
+<div class="container">
+	<h1>Photo</h1>
+</div>
 
-		<?php
-
-			$data = dbs()->get_place_sorted_data();
-			print_r($data);
-
-		?>
-	</div>
-
-</div><!-- /.container -->
+<a class="menu-item-section" name="personality"></a>
+<div class="container">
+	<h1>personality</h1>
+</div>

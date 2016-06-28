@@ -28,7 +28,7 @@ $data	= dbs()->get_place_sorted_data();
 	<div id="header-top">
 		<div class="container">
 			<?php if ( $template_logo ) { ?>
-				<div id="logo"><a href="#top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
+				<div id="logo"><a class="anchor" data-href="top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
 			<?php } ?>
 
 			<div id="credit">
@@ -53,7 +53,7 @@ $data	= dbs()->get_place_sorted_data();
 		<?php if ( ! empty($data) ) {
 			$types = dbs()->get_attribute( 'types' ); ?>
 
-			<nav class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -68,15 +68,14 @@ $data	= dbs()->get_place_sorted_data();
 
 							<?php foreach ( $data as $id => $items ) {
 								if ( ! empty($items) ) {
-									echo '<li><a href="#' . $types[$id]['slug'] . '">' . $types[$id]['menu_title'][$lang] . '</a></li>';
+									echo '<li><a class="anchor" data-href="' . $types[$id]['slug'] . '">' . $types[$id]['menu_title'][$lang] . '</a></li>';
 								}
 							} ?>
 
 						</ul>
-					</div><!--/.nav-collapse -->
+					</div>
 				</div>
 			</nav>
-
 		<?php } ?>
 	</div>
 

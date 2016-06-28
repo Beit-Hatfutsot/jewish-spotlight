@@ -26,6 +26,7 @@
 /***********/
 
 body {
+	padding-top: 184px;
 	@include font;
 	font-size: 18px;
 	color: $font-color;
@@ -78,10 +79,15 @@ header {
 				background-color: $white;
 			}
 
-			img {
-				position: relative;
-				max-width: 165px;
-				height: auto;
+			a {
+				cursor: pointer;
+
+				img {
+					position: relative;
+					max-width: 165px;
+					height: auto;
+					z-index: 1000;
+				}
 			}
 		}
 
@@ -154,7 +160,42 @@ header {
 	#header-bottom {
 		height: 40px;
 		background-color: $gray-color6;
-		display: none;
+
+		nav {
+			margin-bottom: 0;
+			min-height: 40px;
+			height: 40px;
+			border: 0;
+
+			li {
+				a {
+					padding-top: 0;
+					padding-bottom: 0;
+					line-height: 40px;
+					font-size: 20px;
+					color: $font-color;
+					cursor: pointer;
+
+					&:focus {
+						background-color: transparent;
+					}
+
+					&:hover {
+						text-shadow: -1px 0 0 $font-invert-color;
+						color: $font-invert-color;
+						background-color: $blue-color2;
+					}
+				}
+
+				&.active {
+					a {
+						text-shadow: -1px 0 0 $font-invert-color;
+						color: $font-invert-color;
+						background-color: $blue-color2;
+					}
+				}
+			}
+		}
 	}
 }
 
