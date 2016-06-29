@@ -34,6 +34,68 @@ body {
 	word-wrap: break-word;
 }
 
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+	width: 1170px;
+	max-width: none !important;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+	float: left;
+
+	.navbar-toggle {
+		display: none;
+	}
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+	display: block !important;
+	height: auto !important;
+	padding-bottom: 0;
+	border-top: 0;
+	overflow: visible !important;
+	visibility: visible !important;
+
+	/* Always apply the floated nav */
+	.navbar-nav {
+		float: left;
+		margin: 0;
+
+		& > li {
+			float: left;
+
+			& > a {
+				padding: 15px;
+			}
+		}
+
+		&.navbar-right {
+			float: right;
+		}
+
+		/* Undo custom dropdowns */
+		.open .dropdown-menu {
+			position: absolute;
+			float: left;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border: 1px solid rgba(0, 0, 0, .15);
+			border-width: 0 1px 1px;
+			border-radius: 0 0 4px 4px;
+			-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		}
+	}
+}
+
 /**********/
 /* header */
 /**********/
