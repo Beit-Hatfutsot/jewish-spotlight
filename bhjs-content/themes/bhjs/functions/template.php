@@ -59,6 +59,23 @@ function get_page_template() {
 }
 
 /**
+ * get_data_type_template
+ *
+ * Loads and displays data type template
+ *
+ * @since		1.0
+ * @param		$type (string) data type slug
+ * @return		N/A
+ */
+function get_data_type_template($type) {
+
+	if ( $type && file_exists( TEMPLATEPATH . '/view/data-types/' . $type . '.php' ) ) {
+		include( TEMPLATEPATH . '/view/data-types/' . $type . '.php' );
+	}
+
+}
+
+/**
  * get_current_lang
  *
  * Gets current language

@@ -9,21 +9,27 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+$place_name = bhjs_core()->get_attribute( 'place_name' );
+
+global $lang, $data;
+
 ?>
 
 <a name="top"></a>
 
-<a class="menu-item-section" name="community"></a>
-<div class="container">
-	<h1>community</h1>
-</div>
+<?php if ( ! empty($data) ) {
+	$types = dbs()->get_attribute( 'types' );
 
-<a class="menu-item-section" name="photo"></a>
-<div class="container">
-	<h1>Photo</h1>
-</div>
+	foreach ( $data as $id => $items ) {
+		if ( ! empty($items) ) { ?>
 
-<a class="menu-item-section" name="personality"></a>
-<div class="container">
-	<h1>personality</h1>
-</div>
+			<a class="menu-item-section" name="<?php echo $types[$id]['slug']; ?>"></a>
+			<div class="container">
+				<h1><?php echo str_replace( '{place_name}', $place_name[$lang], $types[$id]['section_title'][$lang] ); ?></h1>
+
+				<?php get_data_type_template( $types[$id]['slug'] ); ?>
+			</div>
+
+		<?php }
+	}
+}
