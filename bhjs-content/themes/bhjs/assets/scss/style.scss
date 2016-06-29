@@ -261,6 +261,60 @@ header {
 	}
 }
 
+/********/
+/* main */
+/********/
+
+body.main {
+
+	/*****************/
+	/* section title */
+	/*****************/
+
+	.section-title {
+		margin: 40px 0 10px;
+		padding-bottom: 5px;
+		font-size: 26px;
+		font-weight: $font-normal;
+		border-bottom: 6px solid $gray-color4;
+	}
+
+	.data-type-section {
+
+		/*************/
+		/* community */
+		/*************/
+
+		&#data-type-section-community {
+
+		}
+
+		/*********/
+		/* photo */
+		/*********/
+
+		&#data-type-section-photo {
+
+		}
+
+		/*********/
+		/* video */
+		/*********/
+
+		&#data-type-section-video {
+
+		}
+
+		/***************/
+		/* personality */
+		/***************/
+
+		&#data-type-section-personality {
+
+		}
+	}
+}
+
 /**************************/
 /* languages switcher btn */
 /**************************/

@@ -25,7 +25,7 @@ global $lang, $data;
 
 			<a class="menu-item-section" name="<?php echo $types[$id]['slug']; ?>"></a>
 			<div class="container">
-				<h1><?php echo str_replace( '{place_name}', $place_name[$lang], $types[$id]['section_title'][$lang] ); ?></h1>
+				<h2 class="section-title"><?php echo str_replace( '{place_name}', $place_name[$lang], $types[$id]['section_title'][$lang] ); ?></h2>
 
 				<?php get_data_type_template( $types[$id]['slug'] ); ?>
 			</div>
