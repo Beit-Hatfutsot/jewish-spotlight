@@ -294,7 +294,29 @@ body.main {
 		/*********/
 
 		&#data-type-section-photo {
+			.gallery {
+				position: relative;
 
+				&:before,
+				&:after {
+					display: table;
+				    content: " ";
+				}
+
+				&:after {
+					clear: both;
+				}
+
+				.gallery-item {
+					img {
+/*						position: absolute;
+						top: 0;
+						left: 0;
+						width: 285;
+						height: auto;
+*/					}
+				}
+			}
 		}
 
 		/*********/
