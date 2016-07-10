@@ -20,7 +20,7 @@ $settings = array(
 
 <div class="data-type-section" id="data-type-section-photo">
 
-	<div id="gallery-1" class="gallery">
+	<div id="gallery-1" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 
 		<?php foreach ( $data[ $settings['type_id'] ] as $collection ) {
 
@@ -41,12 +41,15 @@ $settings = array(
 
 				$index = 1;
 
-				foreach ( $photos as $photo ) { ?>
+				foreach ( $photos as $photo ) {
 
-					<figure class="gallery-item">
-						<a href="<?php echo $settings['src_prefix'] . $photo; ?>">
-							<img src="<?php echo $settings['src_prefix'] . $photo; ?>" width="285" height="auto" alt="<?php echo $title . ( count($photos) > 1 ? ' - ' . $index++ : '' ); ?>" />
+					$src = $settings['src_prefix'] . $photo; ?>
+
+					<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<a href="<?php echo $src; ?>" itemprop="contentUrl">
+							<img src="<?php echo $src; ?>" itemprop="thumbnail" width="285" height="auto" alt="<?php echo $title . ( count($photos) > 1 ? ' - ' . $index++ : '' ); ?>" />
 						</a>
+						<figcaption itemprop="caption description"><?php echo $title; ?></figcaption>
 					</figure>
 
 				<?php }

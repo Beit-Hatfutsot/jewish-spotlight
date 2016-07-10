@@ -30,6 +30,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style-rtl.css">
 	<?php } ?>
 
+	<!-- PhotoSwipe - Core CSS file -->
+	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/lib/PhotoSwipe/photoswipe.css"> 
+
+	<!-- PhotoSwipe - Skin CSS file (styling of UI - buttons, caption, etc.)
+	     In the folder of skin CSS file there are also:
+	     - .png and .svg icons sprite, 
+	     - preloader.gif (for browsers that do not support CSS animations) -->
+	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/lib/PhotoSwipe/default-skin/default-skin.css"> 
+
 	<link rel="canonical" href="<?php echo CURR_URL; ?>" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

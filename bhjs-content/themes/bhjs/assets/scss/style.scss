@@ -311,6 +311,7 @@ body.main {
 					position: absolute;
 					width: 285px;
 					height: auto;
+					display: none;
 
 					img {
 						padding: 5px;
@@ -320,6 +321,10 @@ body.main {
 						img {
 							@include opacity(0.7);
 						}
+					}
+
+					figcaption {
+						display: none;
 					}
 				}
 			}
@@ -368,4 +373,12 @@ body.main {
 			background-color: $gray-color3;
 		}
 	}
+}
+
+/**************/
+/* PhotoSwipe */
+/**************/
+
+.pswp__caption__center {
+	text-align: center !important;
 }
