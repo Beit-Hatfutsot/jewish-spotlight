@@ -54,6 +54,9 @@ var $ = jQuery,
 			// Anchors waypoint event
 			BhjsGeneral.topMenuWaypoints();
 
+			// Photo data type
+			BhjsGeneral.photoGallery();
+
 		},
 
 		/**
@@ -112,6 +115,52 @@ var $ = jQuery,
 			}, {
 				offset: '184px'
 			});
+
+		},
+
+		/**
+		 * photoGallery
+		 *
+		 * Arrange gallery photos grid
+		 *
+		 * @since	1.0
+		 * @param	N/A
+		 * @return	N/A
+		 */
+		photoGallery : function() {
+
+			var gallery			= $('.gallery'),
+				index			= 0,
+				width			= 1140,
+				columns			= 4,
+				left			= 0,
+				top				= 0,
+				galleryHeight	= 0;
+
+			if (gallery.length) {
+				var photos = gallery.children('.gallery-item');
+
+				if (photos.length) {
+					photos.each(function() {
+						// Update left/top values
+						left	= (index*width/columns)%width;
+						top		= (index>=columns) ? photos.eq(index-4).position().top + photos.eq(index-4).find('img').outerHeight() : 0;
+
+						// Set photo left/top values
+						$(this).css({'left': left + 'px', 'top': top + 'px'});
+
+						// Update gallery height
+						currHeight = $(this).position().top + $(this).find('img').outerHeight();
+						galleryHeight = currHeight > galleryHeight ? currHeight : galleryHeight;
+
+						// Update index
+						index++;
+					});
+				}
+
+				// Set gallery height
+				gallery.height(galleryHeight);
+			}
 
 		},
 

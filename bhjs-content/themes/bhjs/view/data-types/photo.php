@@ -31,7 +31,7 @@ $settings = array(
 			if ( count( $collection['Pictures'] ) ) {
 				foreach ( $collection['Pictures'] as $photo ) {
 
-					if ( isset( $photo['PictureId'] ) ) {
+					if ( ! is_null( $photo['PictureId'] ) ) {
 						$photos[] = $photo['PictureId'] . '.jpg';
 					}
 				}
