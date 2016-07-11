@@ -90,15 +90,15 @@ class dbs {
 					)
 				),
 
-				// personality
+				// luminary
 				'8'					=> array(
 					'slug'			=> 'personality',
 					'menu_title'	=> array(
-						'en'		=> 'Personalities',
+						'en'		=> 'Luminaries',
 						'he'		=> 'אישים'
 					),
 					'section_title'	=> array(
-						'en'		=> 'Personalities',
+						'en'		=> 'Luminaries',
 						'he'		=> 'אישים'
 					)
 				)
