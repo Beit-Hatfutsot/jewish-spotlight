@@ -48,6 +48,9 @@ var $ = jQuery,
 				return this.height( Math.max.apply(this, $.map(this, function(e) { return $(e).height() })) );
 			}
 
+			// UnitText1 markup
+			// TBD
+
 			// Anchors click event
 			BhjsGeneral.anchors();
 

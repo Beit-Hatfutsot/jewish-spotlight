@@ -39,3 +39,17 @@
 	-moz-opacity:   $opacity;
 	opacity:        $opacity;
 }
+
+@mixin skew($degrees) {
+	-webkit-transform: skew($degrees);
+	-moz-transform: skew($degrees);
+	-o-transform: skew($degrees);
+	-ms-transform: skew($degrees);
+	transform: skew($degrees);
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}

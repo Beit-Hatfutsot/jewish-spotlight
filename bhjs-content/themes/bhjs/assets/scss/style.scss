@@ -286,7 +286,117 @@ body.main {
 		/*************/
 
 		&#data-type-section-community {
+			display: flex;
+			flex-wrap: wrap;
 
+			.item-preview {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				width: 306px;
+				height: 150px;
+				margin: 20px 37px;
+				@include box-shadow(0 0 6px 0 #999);
+
+				&:hover {
+					.text-part {
+						width: 240px;
+
+						&--nothumb {
+							width: initial;
+						}
+					}
+				}
+
+				.thumbnail {
+					position: absolute;
+					width: 50%;
+					height: 100%;
+					overflow: hidden;
+					right: 0;
+					padding: 0;
+
+					img {
+						position: absolute;
+						height: 100%;
+						right: 0px;
+					}
+				}
+
+				.text-part {
+					position: relative;
+				  	border-bottom: 150px solid #ffffff;
+				  	transition: width 1s;
+				  	width: 292px;
+				  	top: 0px;
+				  	border-right: 42px solid transparent;
+
+				  	&--nothumb {
+						width: 100%;
+						border-right: 0px solid #ffffff;
+					}
+
+					.diagonal-block {
+
+						.diagonal-separator {
+							position: absolute;
+							height: 150px;
+							width: 8px;
+							@include skew(16deg);
+							background: $orange-color3;
+						}
+					}
+
+					.header {
+						position: absolute;
+						color: $red-color2;
+						font-weight: 700;
+						margin: 10px 15px 10px;
+						font-size: 13px;
+						width: 164px;
+						max-height: 36px;
+				  		overflow: hidden;
+
+						&--nothumb {
+							width: 94%;
+						}
+					}
+
+						.text {
+							position: absolute;
+						    overflow: hidden;
+							color: $gray-color3;
+							font-size: 14px;
+							height: 86px;
+							line-height: 17px;
+							margin: 50px 15px 0;
+							width: 200px;
+
+							code {
+					            font-family: inherit;
+					            
+					            &:before, &:after {
+					                content: "'";
+					            }   
+					        }
+
+							&--nothumb {
+								height: 88px;
+								width: 90%;
+							}
+					        p {
+					            display: inline; 
+					            a {
+					                pointer-events: none;
+					                text-decoration: none;
+					                color: $gray-color3;
+					            }
+						    }
+					    }	
+				}
+
+
+			}
 		}
 
 		/*********/
