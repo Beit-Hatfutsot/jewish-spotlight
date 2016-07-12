@@ -282,6 +282,38 @@ body.main {
 	.data-type-section {
 
 		/*************/
+		/* indexer */
+		/*************/
+
+		.letter-index-container {
+			margin: 0;
+    		padding: 0;
+
+    		li {
+    			float: left;
+			    width: 38px;
+			    height: 38px;
+			    text-align: center;
+			    list-style: none !important;
+			    cursor: pointer;
+			    line-height: 38px;
+			    font-size: 18px;
+			    margin: 0 2.5px;
+			    color: $gray-color3;
+
+			    &:hover {
+			    	background-color: $blue-color4;
+			    	color: $white;
+			    }
+
+			    &.active {
+			    	background-color: $blue-color2;
+			    	color: $white;	
+			    }
+    		}
+		}
+
+		/*************/
 		/* community */
 		/*************/
 

@@ -57,6 +57,9 @@ var $ = jQuery,
 			// Anchors waypoint event
 			BhjsGeneral.topMenuWaypoints();
 
+			// Bind click event to letters index
+			$('.letter-index-container li').bind('click', BhjsGeneral.index_letter_click);
+
 			// Photo data type
 			setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
 
@@ -121,6 +124,72 @@ var $ = jQuery,
 			}, {
 				offset: '184px'
 			});
+
+		},
+
+		/**
+		 * index_letter_click
+		 *
+		 * Toggle letter
+		 *
+		 * @since		1.0
+		 * @param		event (object)
+		 * @return		N/A
+		 */
+		index_letter_click : function(event) {
+
+			var current = event.currentTarget,
+				active = $(current).hasClass('active') ? true : false,
+				list_id = $(current).parent().attr('id');
+
+			// toggle active
+			if (active) {
+				$(current).removeClass('active');
+			}
+			else {
+				$(current).addClass('active');
+			}
+
+			// refresh items
+			BhjsGeneral.refresh_items(list_id);
+
+		},
+		/**
+		 * refresh_items
+		 *
+		 * Refresh items grid according to filter values
+		 *
+		 * @since		1.0
+		 * @param		srting list_id
+		 * @return		N/A
+		 */
+		refresh_items : function(list_id) {
+			// collect filters values
+			var letters = [];
+
+			$('.letter-index-container#' + list_id).find('li').each(function() {
+				if ( $(this).hasClass('active') ) {
+					letters.push( $(this).html() );
+				}
+			});
+
+			// check whether letters is empty -> show all items
+			if ( letters.length == 0 ) {
+				$('#data-type-section-' + list_id).find('.item-preview').removeClass('hidden');
+			}
+			else {
+				// hide items from grid
+				$('#data-type-section-' + list_id).find('.item-preview').each(function() {
+					var letter = $(this).attr('data-letter');
+
+					if ( $.inArray(letter, letters) == -1 ) {
+						$(this).addClass('hidden');
+					}
+					else {
+						$(this).removeClass('hidden');
+					}
+				});
+			}
 
 		},
 

@@ -19,6 +19,9 @@ $settings = array(
 ?>
 
 <div class="data-type-section" id="data-type-section-luminary">
+    
+    <div><?php echo index_generator('luminary'); ?></div>
+
     <?php foreach ( $data[ $settings['type_id'] ] as $luminary ) {
         $title  = $luminary['Header'][ucfirst($lang)];
         $desc   = $luminary['UnitText1'][ucfirst($lang)];
@@ -36,7 +39,7 @@ $settings = array(
             }
         } ?>
 
-        <div class="item-preview">
+        <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
           <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
             <div class="thumbnail">
               <img src="<?php echo $settings['src_prefix'] . $luminary_photo; ?>" alt="<?php echo $title; ?>"/>

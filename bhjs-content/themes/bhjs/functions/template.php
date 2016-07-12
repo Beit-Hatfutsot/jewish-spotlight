@@ -137,3 +137,41 @@ function languages_switcher() {
 	return $output;
 
 }
+
+/**
+ * index_generator
+ *
+ * Displays letters index
+ *
+ * @since		1.0
+ * @param		$id (string) index ID
+ * @return		(string)
+ */
+function index_generator($id) {
+
+	if ( ! $id )
+		return '';
+
+	global $lang;
+	
+	$output = '';
+
+	if ($lang == 'he') {
+		$letters = array( 'א','ב','ג','ד','ה','ו','ז','ח','ט','י','כ','ל','מ','נ','ס','ע','פ','צ','ק','ר','ש','ת' );
+	}
+	else {
+		$letters = range( 'A', 'Z' );
+	}
+
+	$output .= '<ul class="letter-index-container" id="' . $id . '">';
+
+		foreach ($letters as $l) {
+			$output .= '<li>' . $l . '</li>';
+		}
+
+	$output .= '</ul>';
+
+	// return
+	return $output;
+
+}
