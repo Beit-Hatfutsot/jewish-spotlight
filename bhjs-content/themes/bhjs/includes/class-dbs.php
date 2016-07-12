@@ -92,7 +92,7 @@ class dbs {
 
 				// luminary
 				'8'					=> array(
-					'slug'			=> 'personality',
+					'slug'			=> 'luminary',
 					'menu_title'	=> array(
 						'en'		=> 'Luminaries',
 						'he'		=> 'אישים'
