@@ -323,11 +323,10 @@ body.main {
 
 			.item-preview {
 				position: relative;
-				display: inline-block;
 				vertical-align: middle;
 				width: 306px;
 				height: 150px;
-				margin: 20px 37px;
+				margin: 20px auto;
 				@include box-shadow(0 0 6px 0 #999);
 
 				&:hover {
@@ -478,6 +477,64 @@ body.main {
 
 		&#data-type-section-video {
 
+			.col-sm-6 {
+
+				figure {
+					padding: 20px 0;
+					margin: 0 auto;
+					width: 90%;
+
+					.video-wrapper {
+						position: relative;
+
+						video {
+							background-color: $gray-color1;
+						}
+
+						/**show play button only in chrome**/
+						.video-btn-wrap {
+							z-index: 1;
+							cursor: pointer;
+							background-color: transparent;
+							width: 80px;
+							height: 80px;
+							border: 5px solid $white;
+							@include border-radius (40px);
+							@include centering(absolute);
+							display: none;
+
+							.arrow-right {
+								width: 0px;
+							    height: 0px;
+							    border-top: 20px solid transparent;
+							    border-bottom: 20px solid transparent;
+							    border-left: 33px solid white;
+							    @include centering(absolute);
+							    margin-left: 6px;
+							}
+						}
+
+						.video-btn-wrap:not(*:root) {
+							display: block;
+						}
+					}
+
+					figcaption {
+						text-align: left;
+	    				
+	    				h3 {
+	    					margin: 0 0 20px;
+	    					font-size: 20px;
+	    					font-weight: $font-normal;
+	    				}
+
+	    				p {
+	    					font-size: 16px;
+	    					margin-top: 6px;
+	    				}
+					}
+				}
+			}
 		}
 
 		/***************/

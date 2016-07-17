@@ -60,8 +60,14 @@ var $ = jQuery,
 			// Bind click event to letters index
 			$('.letter-index-container li').bind('click', BhjsGeneral.index_letter_click);
 
+			// Bind click event to 'play video external button'
+			$('.video-wrapper .video-btn-wrap').bind('click', BhjsGeneral.toggle_video_click);
+					
+			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
+
 			// Photo data type
-			setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
+			//setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
+			BhjsGeneral.photoGallery();
 
 			// PhotoSwipe
 			BhjsGeneral.initPhotoSwipeFromDOM('.gallery');
@@ -154,6 +160,31 @@ var $ = jQuery,
 			BhjsGeneral.refresh_items(list_id);
 
 		},
+
+		/**
+		 * toggle_video_click
+		 *
+		 * toggle play/pause video
+		 *
+		 * @since		1.0
+		 * @param		event (object)
+		 * @return		N/A
+		 */
+		toggle_video_click : function(event) {
+			var trigger = event.currentTarget;
+			//internal play button
+			if ( $(trigger).is('.video-wrapper video') ) {
+				external_button = $(trigger).parent().children()[0];
+				$(external_button).addClass('hidden');
+			}
+			// if trigger is an external button
+			else {
+				video = $(trigger).parent().children()[1];
+				video.play();
+				$(trigger).addClass('hidden');
+			}
+		},
+
 		/**
 		 * refresh_items
 		 *
@@ -225,7 +256,7 @@ var $ = jQuery,
 						$(this).css({'left': left + 'px', 'top': top + 'px'});
 
 						// Expose photo
-						$(this).show();
+						//$(this).show();
 
 						// Update gallery height
 						currHeight = $(this).position().top + $(this).find('img').outerHeight();

@@ -37,25 +37,27 @@ $settings = array(
             }
         } ?>
 
-		<div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
-          <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
-            <div class="thumbnail">
-              <img src="<?php echo $settings['src_prefix'] . $place_photo; ?>" alt="<?php echo $title; ?>"/>
+		<div class="col-sm-4">
+            <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
+              <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
+                <div class="thumbnail">
+                  <img src="<?php echo $settings['src_prefix'] . $place_photo; ?>" alt="<?php echo $title; ?>"/>
+                </div>
+                <div class="text-part <?php echo count($pictures)>0 ? 'text-part--thumbnail' : 'text-part--nothumb'; ?>">
+                    <div class="text <?php echo count($pictures) == 0 ? 'text--nothumb' : ''; ?>">
+                        <?php echo $desc; ?>
+                    </div>
+                    <div class="<?php echo count($pictures) ? 'diagonal-block' : ''?>">
+                        <div class="diagonal-separator" style="right:-22px; opacity:1"></div>
+                        <div class=" <?php echo count($pictures)>1 ? 'diagonal-separator' : '' ?>" style="right:-10px; opacity:0.7"></div>
+                        <div class=" <?php echo count($pictures)>1 ? 'diagonal-separator' : '' ?>" style="right:2px; opacity:0.4"></div>
+                    </div>
+                    <div class="header <?php  echo count($pictures) == 0 ? 'header--nothumb' : '' ?>">
+                        <?php echo $title ?>
+                    </div>
+                </div>
+              </a>
             </div>
-            <div class="text-part <?php echo count($pictures)>0 ? 'text-part--thumbnail' : 'text-part--nothumb'; ?>">
-                <div class="text <?php echo count($pictures) == 0 ? 'text--nothumb' : ''; ?>">
-                    <?php echo $desc; ?>
-                </div>
-                <div class="<?php echo count($pictures) ? 'diagonal-block' : ''?>">
-                    <div class="diagonal-separator" style="right:-22px; opacity:1"></div>
-                    <div class=" <?php echo count($pictures)>1 ? 'diagonal-separator' : '' ?>" style="right:-10px; opacity:0.7"></div>
-                    <div class=" <?php echo count($pictures)>1 ? 'diagonal-separator' : '' ?>" style="right:2px; opacity:0.4"></div>
-                </div>
-                <div class="header <?php  echo count($pictures) == 0 ? 'header--nothumb' : '' ?>">
-                    <?php echo $title ?>
-                </div>
-            </div>
-          </a>
         </div>
     <?php } ?>
         
