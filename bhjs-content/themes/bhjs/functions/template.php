@@ -139,6 +139,39 @@ function languages_switcher() {
 }
 
 /**
+ * get_community_coordinates
+ *
+ * Get community coordinates
+ *
+ * @since		1.0
+ * @param		$title (string) community title
+ * @return		(json)
+ */
+function get_community_coordinates($title) {
+
+	$url = 'http://nominatim.openstreetmap.org/search?format=json&city=' . $title;
+
+	// Get place data
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+	$json_response_content = curl_exec($ch);
+	curl_close($ch);
+	
+	$data = json_decode($json_response_content, true);
+
+	$lat = $data[0]['lat'];
+	$lng = $data[0]['lon'];
+
+	// return
+	return array(
+		'lat' => $lat ? $lat : '',
+		'lng' => $lng ? $lng : ''
+	);
+
+}
+
+/**
  * index_generator
  *
  * Displays letters index

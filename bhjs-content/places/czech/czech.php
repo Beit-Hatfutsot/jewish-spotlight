@@ -26,4 +26,13 @@ if ( ! defined( 'PLACE_CREDIT_TEXT_EN' ) )
 	define( 'PLACE_CREDIT_TEXT_EN', 'In honor of Ruth Federmann nee Steckelmacher, presented by the Federmann Family and Dan Hotels Group' );
 
 if ( ! defined( 'PLACE_CREDIT_TEXT_HE' ) )
-	define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן לבית שטקלמכר ע"י משפחת פדרמן וחברת מלונות דן' );
+    define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן לבית שטקלמכר ע"י משפחת פדרמן וחברת מלונות דן' );
+
+if ( ! defined( 'MAP_CENTER_LNG' ) )
+    define( 'MAP_CENTER_LNG', 49.81995 );
+
+if ( ! defined( 'MAP_CENTER_LAT' ) )
+    define( 'MAP_CENTER_LAT', 15.47490 );
+
+if ( ! defined( 'MAP_ZOOM' ) )
+    define( 'MAP_ZOOM', 7 );

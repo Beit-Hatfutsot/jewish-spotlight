@@ -14,12 +14,25 @@ $settings = array(
     'type_id'       => 5,
     'dbs_prefix'    => 'http://dbs.bh.org.il/' . ($lang == 'he' ? 'he/' : ''),
     'src_prefix'    => 'https://storage.googleapis.com/bhs-flat-pics/',
-
 );
 
+$markers = array();
+
 ?>
+
 <div class="data-type-section" id="data-type-section-community">
+
+    <?php if ( defined('MAP_CENTER_LNG') && MAP_CENTER_LNG != '' && defined('MAP_CENTER_LAT') && MAP_CENTER_LAT != '' && defined('MAP_ZOOM') && MAP_ZOOM != '' ) { ?>
+        <script>
+            var _map_center_lng = <?php echo MAP_CENTER_LNG; ?>,
+                _map_center_lat = <?php echo MAP_CENTER_LAT; ?>,
+                _map_zoom = <?php echo MAP_ZOOM; ?>;
+        </script>
+        <div id="communities_map" style="height: 440px; width: 100%; border: 1px solid #AAA;"></div>
+    <?php } ?>
+
     <div><?php echo index_generator('community'); ?></div>
+
     <?php foreach ( $data[ $settings['type_id'] ] as $place ) {
         $title  = $place['Header'][ucfirst($lang)];
         $desc   = $place['UnitText1'][ucfirst($lang)];
@@ -35,7 +48,21 @@ $settings = array(
                     $place_photo = $photo['PictureId'] . '.jpg';
                 }
             }
-        } ?>
+        };
+
+        //to get coordinates
+        $coordinates = get_community_coordinates( $place['Header']['En'] );
+
+        if ( $coordinates['lat'] && $coordinates['lng'] ) {
+            $markers[] = array(
+                'name'  => $place['Header']['En'],
+                'url'   => $settings['dbs_prefix'] . $slug,
+                'lat'   => $coordinates['lat'],
+                'lng'   => $coordinates['lng']
+            );
+        }
+
+        ?>
 
 		<div class="col-sm-4">
             <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
@@ -60,5 +87,9 @@ $settings = array(
             </div>
         </div>
     <?php } ?>
+
+    <script>
+        _map_markers = '<?php echo json_encode($markers); ?>';
+    </script>
         
 </div>
