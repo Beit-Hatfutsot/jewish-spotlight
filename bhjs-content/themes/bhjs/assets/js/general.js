@@ -66,7 +66,7 @@ var $ = jQuery,
 			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
 
 			// Photo data type
-			//setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
+			setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
 			BhjsGeneral.photoGallery();
 
 			// PhotoSwipe
@@ -171,9 +171,18 @@ var $ = jQuery,
 		 * @return		N/A
 		 */
 		toggle_video_click : function(event) {
+
 			var trigger = event.currentTarget;
 			//internal play button
 			if ( $(trigger).is('.video-wrapper video') ) {
+				if (!trigger.paused) {
+					//stop other videos
+					$('#data-type-section-video').find('video').each(function() {
+						if (this != trigger) {
+							this.pause();
+						}
+					});
+				}
 				external_button = $(trigger).parent().children()[0];
 				$(external_button).addClass('hidden');
 			}
