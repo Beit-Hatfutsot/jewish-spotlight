@@ -65,7 +65,8 @@ $data	= dbs()->get_place_sorted_data();
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-
+							<?php if ( ( defined('TIMELINE_EN') && TIMELINE_EN != '') || ( defined( ('TIMELINE_HE')) && TIMELINE_HE != '' ) ) 
+								echo '<li><a class="anchor" data-href="' . $types['999']['slug'] . '">' . $types['999']['menu_title'][$lang] . '</a></li>'; ?>
 							<?php foreach ( $data as $id => $items ) {
 								if ( ! empty($items) ) {
 									echo '<li><a class="anchor" data-href="' . $types[$id]['slug'] . '">' . $types[$id]['menu_title'][$lang] . '</a></li>';

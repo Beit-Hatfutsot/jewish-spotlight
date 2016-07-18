@@ -17,6 +17,8 @@ global $lang, $data;
 
 <a name="top"></a>
 
+<?php get_data_type_template( 'timeline' ); ?>
+
 <?php if ( ! empty($data) ) {
 	$types = dbs()->get_attribute( 'types' );
 

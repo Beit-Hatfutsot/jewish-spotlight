@@ -36,3 +36,9 @@ if ( ! defined( 'MAP_CENTER_LAT' ) )
 
 if ( ! defined( 'MAP_ZOOM' ) )
     define( 'MAP_ZOOM', 7 );
+if ( ! defined( 'TIMELINE_EN' ) )
+    define( 'TIMELINE_EN', 'https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=14_ymqMWDTb5oHYp_ZRGNZ38Awv01wLVEESvcQoruMJw&font=Default&lang=en&initial_zoom=2&height=650' );
+
+if ( ! defined( 'TIMELINE_HE' ) )
+    define( 'TIMELINE_HE', 'https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE&font=Default&lang=en&initial_zoom=2&height=650' );
+

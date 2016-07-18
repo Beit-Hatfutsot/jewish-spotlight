@@ -51,6 +51,20 @@ class dbs {
 
 			// Unit types
 			'types'					=> array(
+
+				//timeline
+				'999'				=> array(
+					'slug'			=> 'timeline',
+					'menu_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					)
+				),
+
 				// community
 				'5'					=> array(
 					'slug'			=> 'community',
