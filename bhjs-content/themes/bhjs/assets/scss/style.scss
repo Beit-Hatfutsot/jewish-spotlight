@@ -105,7 +105,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 1000;
+	z-index: 1001;
 
 	/**************/
 	/* header top */
@@ -148,7 +148,7 @@ header {
 					position: relative;
 					max-width: 165px;
 					height: auto;
-					z-index: 1000;
+					z-index: 1001;
 				}
 			}
 		}
@@ -547,6 +547,111 @@ body.main {
 	}
 }
 
+/**********/
+/* footer */
+/**********/
+
+footer {
+	margin: 40px 0 0;
+	border-top: 6px solid $gray-color4;
+	background-color: $footer-bg;
+
+	.container {
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		/**************/
+		/* place logo */
+		/**************/
+
+		#logo {
+			float: left;
+			margin-right: 20px;
+			width: 112px;
+			height: 100px;
+			text-align: left;
+
+			img {
+				position: relative;
+				max-width: 112px;
+				height: auto;
+				@include vertical-align;
+			}
+		}
+
+		/**********/
+		/* credit */
+		/**********/
+
+		#credit {
+			float: left;
+			margin-right: 15px;
+			width: 500px;
+
+			#credit-image {
+				float: left;
+				margin-right: 15px;
+				width: 50px;
+				height: 100px;
+
+				img {
+					max-width: 100%;
+					height: auto;
+					@include vertical-align;
+				}
+			}
+
+			h1 {
+				margin: 10px 0 5px;
+				font-size: 26px;
+				font-weight: $font-normal;
+			}
+
+			#credit-text {
+				font-size: 16px;
+			}
+		}
+
+		/*************/
+		/* about btn */
+		/*************/
+
+		.about-btn {
+			float: left;
+			margin: 0 60px;
+			height: 100px;
+		}
+
+		/**********************/
+		/* languages switcher */
+		/**********************/
+
+		.language-switcher {
+			float: left;
+			height: 100px;
+		}
+
+		/***********/
+		/* BH logo */
+		/***********/
+
+		#bh-logo a {
+			float: right;
+			width: 140px;
+			height: 100px;
+			display: block;
+
+			&.en {
+				@include image("logo-bh-en.png", 100%, 50% 50%);
+			}
+
+			&.he {
+				@include image("logo-bh-he.png", 100%, 50% 50%);
+			}
+		}
+	}
+}
+
 /**************************/
 /* languages switcher btn */
 /**************************/
@@ -571,6 +676,29 @@ body.main {
 		&:hover {
 			background-color: $gray-color3;
 		}
+	}
+}
+
+/*******/
+/* btn */
+/*******/
+
+.bhjs-btn {
+	float: left;
+	margin-right: 10px;
+	@include vertical-align;
+
+	a {
+		padding: 0 10px;
+		line-height: 30px;
+		font-size: 12px;
+		color: $font-invert-color;
+		font-weight: $font-bold;
+		background-color: $blue-color3;
+		@include border-radius(3px);
+		text-align: center;
+		text-decoration: none;
+		display: block;
 	}
 }
 

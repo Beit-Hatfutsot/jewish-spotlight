@@ -57,37 +57,38 @@ final class bhjs_core {
 	function initialize() {
 
 		$this->settings = array(
-			'template_name'		=> array(
-				'en'			=> 'Jewish Spotlight',
-				'he'			=> 'זרקור יהודי'
+			'template_name'			=> array(
+				'en'				=> 'Jewish Spotlight',
+				'he'				=> 'זרקור יהודי'
 			),
-			'place_name'		=> array(				// TBD - take this data from dbs API
-				'en'			=> '',
-				'he'			=> ''
+			'place_name'			=> array(				// TBD - take this data from dbs API
+				'en'				=> '',
+				'he'				=> ''
 			),
-			'place_slug'		=> '',
-			'template_logo'		=> '',
-			'credit_image'		=> '',
-			'credit_text'		=> array(
-				'en'			=> '',
-				'he'			=> ''
+			'place_slug'			=> '',
+			'template_logo'			=> '',
+			'template_logo_small'	=> '',
+			'credit_image'			=> '',
+			'credit_text'			=> array(
+				'en'				=> '',
+				'he'				=> ''
 			),
-			'languages'			=> array(
-				'en'			=> array(
-					'name'		=> 'English',
-					'slug'		=> 'en'
+			'languages'				=> array(
+				'en'				=> array(
+					'name'			=> 'English',
+					'slug'			=> 'en'
 				),
-				'he'			=> array(
-					'name'		=> 'עברית',
-					'slug'		=> 'he'
+				'he'				=> array(
+					'name'			=> 'עברית',
+					'slug'			=> 'he'
 				)
 			),
-			'permalink'			=> array(
-				'url'			=> '',
-				'request_uri'	=> '',
-				'lang'			=> ''
+			'permalink'				=> array(
+				'url'				=> '',
+				'request_uri'		=> '',
+				'lang'				=> ''
 			),
-			'page_template'		=> ''
+			'page_template'			=> ''
 		);
 
 		$this->set_permalink();
@@ -319,6 +320,7 @@ final class bhjs_core {
 		$this->settings['place_name']['he']		= ( defined( 'PLACE_NAME_HE' ) ) ? PLACE_NAME_HE : '';
 
 		$this->settings['template_logo']		= ( defined( 'PLACE_LOGO' ) ) ? PLACE_LOGO : '';
+		$this->settings['template_logo_small']	= ( defined( 'PLACE_LOGO_SMALL' ) ) ? PLACE_LOGO_SMALL : '';
 		$this->settings['credit_image']			= ( defined( 'PLACE_CREDIT_IMG' ) ) ? PLACE_CREDIT_IMG : '';
 
 		$this->settings['credit_text']['en']	= ( defined( 'PLACE_CREDIT_TEXT_EN' ) ) ? PLACE_CREDIT_TEXT_EN : '';

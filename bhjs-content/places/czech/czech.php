@@ -19,6 +19,9 @@ if ( ! defined( 'PLACE_NAME_HE' ) )
 if ( ! defined( 'PLACE_LOGO' ) )
 	define( 'PLACE_LOGO', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo.png' );
 
+if ( ! defined( 'PLACE_LOGO_SMALL' ) )
+	define( 'PLACE_LOGO_SMALL', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo-small.png' );
+
 if ( ! defined( 'PLACE_CREDIT_IMG' ) )
 	define( 'PLACE_CREDIT_IMG', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/credit.jpg' );
 
