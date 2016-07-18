@@ -167,9 +167,18 @@ var $ = jQuery,
 		 * @return		N/A
 		 */
 		toggle_video_click : function(event) {
+
 			var trigger = event.currentTarget;
 			//internal play button
 			if ( $(trigger).is('.video-wrapper video') ) {
+				if (!trigger.paused) {
+					//stop other videos
+					$('#data-type-section-video').find('video').each(function() {
+						if (this != trigger) {
+							this.pause();
+						}
+					});
+				}
 				external_button = $(trigger).parent().children()[0];
 				$(external_button).addClass('hidden');
 			}
