@@ -65,10 +65,6 @@ var $ = jQuery,
 					
 			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
 
-			// Photo data type
-			//setTimeout(BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
-			BhjsGeneral.photoGallery();
-
 			// PhotoSwipe
 			BhjsGeneral.initPhotoSwipeFromDOM('.gallery');
 
@@ -256,7 +252,7 @@ var $ = jQuery,
 						$(this).css({'left': left + 'px', 'top': top + 'px'});
 
 						// Expose photo
-						//$(this).show();
+						$(this).show();
 
 						// Update gallery height
 						currHeight = $(this).position().top + $(this).find('img').outerHeight();
@@ -491,6 +487,9 @@ var $ = jQuery,
 		 * @return	N/A
 		 */
 		loaded : function() {
+
+			// Photo data type
+			BhjsGeneral.photoGallery();
 
 			// BhjsGeneral.alignments();
 
