@@ -282,6 +282,56 @@ body.main {
 
 	.data-type-section {
 
+        /*************/
+        /* timeline */
+        /*************/
+
+        &#data-type-section-timeline {
+        	#timeline-embed {
+        		.tl-storyslider {
+
+	        		/***********/
+	        		/* sliders */
+	        		/***********/
+
+	        		.tl-slide-content {
+	        			width: 100% !important;
+	        		}
+        		}
+
+        		.tl-timenav {
+
+	        		/*************/
+	        		/* navigator */
+	        		/*************/
+
+	        		background-color: $gray-color4;
+
+	        		.tl-timemarker {
+		        		.tl-timemarker-content-container {
+		        			background-color: $white;
+		        		}
+
+	        			&.tl-timemarker-active {
+	        				.tl-timemarker-content-container {
+	        					background-color: $blue-color2;
+	        				}
+
+	        				h2.tl-headline {
+	        					color: $gray-color1 !important;
+	        				}
+	        			}
+
+	        			&:hover {
+	        				h2.tl-headline {
+	        					color: #bfbfbf;
+	        				}
+	        			}
+	        		}
+        		}
+        	}
+        }
+
 		/*************/
 		/* indexer */
 		/*************/
@@ -711,6 +761,17 @@ footer {
 /* PhotoSwipe */
 /**************/
 
-.pswp__caption__center {
-	text-align: center !important;
+.pswp {
+	.pswp__bg {
+		opacity: 0.9 !important;
+	}
+
+	.pswp__caption {
+		.pswp__caption__center {
+			max-width: 50% !important;
+			font-size: 20px;
+			line-height: 30px;
+			text-align: center !important;
+		}
+	}
 }

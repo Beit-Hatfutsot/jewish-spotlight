@@ -26,6 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<!-- Leaflet CSS file -->
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 
+	<!-- Timeline3  -->
+    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
 	<!-- active theme -->
 	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style.css">
 

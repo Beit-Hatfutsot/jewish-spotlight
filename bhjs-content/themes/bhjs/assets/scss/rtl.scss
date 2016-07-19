@@ -140,6 +140,38 @@ body.main {
     .data-type-section {
 
         /*************/
+        /* timeline */
+        /*************/
+
+        &#data-type-section-timeline {
+            #timeline-embed {
+                .tl-storyslider {
+
+                    /***********/
+                    /* sliders */
+                    /***********/
+
+                    .tl-text {
+                        text-align: right;
+                        direction: rtl;
+                    }
+                }
+
+                .tl-timenav {
+
+                    /*************/
+                    /* navigator */
+                    /*************/
+
+                    .tl-timemarker {
+                        text-align: right;
+                        direction: rtl;
+                    }
+                }
+            }
+        }
+
+        /*************/
         /* indexer */
         /*************/
 
