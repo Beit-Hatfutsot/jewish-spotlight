@@ -1,0 +1,297 @@
+/***********/
+/* imports */
+/***********/
+
+@import "params";
+@import "functions";
+
+/***********/
+/* general */
+/***********/
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+
+.container {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+    float: right;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+
+    /* Always apply the floated nav */
+    .navbar-nav {
+        float: right;
+
+        & > li {
+            float: right;
+        }
+
+        &.navbar-right {
+            float: left;
+        }
+
+        /* Undo custom dropdowns */
+        .open .dropdown-menu {
+            float: right;
+        }
+    }
+}
+
+/**********/
+/* header */
+/**********/
+
+header {
+    right: 0;
+    left: auto;
+
+    /**************/
+    /* header top */
+    /**************/
+
+    #header-top {
+
+        /**************/
+        /* place logo */
+        /**************/
+
+        #logo {
+            float: right;
+            margin-left: 20px;
+            margin-right: auto;
+
+            &:before {
+                right: 0;
+                left: auto;
+            }
+        }
+
+        /**********/
+        /* credit */
+        /**********/
+
+        #credit {
+            float: right;
+            margin-left: 15px;
+            margin-right: auto;
+            text-align: right;
+
+            #credit-image {
+                float: right;
+                margin-left: 15px;
+                margin-right: auto;
+            }
+        }
+
+        /**********************/
+        /* languages switcher */
+        /**********************/
+
+        .language-switcher {
+            float: right;
+        }
+
+        /***********/
+        /* BH logo */
+        /***********/
+
+        #bh-logo a {
+            float: left;
+        }
+    }
+
+    /*****************/
+    /* header bottom */
+    /*****************/
+
+    #header-bottom {
+
+        nav {
+
+            li {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/********/
+/* main */
+/********/
+
+body.main {
+
+    /*****************/
+    /* section title */
+    /*****************/
+
+    .data-type-section {
+
+        /*************/
+        /* indexer */
+        /*************/
+
+        .letter-index-container {
+
+            li {
+                float: right;
+                text-align: center;
+            }
+        }
+
+        /*************/
+        /* community */
+        /*************/
+
+        &#data-type-section-community, &#data-type-section-luminary {
+
+            .item-preview {
+                direction: rtl;
+                text-align: right;
+
+                .thumbnail {
+                    left: 0;
+                    right: auto;
+
+                    img {
+                        left: 0;
+                        right: auto;
+                    }
+                }
+
+                .text-part {
+                    border-left: 42px solid transparent;
+                    border-right: 0px;
+
+                    &--nothumb {
+                        border-left: 0px solid #ffffff;
+                        border-right: 0px;
+                    }
+
+                    .diagonal-block {
+                        @include flip ();
+                    }   
+                }
+
+            }
+        }
+
+        /*********/
+        /* photo */
+        /*********/
+
+        &#data-type-section-photo {
+        }
+
+        /*********/
+        /* video */
+        /*********/
+
+        &#data-type-section-video {
+            text-align: right;
+
+            .col-sm-6 {
+
+                figure {
+
+                    figcaption {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**********/
+/* footer */
+/**********/
+
+footer {
+    
+    .container {
+
+        /**************/
+        /* place logo */
+        /**************/
+
+        #logo {
+            float: right;
+            margin-left: 0;
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        /**********/
+        /* credit */
+        /**********/
+
+        #credit {
+            float: right;
+            margin-right: auto;
+            margin-left: 15px;
+        
+            #credit-image {
+                float: right;
+                margin-left: 15px;
+                margin-right: 0;
+            }
+        }
+
+        /*************/
+        /* about btn */
+        /*************/
+
+        .about-btn {
+            float: right;
+        }
+
+        /**********************/
+        /* languages switcher */
+        /**********************/
+
+        .language-switcher {
+            float: right;
+        }
+
+        /***********/
+        /* BH logo */
+        /***********/
+
+        #bh-logo a {
+            float: left;
+        }
+    }
+}
+
+/**************************/
+/* languages switcher btn */
+/**************************/
+
+.language-switcher-btn {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/*******/
+/* btn */
+/*******/
+
+.bhjs-btn {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}

@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style.css">
 
 	<?php if ( CURR_LANG == 'he' ) { ?>
-		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style-rtl.css">
+		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/rtl.css">
 	<?php } ?>
 
 	<!-- PhotoSwipe - Core CSS file -->
