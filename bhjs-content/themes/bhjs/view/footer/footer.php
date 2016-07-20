@@ -44,7 +44,7 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 
 		<?php if ( file_exists( $about_content ) ) { ?>
 			<div class="about-btn">
-				<div class="bhjs-btn"><a href="<?php echo bhjs_get_siteurl() . '/' . $place_slug . '/' . $lang . '/about.php'; ?>"><?php echo $lang == 'en' ? 'About' : 'אודות'; ?></a></div>
+				<div class="bhjs-btn"><a href="<?php echo bhjs_get_siteurl() . '/' . $place_slug . '/' . $lang . '/about'; ?>"><?php echo $lang == 'en' ? 'About' : 'אודות'; ?></a></div>
 			</div>
 		<?php } ?>
 

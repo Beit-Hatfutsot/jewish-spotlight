@@ -28,7 +28,7 @@
 body {
 	padding-top: 184px;
 	@include font;
-	font-size: 18px;
+	font-size: 16px;
 	color: $font-color;
 	background-color: $content-bg;
 	word-wrap: break-word;
@@ -769,13 +769,13 @@ footer {
 
 .pswp {
 	.pswp__bg {
-		opacity: 0.9 !important;
+		opacity: 0.85 !important;
 	}
 
 	.pswp__caption {
 		.pswp__caption__center {
 			max-width: 50% !important;
-			font-size: 20px;
+			font-size: 24px;
 			line-height: 30px;
 			text-align: center !important;
 		}
