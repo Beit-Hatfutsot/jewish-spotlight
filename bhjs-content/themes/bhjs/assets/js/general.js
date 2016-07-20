@@ -151,10 +151,8 @@ var $ = jQuery,
 			else {
 				$(current).addClass('active');
 			}
-
 			// refresh items
 			BhjsGeneral.refresh_items(list_id);
-
 		},
 
 		/**
@@ -201,7 +199,10 @@ var $ = jQuery,
 		 */
 		refresh_items : function(list_id) {
 			// collect filters values
-			var letters = [];
+			var letters = [],
+				items = $('#data-type-section-' + list_id).find('.item-preview'),
+				empty_result = true,
+				notification = $('#data-type-section-' + list_id).find('.notification');
 
 			$('.letter-index-container#' + list_id).find('li').each(function() {
 				if ( $(this).hasClass('active') ) {
@@ -211,20 +212,32 @@ var $ = jQuery,
 
 			// check whether letters is empty -> show all items
 			if ( letters.length == 0 ) {
-				$('#data-type-section-' + list_id).find('.item-preview').removeClass('hidden');
+				items.each(function() { $(this).parent().removeClass('hidden') });
+
+				if ( items.length ) {
+					empty_result = false;
+				}
 			}
 			else {
 				// hide items from grid
-				$('#data-type-section-' + list_id).find('.item-preview').each(function() {
+				/*var items_disp = [];*/
+				items.each(function() {
 					var letter = $(this).attr('data-letter');
-
+					
 					if ( $.inArray(letter, letters) == -1 ) {
-						$(this).addClass('hidden');
+						$(this).parent().addClass('hidden');
 					}
 					else {
-						$(this).removeClass('hidden');
+						$(this).parent().removeClass('hidden');
+						empty_result = false;
 					}
 				});
+			}
+
+			if ( empty_result ) {
+				notification.show();
+			} else {
+				notification.hide();
 			}
 
 		},

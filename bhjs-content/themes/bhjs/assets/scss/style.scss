@@ -376,6 +376,12 @@ body.main {
 				margin-bottom: 20px;
 			}
 
+			.notification {
+				margin: 20px auto 0;
+				color: $red-color2;
+				display: none;
+			}
+
 			.item-preview {
 				position: relative;
 				vertical-align: middle;
