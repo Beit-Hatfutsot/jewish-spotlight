@@ -87,6 +87,7 @@ $markers = array();
             </div>
         </div>
     <?php } ?>
+    <p class="notification"><?php echo ( $lang == 'en' ? 'No items found, please try another search' : 'לא נמצאו פריטים, אנא נסו חיפוש אחר' ); ?></p>
 
     <script>
         _map_markers = '<?php echo json_encode($markers); ?>';
