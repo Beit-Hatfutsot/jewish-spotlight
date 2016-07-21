@@ -17,7 +17,7 @@ $credit_image			= bhjs_core()->get_attribute( 'credit_image' );
 $credit_text			= bhjs_core()->get_attribute( 'credit_text' );
 $languages				= bhjs_core()->get_attribute( 'languages' );
 
-global $lang;
+global $lang, $data;
 
 $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 
@@ -26,18 +26,18 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 <footer>
 
 	<div class="container">
-		<?php if ( $template_logo_small ) { ?>
+		<?php if ( $data && $template_logo_small ) { ?>
 			<div id="logo"><img src="<?php echo $template_logo_small; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></div>
 		<?php } ?>
 
 		<div id="credit">
-			<?php if ( $credit_image ) { ?>
+			<?php if ( $data && $credit_image ) { ?>
 				<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
 			<?php } ?>
 
-			<h1><?php echo $template_name[$lang] . ': ' . $place_name[$lang]; ?></h1>
+			<h1 <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
 
-			<?php if ( $credit_text ) { ?>
+			<?php if ( $data && $credit_text ) { ?>
 				<div id="credit-text"><?php echo $credit_text[$lang]; ?></div>
 			<?php } ?>
 		</div>
@@ -48,7 +48,9 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 			</div>
 		<?php } ?>
 
-		<div class="language-switcher"><?php echo languages_switcher(); ?></div>
+		<?php if ( $data ) { ?>
+			<div class="language-switcher"><?php echo languages_switcher(); ?></div>
+		<?php } ?>
 
 		<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 	</div>

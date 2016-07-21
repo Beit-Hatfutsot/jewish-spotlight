@@ -278,26 +278,32 @@ final class bhjs_core {
 			// Retrieve URL path
 			$requestURI = $this->settings['permalink']['request_uri'];
 
-			// Remove place slug
-			unset( $requestURI[0] );
-
-			// Remove language indicator if exists
-			if ( isset( $requestURI[1] ) && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
-				unset( $requestURI[1] );
-			}
-
-			$path = implode( '/', $requestURI );
-
-			// Resolve path to page template
-			if ( ! $path ) {
-				// Main page template
-				$path = 'main.php';
-			}
-			elseif ( file_exists( TEMPLATEPATH . '/template/' . $path . '.php' ) ) {
-				$path = $path . '.php';
+			// Check if place slug exists
+			if ( ! file_exists(PLACES . '/' . $requestURI[0] . '/' . $requestURI[0] . '.php') ) {
+				$path = '404.php';
 			}
 			else {
-				$path = '404.php';
+				// Remove place slug
+				unset( $requestURI[0] );
+
+				// Remove language indicator if exists
+				if ( isset( $requestURI[1] ) && array_key_exists( $requestURI[1], $this->settings['languages'] ) ) {
+					unset( $requestURI[1] );
+				}
+
+				$path = implode( '/', $requestURI );
+
+				// Resolve path to page template
+				if ( ! $path ) {
+					// Main page template
+					$path = 'main.php';
+				}
+				elseif ( file_exists( TEMPLATEPATH . '/template/' . $path . '.php' ) ) {
+					$path = $path . '.php';
+				}
+				else {
+					$path = '404.php';
+				}
 			}
 		}
 

@@ -29,23 +29,25 @@ $data	= dbs()->get_place_sorted_data();
 
 	<div id="header-top">
 		<div class="container">
-			<?php if ( $template_logo ) { ?>
+			<?php if ( $data && $template_logo ) { ?>
 				<div id="logo"><a class="anchor" data-href="top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
 			<?php } ?>
 
 			<div id="credit">
-				<?php if ( $credit_image ) { ?>
+				<?php if ( $data && $credit_image ) { ?>
 					<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
 				<?php } ?>
 
-				<h1><?php echo $template_name[$lang] . ': ' . $place_name[$lang]; ?></h1>
+				<h1 <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
 
-				<?php if ( $credit_text ) { ?>
+				<?php if ( $data && $credit_text ) { ?>
 					<div id="credit-text"><?php echo $credit_text[$lang]; ?></div>
 				<?php } ?>
 			</div>
 
-			<div class="language-switcher"><?php echo languages_switcher(); ?></div>
+			<?php if ( $data ) { ?>
+				<div class="language-switcher"><?php echo languages_switcher(); ?></div>
+			<?php } ?>
 
 			<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 		</div>
@@ -80,7 +82,7 @@ $data	= dbs()->get_place_sorted_data();
 								}
 							}
 						}
-						else {
+						elseif ( $data ) {
 							// internal page
 							echo '<li><a href="' . bhjs_get_siteurl() . '/' . $place_slug . '/' . $lang . '">' . ( $lang == 'en' ? 'Back to Homepage' : 'חזרה לעמוד הבית' ) . '</a></li>';
 						} ?>

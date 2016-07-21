@@ -8,6 +8,6 @@
 	$page_template = $page_template ? str_replace( '.php', '', $page_template ) : '';
 ?>
 
-<body <?php echo $page_template ? 'class="' . $page_template . '"' : ''; ?>>
+<body <?php echo $page_template ? 'class="page-template-' . $page_template . '"' : ''; ?>>
 
 	<?php include( TEMPLATEPATH . '/view/header/header.php' ); ?>

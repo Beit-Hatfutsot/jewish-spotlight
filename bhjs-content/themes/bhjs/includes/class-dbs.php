@@ -231,6 +231,9 @@ class dbs {
 		
 		$data = json_decode($json_response_content, true);
 
+		if ( ! count($data['items']) )
+			return null;
+
 		// return
 		return $data;
 

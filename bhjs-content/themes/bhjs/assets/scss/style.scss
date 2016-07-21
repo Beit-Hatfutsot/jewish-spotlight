@@ -180,6 +180,11 @@ header {
 				margin: 10px 0 2px;
 				font-size: 32px;
 				font-weight: $font-normal;
+
+				&.vertical-align {
+					margin: 0;
+					line-height: 100px;
+				}
 			}
 
 			#credit-text {
@@ -266,7 +271,7 @@ header {
 /* main */
 /********/
 
-body.main {
+body.page-template-main {
 
 	/*****************/
 	/* section title */
@@ -608,6 +613,28 @@ body.main {
 	}
 }
 
+/*******/
+/* 404 */
+/*******/
+
+body.page-template-404 {
+	.container.content {
+		h1 {
+			margin: 50px 0 25px;
+			font-size: 72px;
+			font-weight: $font-bold;
+			text-align: center;
+		}
+
+		h3 {
+			margin: 0;
+			font-size: 32px;
+			font-weight: $font-normal;
+			text-align: center;
+		}
+	}
+}
+
 /**********/
 /* footer */
 /**********/
@@ -666,6 +693,11 @@ footer {
 				margin: 10px 0 5px;
 				font-size: 26px;
 				font-weight: $font-normal;
+
+				&.vertical-align {
+					margin: 0;
+					line-height: 120px;
+				}
 			}
 
 			#credit-text {
