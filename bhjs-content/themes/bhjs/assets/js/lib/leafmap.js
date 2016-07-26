@@ -1,7 +1,7 @@
 var map = L.map( 'communities_map', {
   center:  [_map_center_lng, _map_center_lat],
   minZoom: _map_zoom,
-  //maxZoom: _map_zoom,
+  maxZoom: _map_zoom + 2,
   zoom:    _map_zoom
 })
 
