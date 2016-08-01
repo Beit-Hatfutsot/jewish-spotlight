@@ -42,15 +42,17 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 			<?php } ?>
 		</div>
 
-		<?php if ( file_exists( $about_content ) ) { ?>
-			<div class="about-btn">
-				<div class="bhjs-btn"><a href="<?php echo bhjs_get_siteurl() . '/' . $place_slug . '/' . $lang . '/about'; ?>"><?php echo $lang == 'en' ? 'About' : 'אודות'; ?></a></div>
-			</div>
-		<?php } ?>
+		<div class="language-switcher-wrapper">
+			<?php if ( file_exists( $about_content ) ) { ?>
+				<div class="about-btn">
+					<div class="bhjs-btn"><a href="<?php echo bhjs_get_siteurl() . '/' . $place_slug . '/' . $lang . '/about'; ?>"><?php echo $lang == 'en' ? 'About' : 'אודות'; ?></a></div>
+				</div>
+			<?php } ?>
 
-		<?php if ( $data ) { ?>
-			<div class="language-switcher"><?php echo languages_switcher(); ?></div>
-		<?php } ?>
+			<?php if ( $data ) { ?>
+				<div class="language-switcher"><?php echo languages_switcher(); ?></div>
+			<?php } ?>
+		</div>
 
 		<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 	</div>
