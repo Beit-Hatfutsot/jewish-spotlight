@@ -22,42 +22,39 @@ $settings = array(
 
 	<div id="gallery-1" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 
-		<?php foreach ( $data[ $settings['type_id'] ] as $collection ) {
+		<?php 
+			$photos = array();
 
-			$title	= $collection['Header'][ucfirst($lang)];
-			$desc	= $collection['UnitText1'][ucfirst($lang)];
-			$photos	= array();
+			foreach ( $data[ $settings['type_id'] ] as $collection ) {
+				$title	= $collection['Header'][ucfirst($lang)];
+				$desc	= $collection['UnitText1'][ucfirst($lang)];
+				$collection_photos	= array();
 
-			if ( count( $collection['Pictures'] ) ) {
-				foreach ( $collection['Pictures'] as $photo ) {
+				if ( count( $collection['Pictures'] ) ) {
+					foreach ( $collection['Pictures'] as $photo ) {
 
-					if ( ! is_null( $photo['PictureId'] ) ) {
-						$photos[] = $photo['PictureId'] . '.jpg';
+						if ( ! is_null( $photo['PictureId'] ) ) {
+							$title = str_replace(array("\r\n", "\n", "\r"), ' ', $title);
+							$title = str_replace('"', '\"', $title);
+
+							$collection_photos[] = array(
+								'title'	=> $title,
+								'photo'	=> $settings['src_prefix'] . $photo['PictureId'] . '.jpg'
+							);
+						}
 					}
 				}
+
+				$photos = array_merge( $photos, $collection_photos );
 			}
-
-			if ( count( $photos ) ) {
-
-				$index = 1;
-
-				foreach ( $photos as $photo ) {
-
-					$src = $settings['src_prefix'] . $photo; ?>
-
-					<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="<?php echo $src; ?>" itemprop="contentUrl">
-							<img src="<?php echo $src; ?>" itemprop="thumbnail" width="285" height="auto" alt="<?php echo $title . ( count($photos) > 1 ? ' - ' . $index++ : '' ); ?>" />
-						</a>
-						<figcaption itemprop="caption description"><?php echo $title; ?></figcaption>
-					</figure>
-
-				<?php }
-
-			}
-
-		} ?>
+		?>
 
 	</div>
+
+	<button class="load-more"><?php echo $lang == 'en' ? 'Load more' : 'טען עוד'; ?></button>
+
+	<script>
+		_BhjsPhotos = '<?php echo count( $photos ) ? json_encode( $photos, JSON_ERROR_UTF8 ) : ''; ?>';
+	</script>
 
 </div>

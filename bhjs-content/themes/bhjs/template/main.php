@@ -23,7 +23,7 @@ global $lang, $data;
 	$types = dbs()->get_attribute( 'types' );
 
 	foreach ( $data as $id => $items ) {
-		if ( ! empty($items) ) { ?>
+		if ( array_key_exists($id, $types) && ! empty($items) ) { ?>
 
 			<a class="menu-item-section" name="<?php echo $types[$id]['slug']; ?>"></a>
 			<div class="container">

@@ -41,6 +41,7 @@ $markers = array();
         $slug = $lang == 'he' ? $heb_slug : str_replace('_', '/', $place['Slug']['En']);
         $photo  = '';
         $pictures = $place['Pictures'];
+        $place_photo = '';
 
         if ( count ( $pictures ) ) {
             foreach ( $pictures as $photo ) {
@@ -67,9 +68,13 @@ $markers = array();
 		<div class="col-md-4 col-sm-6 col-xs-12">
             <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
               <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
-                <div class="thumbnail">
-                  <img src="<?php echo $settings['src_prefix'] . $place_photo; ?>" alt="<?php echo $title; ?>"/>
-                </div>
+                
+                <?php if ( $place_photo ) { ?>
+                    <div class="thumbnail">
+                      <img src="<?php echo $settings['src_prefix'] . $place_photo; ?>" alt="<?php echo $title; ?>"/>
+                    </div>
+                <?php } ?>
+
                 <div class="text-part <?php echo count($pictures)>0 ? 'text-part--thumbnail' : 'text-part--nothumb'; ?>">
                     <div class="text <?php echo count($pictures) == 0 ? 'text--nothumb' : ''; ?>">
                         <?php echo $desc; ?>
