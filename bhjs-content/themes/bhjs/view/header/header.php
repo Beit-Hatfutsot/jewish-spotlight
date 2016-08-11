@@ -76,7 +76,7 @@ $data	= dbs()->get_place_sorted_data();
 									echo '<li><a class="anchor" data-href="' . $types['999']['slug'] . '">' . $types['999']['menu_title'][$lang] . '</a></li>';
 
 								foreach ( $data as $id => $items ) {
-									if ( ! empty($items) ) {
+									if ( array_key_exists($id, $types) && ! empty($items) ) {
 										echo '<li><a class="anchor" data-href="' . $types[$id]['slug'] . '">' . $types[$id]['menu_title'][$lang] . '</a></li>';
 									}
 								}

@@ -30,7 +30,9 @@ var $ = jQuery,
 		 */
 		params : {
 
-			timeout		: 400	// general timeout (int)
+			photos			: $.parseJSON( _BhjsPhotos ),
+			active_photos	: 0,
+			timeout			: 400	// general timeout (int)
 
 		},
 
@@ -64,6 +66,14 @@ var $ = jQuery,
 			$('.video-wrapper .video-btn-wrap').bind('click', BhjsGeneral.toggle_video_click);
 					
 			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
+
+			// Init gallery
+			BhjsGeneral.lazyLoad(0, 4);
+
+			// Bind click event to gallery 'load more' btn
+			$('#data-type-section-photo .load-more').bind('click', function() {
+				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, 4);
+			});
 
 			// PhotoSwipe
 			BhjsGeneral.initPhotoSwipeFromDOM('.gallery');
@@ -496,6 +506,49 @@ var $ = jQuery,
 			if(hashData.pid && hashData.gid) {
 				openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
 			}
+
+		},
+
+		/**
+		 * lazyLoad
+		 *
+		 * Load Images
+		 *
+		 * @since	1.0
+		 * @param	offset (int)
+		 * @param	amount (int)
+		 * @return	N/A
+		 */
+		lazyLoad : function (offset, amount) {
+
+			var index, j;
+
+			for (index=offset, j=0 ; j<amount && BhjsGeneral.params.photos.length>index ; index++, j++) {
+				// expose photo
+				var photoItem =
+					'<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
+						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
+							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" width="285" height="auto" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
+						'</a>' +
+						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '</figcaption>' +
+					'</figure>';
+
+				$(photoItem).appendTo( $('.gallery') );
+			}
+
+			if ( index == BhjsGeneral.params.photos.length ) {
+				// hide more btn
+				$('#data-type-section-photo .load-more').hide();
+			} else {
+				// expose more btn
+				$('#data-type-section-photo .load-more').show();
+			}
+
+			// Update active_photos
+			BhjsGeneral.params.active_photos += j;
+
+			// Refresh gallery grid
+			setTimeout( BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
 
 		},
 
