@@ -30,11 +30,12 @@ var $ = jQuery,
 		 */
 		params : {
 
-			photos			: $.parseJSON( _BhjsPhotos ),
-			active_photos	: 0,
-			photos_columns	: 3,
-			active_column	: 0,
-			timeout			: 400	// general timeout (int)
+			photos					: $.parseJSON( _BhjsPhotos ),
+			active_photos			: 0,
+			photos_columns			: 3,
+			active_column			: 0,
+			photos_more_interval	: 6,
+			timeout					: 400	// general timeout (int)
 
 		},
 
@@ -74,11 +75,11 @@ var $ = jQuery,
 			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
 
 			// Init gallery
-			BhjsGeneral.lazyLoad(0, 6);
+			BhjsGeneral.lazyLoad(0, BhjsGeneral.params.photos_more_interval);
 
 			// Bind click event to gallery 'load more' btn
 			$('#data-type-section-photo .load-more').bind('click', function() {
-				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, 6);
+				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, BhjsGeneral.params.photos_more_interval);
 			});
 
 			// PhotoSwipe
