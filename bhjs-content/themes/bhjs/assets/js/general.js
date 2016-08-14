@@ -214,6 +214,32 @@ var $ = jQuery,
 				}
 			});
 
+			// Update map markers
+			if (type == 'community') {
+				// Remove all markers
+				for ( var i=0; i < map_markers.length; i++ ) {
+					map.removeLayer(map_markers[i]);
+				}
+
+				map_markers = [];
+
+				// Set current markers
+				var markers = JSON.parse(_map_markers);
+
+				for ( var i=0; i < markers.length; ++i ) {
+					markerLetterEn = markers[i].name_en.charAt(0).toUpperCase();
+					markerLetterHe = markers[i].name_he.charAt(0);
+
+					if (markerLetterEn == letter || markerLetterHe == letter) {
+						marker = L.marker( [markers[i].lat, markers[i].lng]/*, {icon: myIcon}*/ )
+						.bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name_en + '</a>' )
+						.addTo( map );
+
+						map_markers.push(marker);
+					}
+				}
+			}
+
 		},
 
 		/**

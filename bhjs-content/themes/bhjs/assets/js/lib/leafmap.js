@@ -10,10 +10,4 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   subdomains: ['a', 'b', 'c']
 }).addTo( map )
 
-var markers = JSON.parse(_map_markers);
-
-for ( var i=0; i < markers.length; ++i ) {
-  L.marker( [markers[i].lat, markers[i].lng]/*, {icon: myIcon}*/ )
-  .bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' )
-  .addTo( map );
-}
+var map_markers = [];

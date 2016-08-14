@@ -56,10 +56,11 @@ $markers = array();
 
         if ( $coordinates['lat'] && $coordinates['lng'] ) {
             $markers[] = array(
-                'name'  => $place['Header']['En'],
-                'url'   => $settings['dbs_prefix'] . $slug,
-                'lat'   => $coordinates['lat'],
-                'lng'   => $coordinates['lng']
+                'name_en'   => $place['Header']['En'],
+                'name_he'   => str_replace("'", "", $place['Header']['He']),
+                'url'       => $settings['dbs_prefix'] . $slug,
+                'lat'       => $coordinates['lat'],
+                'lng'       => $coordinates['lng']
             );
         }
 
