@@ -202,7 +202,7 @@ function index_generator($id) {
 	$output .= '<ul class="letter-index-container" id="' . $id . '">';
 
 		foreach ($letters as $l) {
-			$output .= '<li>' . $l . '</li>';
+			$output .= '<li data-letter="' . $l . '">' . $l . '</li>';
 		}
 
 	$output .= '</ul>';

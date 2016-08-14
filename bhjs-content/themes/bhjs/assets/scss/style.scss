@@ -274,9 +274,9 @@ body.page-template-main {
         	}
         }
 
-		/*************/
+		/***********/
 		/* indexer */
-		/*************/
+		/***********/
 
 		.letter-index-container {
 			margin: 0;
@@ -291,7 +291,7 @@ body.page-template-main {
 			    cursor: pointer;
 			    line-height: 38px;
 			    font-size: 18px;
-			    margin: 0 2.5px;
+			    margin: 0 2.5px 5px;
 			    color: $gray-color3;
 
 			    &:hover {
@@ -302,6 +302,12 @@ body.page-template-main {
 			    &.active {
 			    	background-color: $blue-color2;
 			    	color: $white;	
+			    }
+
+			    &.disabled {
+			    	background-color: $blue-color6;
+			    	color: $white;
+			    	cursor: not-allowed;
 			    }
     		}
 		}

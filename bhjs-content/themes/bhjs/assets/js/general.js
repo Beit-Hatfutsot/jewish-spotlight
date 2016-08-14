@@ -61,6 +61,10 @@ var $ = jQuery,
 			// Anchors waypoint event
 			BhjsGeneral.topMenuWaypoints();
 
+			// Expose first communities and luminaries
+			BhjsGeneral.initIndex('community');
+			BhjsGeneral.initIndex('luminary');
+
 			// Bind click event to letters index
 			$('.letter-index-container li').bind('click', BhjsGeneral.index_letter_click);
 
@@ -142,6 +146,76 @@ var $ = jQuery,
 		},
 
 		/**
+		 * initIndex
+		 *
+		 * Initiate letters index
+		 *
+		 * @since	1.0
+		 * @param	type (string) list type - community/luminary
+		 * @return	N/A
+		 */
+		initIndex : function(type) {
+
+			var items = $('#data-type-section-' + type).find('.item-preview'),
+				letters_list = $('#data-type-section-' + type).find('.letter-index-container');
+
+			// Disable all letter buttons
+			letters_list.find('li').addClass('disabled');
+
+			// Loop through all items and enable relevant letter buttons
+			items.each(function() {
+				var letter = $(this).attr('data-letter');
+
+				// Enable letter
+				letters_list.find("li[data-letter='" + letter + "']").removeClass('disabled');
+			});
+
+			// Expose first enabled letter items
+			letters_list.find('li').each(function() {
+				if ( !$(this).hasClass('disabled') ) {
+					BhjsGeneral.setIndex(type, $(this).attr('data-letter'));
+					return false;
+				}
+			});
+
+		},
+
+		/**
+		 * setIndex
+		 *
+		 * Expose list items by starting with a specific letter
+		 *
+		 * @since	1.0
+		 * @param	type (string) list type - community/luminary
+		 * @param	letter (string)
+		 * @return	N/A
+		 */
+		setIndex : function(type, letter) {
+
+			var items = $('#data-type-section-' + type).find('.item-preview'),
+				letters_list = $('#data-type-section-' + type).find('.letter-index-container');
+
+			// Hide all items
+			items.each(function() {
+				$(this).parent().addClass('hidden');
+			});
+
+			// Deactivate all letters
+			letters_list.find('li').removeClass('active');
+
+			// Activate current letter
+			letters_list.find("li[data-letter='" + letter + "']").addClass('active');
+
+			// Loop through all items and expose relavant items
+			items.each(function() {
+				if ($(this).attr('data-letter') == letter) {
+					$(this).parent().removeClass('hidden');
+				}
+			});
+
+		},
+
+		/**
 		 * index_letter_click
 		 *
 		 * Toggle letter
@@ -152,19 +226,26 @@ var $ = jQuery,
 		 */
 		index_letter_click : function(event) {
 
-			var current = event.currentTarget,
-				active = $(current).hasClass('active') ? true : false,
+			var current = event.currentTarget;
+
+			if ($(current).hasClass('disabled')) {
+				return;
+			}
+
+			var active = $(current).hasClass('active') ? true : false,
 				list_id = $(current).parent().attr('id');
 
 			// toggle active
 			if (active) {
-				$(current).removeClass('active');
+				//$(current).removeClass('active');
+				return;
 			}
 			else {
-				$(current).addClass('active');
+				//$(current).addClass('active');
+				BhjsGeneral.setIndex(list_id, $(current).attr('data-letter'));
 			}
 			// refresh items
-			BhjsGeneral.refresh_items(list_id);
+			//BhjsGeneral.refresh_items(list_id);
 
 		},
 
@@ -206,6 +287,7 @@ var $ = jQuery,
 		 * refresh_items
 		 *
 		 * Refresh items grid according to filter values
+		 * Not in use at the moment
 		 *
 		 * @since		1.0
 		 * @param		srting list_id

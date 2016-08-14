@@ -65,7 +65,7 @@ $markers = array();
 
         ?>
 
-		<div class="col-md-4 col-sm-6 col-xs-12">
+		<div class="col-md-4 col-sm-6 col-xs-12 hidden">
             <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
               <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
                 
