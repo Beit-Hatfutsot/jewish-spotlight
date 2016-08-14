@@ -451,29 +451,32 @@ body.page-template-main {
 					clear: both;
 				}
 
-				.gallery-item {
-					position: absolute;
-					width: 285px;
-					height: auto;
-					display: none;
+				.gallery-col {
+					padding-left: 2.5px;
+					padding-right: 2.5px;
 
-					img {
-						padding: 5px;
-					}
-
-					&:hover {
+					.gallery-item {
 						img {
-							@include opacity(0.7);
+							padding: 5px;
+							width: 100%;
+							height: auto;
 						}
-					}
 
-					figcaption {
-						display: none;
+						&:hover {
+							img {
+								@include opacity(0.7);
+							}
+						}
+
+						figcaption {
+							display: none;
+						}
 					}
 				}
 			}
 
 			button.load-more {
+				margin: 20px 0;
 				padding: 0 10px;
 				line-height: 30px;
 				font-size: 12px;

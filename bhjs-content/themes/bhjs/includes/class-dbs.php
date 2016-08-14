@@ -229,6 +229,8 @@ class dbs {
 		$json_response_content = curl_exec($ch);
 		curl_close($ch);
 		
+//		$json_response_content = file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/cached-api.php' );
+
 		$data = json_decode($json_response_content, true);
 
 		if ( ! count($data['items']) )

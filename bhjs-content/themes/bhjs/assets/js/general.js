@@ -32,6 +32,8 @@ var $ = jQuery,
 
 			photos			: $.parseJSON( _BhjsPhotos ),
 			active_photos	: 0,
+			photos_columns	: 3,
+			active_column	: 0,
 			timeout			: 400	// general timeout (int)
 
 		},
@@ -68,11 +70,11 @@ var $ = jQuery,
 			$('.video-wrapper video').bind("play", BhjsGeneral.toggle_video_click);
 
 			// Init gallery
-			BhjsGeneral.lazyLoad(0, 4);
+			BhjsGeneral.lazyLoad(0, 6);
 
 			// Bind click event to gallery 'load more' btn
 			$('#data-type-section-photo .load-more').bind('click', function() {
-				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, 4);
+				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, 6);
 			});
 
 			// PhotoSwipe
@@ -163,6 +165,7 @@ var $ = jQuery,
 			}
 			// refresh items
 			BhjsGeneral.refresh_items(list_id);
+
 		},
 
 		/**
@@ -196,6 +199,7 @@ var $ = jQuery,
 				video.play();
 				$(trigger).addClass('hidden');
 			}
+
 		},
 
 		/**
@@ -208,6 +212,7 @@ var $ = jQuery,
 		 * @return		N/A
 		 */
 		refresh_items : function(list_id) {
+
 			// collect filters values
 			var letters = [],
 				items = $('#data-type-section-' + list_id).find('.item-preview'),
@@ -253,55 +258,6 @@ var $ = jQuery,
 		},
 
 		/**
-		 * photoGallery
-		 *
-		 * Arrange gallery photos grid
-		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
-		 */
-		photoGallery : function() {
-
-			var gallery			= $('.gallery'),
-				index			= 0,
-				width			= 1140,
-				columns			= 4,
-				left			= 0,
-				top				= 0,
-				galleryHeight	= 0;
-
-			if (gallery.length) {
-				var photos = gallery.children('.gallery-item');
-
-				if (photos.length) {
-					photos.each(function() {
-						// Update left/top values
-						left	= (index*width/columns)%width;
-						top		= (index>=columns) ? photos.eq(index-4).position().top + photos.eq(index-4).find('img').outerHeight() : 0;
-
-						// Set photo left/top values
-						$(this).css({'left': left + 'px', 'top': top + 'px'});
-
-						// Expose photo
-						$(this).show();
-
-						// Update gallery height
-						currHeight = $(this).position().top + $(this).find('img').outerHeight();
-						galleryHeight = currHeight > galleryHeight ? currHeight : galleryHeight;
-
-						// Update index
-						index++;
-					});
-				}
-
-				// Set gallery height
-				gallery.height(galleryHeight);
-			}
-
-		},
-
-		/**
 		 * initPhotoSwipeFromDOM
 		 *
 		 * PhotoSwipe init
@@ -312,56 +268,40 @@ var $ = jQuery,
 		 */
 		initPhotoSwipeFromDOM : function(gallerySelector) {
 
-			// parse slide data (url, title, size ...) from DOM elements 
+			// parse slide data (url, title, size ...) from DOM elements
 			// (children of gallerySelector)
 			var parseThumbnailElements = function(el) {
-				var thumbElements = el.childNodes,
-					numNodes = thumbElements.length,
-					items = [],
-					figureEl,
-					linkEl,
-					imgEl,
-					item;
+				var galleryCols = el.children('.gallery-col'),
+					items = [];
 
-				for(var i = 0; i < numNodes; i++) {
+				$(galleryCols).each(function() {
+					var galleryColItems = $(this).children('.gallery-item');
 
-					figureEl = thumbElements[i]; // <figure> element
+					$(galleryColItems).each(function() {
+						var index = $(this).attr('data-index'),
+							link = $(this).children('a'),
+							caption = $(this).children('figcaption'),
+							img = link.children('img');
 
-					// include only element nodes 
-					if(figureEl.nodeType !== 1) {
-						continue;
-					}
+						// create slide object
+						var item = {
+							src: link.attr('href'),
+							w: img[0].naturalWidth,
+							h: img[0].naturalHeight,
+							msrc: img.attr('src')
+						};
 
-					linkEl = figureEl.children[0]; // <a> element
-					imgEl = linkEl.children[0]; // <img> element
+						if (caption) {
+							item.title = caption.html();
+						}
 
-					// create slide object
-					item = {
-						src: linkEl.getAttribute('href'),
-						w: imgEl.naturalWidth,
-						h: imgEl.naturalHeight
-					};
+						item.el = $(this)[0]; // save link to element for getThumbBoundsFn
 
-					if(figureEl.children.length > 1) {
-						// <figcaption> content
-						item.title = figureEl.children[1].innerHTML; 
-					}
-
-					if(linkEl.children.length > 0) {
-						// <img> thumbnail element, retrieving thumbnail url
-						item.msrc = linkEl.children[0].getAttribute('src');
-					} 
-
-					item.el = figureEl; // save link to element for getThumbBoundsFn
-					items.push(item);
-				}
+						items[index] = item;
+					});
+				});
 
 				return items;
-			};
-
-			// find nearest parent element
-			var closest = function closest(el, fn) {
-				return el && ( fn(el) ? el : closest(el.parentNode, fn) );
 			};
 
 			// triggers when user clicks on thumbnail
@@ -372,70 +312,25 @@ var $ = jQuery,
 				var eTarget = e.target || e.srcElement;
 
 				// find root element of slide
-				var clickedListItem = closest(eTarget, function(el) {
-					return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-				});
+				var clickedListItem = $(eTarget).parent().parent();
 
 				if(!clickedListItem) {
 					return;
 				}
 
-				// find index of clicked item by looping through all child nodes
-				// alternatively, you may define index via data- attribute
-				var clickedGallery = clickedListItem.parentNode,
-					childNodes = clickedListItem.parentNode.childNodes,
-					numChildNodes = childNodes.length,
-					nodeIndex = 0,
-					index;
+				// find index of clicked item
+				var clickedGallery = clickedListItem.parent().parent(),
+					index = clickedListItem.attr('data-index');
 
-				for (var i = 0; i < numChildNodes; i++) {
-					if(childNodes[i].nodeType !== 1) { 
-						continue;
-					}
-
-					if(childNodes[i] === clickedListItem) {
-						index = nodeIndex;
-						break;
-					}
-					nodeIndex++;
-				}
-
-				if(index >= 0) {
+				if(clickedGallery && index >= 0) {
 					// open PhotoSwipe if valid index found
 					openPhotoSwipe( index, clickedGallery );
 				}
+
 				return false;
 			};
 
-			// parse picture index and gallery index from URL (#&pid=1&gid=2)
-			var photoswipeParseHash = function() {
-				var hash = window.location.hash.substring(1),
-				params = {};
-
-				if(hash.length < 5) {
-					return params;
-				}
-
-				var vars = hash.split('&');
-				for (var i = 0; i < vars.length; i++) {
-					if(!vars[i]) {
-						continue;
-					}
-					var pair = vars[i].split('=');  
-					if(pair.length < 2) {
-						continue;
-					}
-					params[pair[0]] = pair[1];
-				}
-
-				if(params.gid) {
-					params.gid = parseInt(params.gid, 10);
-				}
-
-				return params;
-			};
-
-			var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+			var openPhotoSwipe = function(index, galleryElement) {
 				var pswpElement = document.querySelectorAll('.pswp')[0],
 					gallery,
 					options,
@@ -447,45 +342,24 @@ var $ = jQuery,
 				options = {
 
 					// define gallery index (for URL)
-					galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+					galleryUID: galleryElement.attr('data-pswp-uid'),
 
 					getThumbBoundsFn: function(index) {
 						// See Options -> getThumbBoundsFn section of documentation for more info
 						var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-							pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-							rect = thumbnail.getBoundingClientRect(); 
+						pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+						rect = thumbnail.getBoundingClientRect(); 
 
 						return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-					}
+					},
+
+					index: parseInt(index, 10)
 
 				};
-
-				// PhotoSwipe opened from URL
-				if(fromURL) {
-					if(options.galleryPIDs) {
-						// parse real index when custom PIDs are used 
-						// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-						for(var j = 0; j < items.length; j++) {
-							if(items[j].pid == index) {
-								options.index = j;
-								break;
-							}
-						}
-					} else {
-						// in URL indexes start from 1
-						options.index = parseInt(index, 10) - 1;
-					}
-				} else {
-					options.index = parseInt(index, 10);
-				}
 
 				// exit if index not found
 				if( isNaN(options.index) ) {
 					return;
-				}
-
-				if(disableAnimation) {
-					options.showAnimationDuration = 0;
 				}
 
 				// Pass data to PhotoSwipe and initialize it
@@ -499,12 +373,6 @@ var $ = jQuery,
 			for(var i = 0, l = galleryElements.length; i < l; i++) {
 				galleryElements[i].setAttribute('data-pswp-uid', i+1);
 				galleryElements[i].onclick = onThumbnailsClick;
-			}
-
-			// Parse URL and open gallery if it contains #&pid=3&gid=1
-			var hashData = photoswipeParseHash();
-			if(hashData.pid && hashData.gid) {
-				openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
 			}
 
 		},
@@ -526,29 +394,29 @@ var $ = jQuery,
 			for (index=offset, j=0 ; j<amount && BhjsGeneral.params.photos.length>index ; index++, j++) {
 				// expose photo
 				var photoItem =
-					'<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
+					'<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
 						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
-							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" width="285" height="auto" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
+							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
 						'</a>' +
 						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '</figcaption>' +
 					'</figure>';
 
-				$(photoItem).appendTo( $('.gallery') );
+				$(photoItem).appendTo( $('.gallery .col' + BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns) );
+
+				// Update active column
+				BhjsGeneral.params.active_column = BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns + 1;
 			}
 
 			if ( index == BhjsGeneral.params.photos.length ) {
 				// hide more btn
-				$('#data-type-section-photo .load-more').hide();
+				$('#data-type-section-photo .load-more').addClass('disabled');
 			} else {
 				// expose more btn
-				$('#data-type-section-photo .load-more').show();
+				$('#data-type-section-photo .load-more').removeClass('disabled');
 			}
 
-			// Update active_photos
+			// Update active photos
 			BhjsGeneral.params.active_photos += j;
-
-			// Refresh gallery grid
-			setTimeout( BhjsGeneral.photoGallery, BhjsGeneral.params.timeout);
 
 		},
 
@@ -562,9 +430,6 @@ var $ = jQuery,
 		 * @return	N/A
 		 */
 		loaded : function() {
-
-			// Photo data type
-			BhjsGeneral.photoGallery();
 
 			// BhjsGeneral.alignments();
 

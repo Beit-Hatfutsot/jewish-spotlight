@@ -27,7 +27,6 @@ $settings = array(
 
 			foreach ( $data[ $settings['type_id'] ] as $collection ) {
 				$title	= $collection['Header'][ucfirst($lang)];
-				$desc	= $collection['UnitText1'][ucfirst($lang)];
 				$collection_photos	= array();
 
 				if ( count( $collection['Pictures'] ) ) {
@@ -47,11 +46,24 @@ $settings = array(
 
 				$photos = array_merge( $photos, $collection_photos );
 			}
+
+			if ( $photos ) {
+				$i = 0;
+				while ( $i <= 2 ) { ?>
+
+					<div class="gallery-col col<?php echo $i++; ?> col-xs-4"></div>
+
+				<?php }
+			}
 		?>
 
 	</div>
 
-	<button class="load-more"><?php echo $lang == 'en' ? 'Load more' : 'טען עוד'; ?></button>
+	<?php if ( $photos ) { ?>
+
+		<button class="btn load-more"><?php echo $lang == 'en' ? 'Load more' : 'טען עוד'; ?></button>
+
+	<?php } ?>
 
 	<script>
 		_BhjsPhotos = '<?php echo count( $photos ) ? json_encode( $photos, JSON_ERROR_UTF8 ) : ''; ?>';
