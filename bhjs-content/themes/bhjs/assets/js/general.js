@@ -62,6 +62,11 @@ var $ = jQuery,
 			// Anchors waypoint event
 			BhjsGeneral.topMenuWaypoints();
 
+			// Mobile menu
+			$('.navbar-collapse li').click(function() {
+				$('.navbar-collapse').removeClass('in');
+			});
+
 			// Expose first communities and luminaries
 			BhjsGeneral.initIndex('community');
 			BhjsGeneral.initIndex('luminary');
