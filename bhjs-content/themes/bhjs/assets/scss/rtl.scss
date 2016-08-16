@@ -22,33 +22,6 @@
     text-align: right;
 }
 
-/* Always float the navbar header */
-.navbar-header {
-    float: right;
-}
-
-/* Undo the collapsing navbar */
-.navbar-collapse {
-
-    /* Always apply the floated nav */
-    .navbar-nav {
-        float: right;
-
-        & > li {
-            float: right;
-        }
-
-        &.navbar-right {
-            float: left;
-        }
-
-        /* Undo custom dropdowns */
-        .open .dropdown-menu {
-            float: right;
-        }
-    }
-}
-
 /**********/
 /* header */
 /**********/
@@ -117,10 +90,19 @@ header {
     /*****************/
 
     #header-bottom {
+        .navbar-header {
+            .navbar-toggle {
+                float: left;
+                margin-left: 15px;
+            }
+        }
 
-        nav {
-
+        .nav {
+            float: right;
+            padding-right: 0;
+            
             li {
+                float: right;
                 padding-right: 0;
             }
         }
@@ -326,4 +308,61 @@ footer {
     float: right;
     margin-left: 10px;
     margin-right: 0;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header #header-bottom nav li a {
+        .navbar-nav>li {
+            float: right;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        #header-top {
+            .language-switcher {
+                float: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        #header-bottom {
+            .nav {
+                float: none;
+
+                li {
+                    float: none;
+                }
+            }
+        }
+    }
+
+    footer {
+        .container {
+
+            /**************/
+            /* place logo */
+            /**************/
+
+            #logo {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                text-align: center;
+            }
+
+            #credit {
+                float: none;
+            }
+
+            #bh-logo a {
+                margin: 0 auto;
+                float: none;
+            }
+        }
+    }
 }
