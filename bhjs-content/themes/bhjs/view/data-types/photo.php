@@ -34,14 +34,15 @@ $settings = array(
 			foreach ( $data[ $settings['type_id'] ] as $collection ) {
 				$title	= $collection['Header'][ucfirst($lang)];
 				$description = $collection['UnitText1'][ucfirst($lang)];
+
+				$title = fix_str($title);
+				$description = fix_str($description);
+
 				$collection_photos	= array();
 
 				if ( count( $collection['Pictures'] ) ) {
 					foreach ( $collection['Pictures'] as $photo ) {
-
 						if ( ! is_null( $photo['PictureId'] ) ) {
-							$title = fix_str($title);
-							$description = fix_str($description);
 							$collection_photos[] = array(
 								'title'	=> $title,
 								'description' => $description,

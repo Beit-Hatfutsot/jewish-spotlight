@@ -310,6 +310,19 @@ footer {
     margin-right: 0;
 }
 
+/**************/
+/* PhotoSwipe */
+/**************/
+
+.pswp {
+    .pswp__caption {
+        .pswp__caption__center {
+            direction: rtl;
+        }
+    }
+}
+
+
 @media (min-width: 768px) and (max-width: 991px) {
     header #header-bottom nav li a {
         .navbar-nav>li {
