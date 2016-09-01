@@ -25,19 +25,26 @@ $settings = array(
 		<?php 
 			$photos = array();
 
+			function fix_str($string_to_fix) {
+				$string_to_fix = str_replace(array("\r\n", "\n", "\r"), ' ', $string_to_fix);
+				$string_to_fix = str_replace('"', '\"', $string_to_fix);
+				return $string_to_fix;
+			};
+
 			foreach ( $data[ $settings['type_id'] ] as $collection ) {
 				$title	= $collection['Header'][ucfirst($lang)];
+				$description = $collection['UnitText1'][ucfirst($lang)];
 				$collection_photos	= array();
 
 				if ( count( $collection['Pictures'] ) ) {
 					foreach ( $collection['Pictures'] as $photo ) {
 
 						if ( ! is_null( $photo['PictureId'] ) ) {
-							$title = str_replace(array("\r\n", "\n", "\r"), ' ', $title);
-							$title = str_replace('"', '\"', $title);
-
+							$title = fix_str($title);
+							$description = fix_str($description);
 							$collection_photos[] = array(
 								'title'	=> $title,
+								'description' => $description,
 								'photo'	=> $settings['src_prefix'] . $photo['PictureId'] . '.jpg'
 							);
 						}

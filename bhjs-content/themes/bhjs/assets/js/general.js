@@ -512,8 +512,10 @@ var $ = jQuery,
 						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
 							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
 						'</a>' +
-						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '</figcaption>' +
-					'</figure>';
+						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '<br><span>' + BhjsGeneral.params.photos[index]['description'] +  '</span></figcaption>' +
+						/*'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['description'] + '</figcaption>' +*/
+					'</figure>'
+					;
 
 				$(photoItem).appendTo( $('.gallery .col' + BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns) );
 
