@@ -4,7 +4,7 @@
  *
  * @author      Inna
  * @package     jewish-spotlight/bhjs-content/themes/bhjs/view
- * @version     1.0
+ * @version     1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

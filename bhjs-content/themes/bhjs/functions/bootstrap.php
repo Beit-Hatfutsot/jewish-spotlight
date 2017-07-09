@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/functions
- * @version		1.0
+ * @version		1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -22,7 +22,7 @@ if ( ! defined( 'INCLUDES' ) )
 /**
  * Class: bhjs_core
  *
- * @since 1.0
+ * @since 1.0.0
  */
 if ( ! class_exists('bhjs_core') ) :
 
@@ -35,7 +35,7 @@ final class bhjs_core {
 	 *
 	 * A dummy constructor to ensure bhjs_core is only initialized once
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -50,7 +50,7 @@ final class bhjs_core {
 	 *
 	 * The real constructor to initialize bhjs_core
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -109,7 +109,7 @@ final class bhjs_core {
 	 *
 	 * This function will return a value from the settings array found in bhjs_core object
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		$name (string) the attribute name to return
 	 * @return		(mixed)
 	 */
@@ -133,7 +133,7 @@ final class bhjs_core {
 	 *
 	 * This function will update a value into the settings array found in bhjs_core object
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		$name (string) the attribute name to update
 	 * @param		$value (mixed) the attribute value to update
 	 * @return		N/A
@@ -149,7 +149,7 @@ final class bhjs_core {
 	 *
 	 * Updates permalink attribute according to request URI
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -171,7 +171,7 @@ final class bhjs_core {
 	 *
 	 * Gets current permalink URL
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(string)
 	 */
@@ -187,7 +187,7 @@ final class bhjs_core {
 	 *
 	 * Gets current request URI as array of strings
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(mixed)
 	 */
@@ -222,7 +222,7 @@ final class bhjs_core {
 	 *
 	 * Gets current language according to request URI (language indicator or 'en' as default)
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(string) language code
 	 */
@@ -245,7 +245,7 @@ final class bhjs_core {
 	 *
 	 * Updates place_slug attribute according to request URI
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -263,7 +263,7 @@ final class bhjs_core {
 	 *
 	 * Updates page_template attribute according to request URI
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -316,7 +316,7 @@ final class bhjs_core {
 	 *
 	 * Updates place constants attributes according to place constants configuration file
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -337,7 +337,7 @@ final class bhjs_core {
 	/**
 	 * includes
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -362,9 +362,9 @@ final class bhjs_core {
  *
  * The main function responsible for returning the one true bhjs_core instance
  *
- * @since	1.0
- * @param	N/A
- * @return	(object)
+ * @since		1.0.0
+ * @param		N/A
+ * @return		(object)
  */
 function bhjs_core() {
 

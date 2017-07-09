@@ -10,4 +10,6 @@
 
 <body <?php echo $page_template ? 'class="page-template-' . $page_template . '"' : ''; ?>>
 
+	<?php gtm_body(); ?>
+
 	<?php include( TEMPLATEPATH . '/view/header/header.php' ); ?>

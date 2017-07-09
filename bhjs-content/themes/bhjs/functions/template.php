@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/functions
- * @version		1.0
+ * @version		1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * Displays header
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		N/A
  * @return		N/A
  */
@@ -29,7 +29,7 @@ function get_header() {
  *
  * Displays footer
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		N/A
  * @return		N/A
  */
@@ -44,7 +44,7 @@ function get_footer() {
  *
  * Loads and displays page template
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		N/A
  * @return		N/A
  */
@@ -63,7 +63,7 @@ function get_page_template() {
  *
  * Loads and displays data type template
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		$type (string) data type slug
  * @return		N/A
  */
@@ -80,7 +80,7 @@ function get_data_type_template($type) {
  *
  * Gets current language
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		N/A
  * @return		(string)
  */
@@ -107,7 +107,7 @@ function get_current_lang() {
  *
  * Displays language switcher
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		N/A
  * @return		(string)	language switcher button
  */
@@ -143,7 +143,7 @@ function languages_switcher() {
  *
  * Get community coordinates
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		$title (string) community title
  * @return		(json)
  */
@@ -179,7 +179,7 @@ function get_community_coordinates($title) {
  *
  * Displays letters index
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		$id (string) index ID
  * @return		(string)
  */

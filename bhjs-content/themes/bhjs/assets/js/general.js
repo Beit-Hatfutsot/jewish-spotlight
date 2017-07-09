@@ -42,9 +42,9 @@ var $ = jQuery,
 		/**
 		 * init
 		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		N/A
+		 * @return		N/A
 		 */
 		init : function() {
 
@@ -97,9 +97,9 @@ var $ = jQuery,
 		 *
 		 * Bind click event to menu items
 		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		N/A
+		 * @return		N/A
 		 */
 		anchors : function() {
 
@@ -121,9 +121,9 @@ var $ = jQuery,
 		 *
 		 * Bind waypoint event to menu items
 		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		N/A
+		 * @return		N/A
 		 */
 		topMenuWaypoints : function() {
 
@@ -156,9 +156,9 @@ var $ = jQuery,
 		 *
 		 * Initiate letters index
 		 *
-		 * @since	1.0
-		 * @param	type (string) list type - community/luminary
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		type (string) list type - community/luminary
+		 * @return		N/A
 		 */
 		initIndex : function(type) {
 
@@ -191,10 +191,10 @@ var $ = jQuery,
 		 *
 		 * Expose list items by starting with a specific letter
 		 *
-		 * @since	1.0
-		 * @param	type (string) list type - community/luminary
-		 * @param	letter (string)
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		type (string) list type - community/luminary
+		 * @param		letter (string)
+		 * @return		N/A
 		 */
 		setIndex : function(type, letter) {
 
@@ -252,7 +252,7 @@ var $ = jQuery,
 		 *
 		 * Toggle letter
 		 *
-		 * @since		1.0
+		 * @since		1.0.0
 		 * @param		event (object)
 		 * @return		N/A
 		 */
@@ -286,7 +286,7 @@ var $ = jQuery,
 		 *
 		 * toggle play/pause video
 		 *
-		 * @since		1.0
+		 * @since		1.0.0
 		 * @param		event (object)
 		 * @return		N/A
 		 */
@@ -321,7 +321,7 @@ var $ = jQuery,
 		 * Refresh items grid according to filter values
 		 * Not in use at the moment
 		 *
-		 * @since		1.0
+		 * @since		1.0.0
 		 * @param		srting list_id
 		 * @return		N/A
 		 */
@@ -376,9 +376,9 @@ var $ = jQuery,
 		 *
 		 * PhotoSwipe init
 		 *
-		 * @since	1.0
-		 * @param	gallerySelector (string)
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		gallerySelector (string)
+		 * @return		N/A
 		 */
 		initPhotoSwipeFromDOM : function(gallerySelector) {
 
@@ -496,10 +496,10 @@ var $ = jQuery,
 		 *
 		 * Load Images
 		 *
-		 * @since	1.0
-		 * @param	offset (int)
-		 * @param	amount (int)
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		offset (int)
+		 * @param		amount (int)
+		 * @return		N/A
 		 */
 		lazyLoad : function (offset, amount) {
 
@@ -541,9 +541,9 @@ var $ = jQuery,
 		 *
 		 * Called by $(window).load event
 		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		N/A
+		 * @return		N/A
 		 */
 		loaded : function() {
 
@@ -556,9 +556,9 @@ var $ = jQuery,
 		 *
 		 * Align components after window resize event
 		 *
-		 * @since	1.0
-		 * @param	N/A
-		 * @return	N/A
+		 * @since		1.0.0
+		 * @param		N/A
+		 * @return		N/A
 		 */
 		alignments : function() {}
 

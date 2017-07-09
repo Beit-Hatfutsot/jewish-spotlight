@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/view/header
- * @version		1.0
+ * @version		1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -52,4 +52,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+	<?php gtm_head(); ?>
 </head>

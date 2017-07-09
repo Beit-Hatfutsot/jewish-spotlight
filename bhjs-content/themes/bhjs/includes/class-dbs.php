@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/includes
- * @version		1.0
+ * @version		1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -23,7 +23,7 @@ class dbs {
 	 *
 	 * A dummy constructor to ensure dbs is only initialized once
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -38,7 +38,7 @@ class dbs {
 	 *
 	 * The real constructor to initialize dbs
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		N/A
 	 */
@@ -126,7 +126,7 @@ class dbs {
 	 *
 	 * This function will return a value from the settings array found in dbs object
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		$name (string) the attribute name to return
 	 * @return		(mixed)
 	 */
@@ -150,7 +150,7 @@ class dbs {
 	 *
 	 * This function will update a value into the settings array found in dbs object
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		$name (string) the attribute name to update
 	 * @param		$value (mixed) the attribute value to update
 	 * @return		N/A
@@ -166,7 +166,7 @@ class dbs {
 	 *
 	 * Sets place to query from
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		$place (string)
 	 * @return		N/A
 	 */
@@ -181,7 +181,7 @@ class dbs {
 	 *
 	 * Build the API url
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(mixed)
 	 */
@@ -207,7 +207,7 @@ class dbs {
 	 *
 	 * Retrieves place data
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(mixed)
 	 */
@@ -246,7 +246,7 @@ class dbs {
 	 *
 	 * Retrieves place's types based sorted data
 	 *
-	 * @since		1.0
+	 * @since		1.0.0
 	 * @param		N/A
 	 * @return		(mixed)
 	 */
@@ -294,7 +294,7 @@ class dbs {
  * Sorts array by specific array item value
  * Used to sort unit types array by Header value
  *
- * @since		1.0
+ * @since		1.0.0
  * @param		(array)
  * @param		(array)
  * @return		(int)
@@ -322,9 +322,9 @@ function cmp($a, $b) {
  *
  * The main function responsible for returning the one true dbs instance
  *
- * @since	1.0
- * @param	N/A
- * @return	(object)
+ * @since		1.0.0
+ * @param		N/A
+ * @return		(object)
  */
 function dbs() {
 
