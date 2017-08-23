@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $lang, $data;
 $settings = array(
     'type_id'       => 5,
-    'dbs_prefix'    => '//dbs.bh.org.il/' . ($lang == 'he' ? 'he/' : ''),
+    'dbs_prefix'    => 'http://dbs.bh.org.il/' . ($lang == 'he' ? 'he/' : ''),
     'src_prefix'    => '//storage.googleapis.com/bhs-flat-pics/',
 );
 
