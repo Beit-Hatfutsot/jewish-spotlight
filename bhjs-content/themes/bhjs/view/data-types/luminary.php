@@ -13,7 +13,7 @@ global $lang, $data;
 $settings = array(
     'type_id'       => 8,
     'dbs_prefix'    => 'http://dbs.bh.org.il/' . ($lang == 'he' ? 'he/' : ''),
-    'src_prefix'    => '//storage.googleapis.com/bhs-flat-pics/',
+    'src_prefix'    => 'https://storage.googleapis.com/bhs-flat-pics/',
 );
 
 ?>

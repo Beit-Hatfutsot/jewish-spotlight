@@ -150,7 +150,7 @@ function languages_switcher() {
 
 function get_community_coordinates($title) {
 
-	$url = '//nominatim.openstreetmap.org/search?format=json&city=' . $title;
+	$url = 'http://nominatim.openstreetmap.org/search?format=json&city=' . $title;
 	$lat = '';
 	$lng = '';
 
