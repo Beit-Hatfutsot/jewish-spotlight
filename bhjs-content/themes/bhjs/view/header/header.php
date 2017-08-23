@@ -49,7 +49,7 @@ $data	= dbs()->get_place_sorted_data();
 				<div class="language-switcher"><?php echo languages_switcher(); ?></div>
 			<?php } ?>
 
-			<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
+			<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="https://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 		</div>
 	</div>
 

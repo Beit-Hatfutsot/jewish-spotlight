@@ -46,7 +46,7 @@ class dbs {
 
 		$this->settings = array(
 			// Basic
-			'api_host'	=> 'http://api.dbs.bh.org.il/v1/collection/',
+			'api_host'	=> '//api.dbs.bh.org.il/v1/collection/',
 			'place'		=> '',
 
 			// Unit types

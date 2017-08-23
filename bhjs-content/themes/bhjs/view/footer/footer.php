@@ -54,7 +54,7 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 			<?php } ?>
 		</div>
 
-		<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="http://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
+		<div id="bh-logo"><a class="<?php echo $lang ? $lang : 'en'; ?>" href="https://www.bh.org.il/<?php echo $lang == 'he' ? 'he/' : ''; ?>" target="_blank"></a></div>
 	</div>
 
 </footer>
