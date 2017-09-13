@@ -20,7 +20,7 @@ $settings = array(
 
 <div class="data-type-section" id="data-type-section-photo">
 
-	<div id="gallery-1" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+	<div id="gallery-1" class="gallery" itemscope itemtype="https://schema.org/ImageGallery">
 
 		<?php 
 			$photos = array();

@@ -508,7 +508,7 @@ var $ = jQuery,
 			for (index=offset, j=0 ; j<amount && BhjsGeneral.params.photos.length>index ; index++, j++) {
 				// expose photo
 				var photoItem =
-					'<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
+					'<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +
 						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
 							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
 						'</a>' +

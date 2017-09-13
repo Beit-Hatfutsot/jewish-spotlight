@@ -14,7 +14,7 @@
 
 		if ( $page_template == 'main.php' ) { ?>
 			<!-- Leaflet JavaScript file -->
-			<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+			<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
 			<script src="<?php echo JS_DIR; ?>/lib/leafmap.js"></script>
 
 			<!-- PhotoSwipe - Core JS file -->
