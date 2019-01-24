@@ -1,0 +1,39 @@
+version: "3"
+services:
+
+  build:
+    build:
+      context: .
+      dockerfile: build.Dockerfile
+    volumes:
+      - jewishspotlight:/data/jewish-spotlight
+
+  php:
+    depends_on:
+      - build
+    image: php:7.3-fpm
+    volumes:
+      - jewishspotlight:/data/jewish-spotlight
+    networks:
+      - jewishspotlight
+
+  nginx:
+    depends_on:
+      - php
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - jewishspotlight:/data/jewish-spotlight
+    networks:
+      - jewishspotlight
+    environment:
+      SERVER_NAME: localhost:8080
+
+networks:
+  jewishspotlight:
+
+volumes:
+  jewishspotlight:
