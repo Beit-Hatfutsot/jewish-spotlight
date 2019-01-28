@@ -223,15 +223,25 @@ class dbs {
 		}
 
 		// Get place data
-		$ch = curl_init($url);
+		/*$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 		$json_response_content = curl_exec($ch);
-		curl_close($ch);
+		curl_close($ch);*/
 		
-//		$json_response_content = file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/cached-api.php' );
+		$json_response_content = file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/cached-api.php' );
 
 		$data = json_decode($json_response_content, true);
+
+		/*if ( $this->get_attribute( 'place' ) == 'ethiopeia' ) {
+		    $items = [];
+		    foreach ( $data['items'] as $item ) {
+				if ( $item["UnitTypeDesc"] != "Place" ) {
+				    $items[] = $item;
+				}
+			}
+			$data['items'] = $items;
+		}*/
 
 		if ( ! count($data['items']) )
 			return null;
