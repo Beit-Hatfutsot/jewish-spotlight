@@ -13,10 +13,10 @@ if ( ! defined( 'PLACE_NAME_HE' ) )
 	define( 'PLACE_NAME_HE', 'אתיופיה' );
 
 if ( ! defined( 'PLACE_LOGO' ) )
-	define( 'PLACE_LOGO', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo.png' );
+	define( 'PLACE_LOGO', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo.png?v=2' );
 
 if ( ! defined( 'PLACE_LOGO_SMALL' ) )
-	define( 'PLACE_LOGO_SMALL', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo-small.png' );
+	define( 'PLACE_LOGO_SMALL', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/logo-small.png?v=2' );
 
 if ( ! defined( 'PLACE_CREDIT_IMG' ) )
 	define( 'PLACE_CREDIT_IMG', bhjs_get_siteurl() . '/bhjs-content/places/' . bhjs_core()->get_attribute( 'place_slug' ) . '/images/credit.jpg' );
