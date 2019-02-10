@@ -45,3 +45,6 @@ if ( ! defined( 'TIMELINE_EN' ) )
 
 if ( ! defined( 'TIMELINE_HE' ) )
     define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );
+
+if ( ! defined( 'CSS_STYLE_SUFFIX' ) )
+    define( 'CSS_STYLE_SUFFIX', 'default' );

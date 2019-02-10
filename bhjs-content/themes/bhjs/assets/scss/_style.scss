@@ -5,6 +5,7 @@
 @import "params";
 @import "functions";
 
+
 /*
  * IE10 viewport hack for Surface/desktop Windows 8 bug
  * Copyright 2014-2015 Twitter, Inc.
@@ -52,7 +53,7 @@ header {
 	#header-top {
 		height: 110px;
 		background-color: $header-bg;
-		border-bottom: 10px solid $blue-color2;
+		border-bottom: 10px solid $jewish-header-color;
 
 		/**************/
 		/* place logo */
@@ -73,9 +74,9 @@ header {
 				left: 0;
 				width: 205px;
 				height: 85px;
-				border-left: 10px solid $blue-color2;
-				border-right: 10px solid $blue-color2;
-				border-bottom: 10px solid $blue-color2;
+				border-left: 10px solid $jewish-header-color;
+				border-right: 10px solid $jewish-header-color;
+				border-bottom: 10px solid $jewish-header-color;
 				background-color: $white;
 			}
 
@@ -103,7 +104,7 @@ header {
 			#credit-image {
 				float: left;
 				margin-right: 15px;
-				width: 50px;
+				width: $jewish-credit-image-width;
 				height: 100px;
 
 				img {
@@ -188,7 +189,7 @@ header {
 					&:hover {
 						text-shadow: -1px 0 0 $font-invert-color;
 						color: $font-invert-color;
-						background-color: $blue-color2;
+						background-color: $jewish-header-color;
 					}
 				}
 
@@ -196,7 +197,7 @@ header {
 					a {
 						text-shadow: -1px 0 0 $font-invert-color;
 						color: $font-invert-color;
-						background-color: $blue-color2;
+						background-color: $jewish-header-color;
 					}
 				}
 			}
@@ -256,7 +257,7 @@ body.page-template-main {
 
 	        			&.tl-timemarker-active {
 	        				.tl-timemarker-content-container {
-	        					background-color: $blue-color2;
+	        					background-color: $jewish-header-color;
 	        				}
 
 	        				h2.tl-headline {
@@ -300,7 +301,7 @@ body.page-template-main {
 			    }
 
 			    &.active {
-			    	background-color: $blue-color2;
+			    	background-color: $jewish-header-color;
 			    	color: $white;	
 			    }
 
@@ -641,7 +642,7 @@ footer {
 			#credit-image {
 				float: left;
 				margin-right: 15px;
-				width: 50px;
+				width: $jewish-credit-image-width;
 				height: 100px;
 
 				img {
@@ -850,7 +851,7 @@ footer {
 				width: 360px;
 
 				#credit-image {
-					width: 40px;
+					width: $jewish-credit-image-width;
 					height: 100px;
 				}
 
@@ -909,7 +910,7 @@ footer {
 
     			#credit-image {
 					margin-right: 10px;
-				    width: 50px;
+				    width: $jewish-credit-image-width;
 				    height: 75px;
 				}
 
