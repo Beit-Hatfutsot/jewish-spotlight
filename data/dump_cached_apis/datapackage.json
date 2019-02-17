@@ -1,11 +1,11 @@
 {
-  "bytes": 1743390,
-  "count_of_rows": 309,
-  "hash": "b04814ca894e01464a9134c16a78cfac",
+  "bytes": 1861555,
+  "count_of_rows": 1470,
+  "hash": "ef5418ac52c73c2de2210701e958ea47",
   "profile": "data-package",
   "resources": [
     {
-      "bytes": 1718609,
+      "bytes": 1719225,
       "count_of_rows": 296,
       "dialect": {
         "caseSensitiveHeader": false,
@@ -18,7 +18,7 @@
       },
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "e270ee46f984cb59484782be0f3bb723",
+      "hash": "e376c450036f2d278ccb655f57d36c8b",
       "name": "czeck-cached-api",
       "path": "czeck-cached-api.csv",
       "profile": "tabular-data-resource",
@@ -83,6 +83,16 @@
             "format": "default",
             "name": "image_urls",
             "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "item_url_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "item_url_en",
+            "type": "string"
           }
         ],
         "missingValues": [
@@ -166,6 +176,16 @@
             "format": "default",
             "name": "image_urls",
             "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "item_url_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "item_url_en",
+            "type": "string"
           }
         ],
         "missingValues": [

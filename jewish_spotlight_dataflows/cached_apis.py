@@ -31,6 +31,8 @@ def load_cached_api(json_filename):
                     'main_image_url': item.get('main_image_url'),
                     'preview_image_url': preview_image_url,
                     'image_urls': image_urls,
+                    'item_url_he': '',
+                    'item_url_en': ''
                 }
 
     return _load_cached_api()
@@ -62,6 +64,8 @@ def dump_cached_api(resource_name, json_filename):
                     'main_image_url': row['main_image_url'],
                     'preview_image_url': row['preview_image_url'],
                     'image_urls': row['image_urls'],
+                    'item_url_he': row.get('item_url_he', ''),
+                    'item_url_en': row.get('item_url_en', ''),
                 })
         with open(json_filename, 'w') as f:
             json.dump(data, f)
