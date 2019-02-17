@@ -174,6 +174,89 @@ class dbs {
 
 		$this->set_attribute('place', $place);
 
+		if ($place == 'ethiopia') {
+		    $this->settings['types'] = array(
+
+				//timeline
+				'999'				=> array(
+					'slug'			=> 'timeline',
+					'menu_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					)
+				),
+
+				//family names
+				'6' => array(
+				    'slug' => 'familyname',
+				    'menu_title' => array(
+				        'en' => 'Family Names',
+				        'he' => 'שמות משפחה',
+				    ),
+				    'section_title' => array(
+				        'en' => 'Family Names',
+				        'he' => 'שמות משפחה',
+				    )
+				),
+
+				// community
+				/*'5'					=> array(
+					'slug'			=> 'community',
+					'menu_title'	=> array(
+						'en'		=> 'Communities',
+						'he'		=> 'קהילות'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Jewish Communities in {place_name}',
+						'he'		=> 'הקהילות היהודיות ב{place_name}'
+					)
+				),*/
+
+				// photo
+				/*'1'					=> array(
+					'slug'			=> 'photo',
+					'menu_title'	=> array(
+						'en'		=> 'Gallery',
+						'he'		=> 'גלריה'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Photo Gallery',
+						'he'		=> 'גלריית תמונות'
+					)
+				),*/
+
+				// video
+				/*'9'					=> array(
+					'slug'			=> 'video',
+					'menu_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					)
+				),*/
+
+				// luminary
+				/*'8'					=> array(
+					'slug'			=> 'luminary',
+					'menu_title'	=> array(
+						'en'		=> 'Luminaries',
+						'he'		=> 'אישים'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Luminaries',
+						'he'		=> 'אישים'
+					)
+				)*/
+			);
+		};
+
 	}
 
 	/**

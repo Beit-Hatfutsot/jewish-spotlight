@@ -30,7 +30,7 @@ var $ = jQuery,
 		 */
 		params : {
 
-			photos					: $.parseJSON( _BhjsPhotos ),
+			photos					: (typeof(_BhjsPhotos) === 'undefined') ? null : $.parseJSON( _BhjsPhotos ),
 			active_photos			: 0,
 			photos_columns			: 3,
 			active_column			: 0,
@@ -70,6 +70,7 @@ var $ = jQuery,
 			// Expose first communities and luminaries
 			BhjsGeneral.initIndex('community');
 			BhjsGeneral.initIndex('luminary');
+			BhjsGeneral.initIndex('familyname');
 
 			// Bind click event to letters index
 			$('.letter-index-container li').bind('click', BhjsGeneral.index_letter_click);
@@ -505,25 +506,27 @@ var $ = jQuery,
 
 			var index, j;
 
-			for (index=offset, j=0 ; j<amount && BhjsGeneral.params.photos.length>index ; index++, j++) {
-				// expose photo
-				var photoItem =
-					'<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +
-						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
-							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
-						'</a>' +
-						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '<br><span>' + BhjsGeneral.params.photos[index]['description'] +  '</span></figcaption>' +
-						/*'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['description'] + '</figcaption>' +*/
-					'</figure>'
-					;
+			if (BhjsGeneral.params.photos) {
+                for (index = offset, j = 0; j < amount && BhjsGeneral.params.photos.length > index; index++, j++) {
+                    // expose photo
+                    var photoItem =
+                        '<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +
+                        '<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
+                        '<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
+                        '</a>' +
+                        '<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '<br><span>' + BhjsGeneral.params.photos[index]['description'] + '</span></figcaption>' +
+                        /*'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['description'] + '</figcaption>' +*/
+                        '</figure>'
+                    ;
 
-				$(photoItem).appendTo( $('.gallery .col' + BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns) );
+                    $(photoItem).appendTo($('.gallery .col' + BhjsGeneral.params.active_column % BhjsGeneral.params.photos_columns));
 
-				// Update active column
-				BhjsGeneral.params.active_column = BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns + 1;
-			}
+                    // Update active column
+                    BhjsGeneral.params.active_column = BhjsGeneral.params.active_column % BhjsGeneral.params.photos_columns + 1;
+                }
+            }
 
-			if ( index == BhjsGeneral.params.photos.length ) {
+			if ( BhjsGeneral.params.photos && index == BhjsGeneral.params.photos.length ) {
 				// hide more btn
 				$('#data-type-section-photo .load-more').addClass('disabled');
 			} else {

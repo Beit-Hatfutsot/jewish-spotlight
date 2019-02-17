@@ -314,10 +314,10 @@ body.page-template-main {
 		}
 
 		/*************/
-		/* community */
+		/* community, luminary, familyname */
 		/*************/
 
-		&#data-type-section-community, &#data-type-section-luminary {
+		&#data-type-section-community, &#data-type-section-luminary, &#data-type-section-familyname {
 			display: flex;
 			flex-wrap: wrap;
 
@@ -571,6 +571,14 @@ body.page-template-main {
 		/***************/
 
 		&#data-type-section-luminary {
+
+		}
+
+		/***************/
+		/* familyname */
+		/***************/
+
+		&#data-type-section-familyname {
 
 		}
 	}
