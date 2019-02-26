@@ -50,3 +50,9 @@ python3 flows/dump_cached_apis.py
 ```
 
 The flows store data as [tabular data packages](https://frictionlessdata.io/specs/tabular-data-package/) under `data/` directory (not committed)
+
+Run Jupyter notebooks
+
+```
+jupyter lab
+```
