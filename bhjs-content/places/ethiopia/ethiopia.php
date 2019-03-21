@@ -37,10 +37,10 @@ if ( ! defined( 'MAP_ZOOM' ) )
     define( 'MAP_ZOOM', 7 );
 
 if ( ! defined( 'TIMELINE_EN' ) )
-    define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/14_ymqMWDTb5oHYp_ZRGNZ38Awv01wLVEESvcQoruMJw/edit?invite=CKfT78QI&ts=578e2a08#gid=0' );
+    define( 'TIMELINE_EN', '' );
 
 if ( ! defined( 'TIMELINE_HE' ) )
-    define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );
+    define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Jql8X2c-NvYsos6BxyLMMTNfA3H-CeoUone1adLcsr4/edit' );
 
 if ( ! defined( 'CSS_STYLE_SUFFIX' ) )
     define( 'CSS_STYLE_SUFFIX', 'ethiopia' );
