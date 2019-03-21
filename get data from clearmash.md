@@ -11,6 +11,17 @@ CLEARMASH_CLIENT_TOKEN=getpass.getpass('CLEARMASH_CLIENT_TOKEN:')
 
 
 ```python
+REQUEST_HEADERS = {
+    "ClientToken": CLEARMASH_CLIENT_TOKEN,
+    "PersonToken": "no_token",
+    "SystemToken": "no_token",
+    "Content-Type": "application/json"
+}
+```
+
+
+```python
+import requests
 from IPython.core.display import display, HTML
 
 res = requests.get(
@@ -18,40 +29,41 @@ res = requests.get(
         query=input("query: "),
         numOfResults=input("numOfResults: ")
     ),
-    headers={
-        "ClientToken": CLEARMASH_CLIENT_TOKEN,
-        "Content-Type": "application/json"
-    }
+    headers=REQUEST_HEADERS
 )
 
 display(HTML(res.text))
 ```
 
-    query:  banana
+    query:  ethiopian
     numOfResults:  5
 
 
 
-ï»¿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Request Error</title>
-    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>
-  </head>
-  <body>
-    <div id="content">
-      <p class="heading1">Request Error</p>
-      <p>The server encountered an error processing the request. The exception message is 'Object reference not set to an instance of an object.'. See server logs for more details. The exception stack trace is: </p>
-      <p>   at ClearMash.ServerAPI.Common.Security.RequestHeaders.ImpersonationHeaders.Create(String personToken, String systemToken)
-   at ClearMash.ServerAPI.Common.Security.RequestHeaders.Create(Type serviceType, String operationName, String clientToken, String personToken, String systemToken)
-   at ClearMash.ServerAPI.Common.Security.ClientValidationMessageInspectorREST.GetRequestHeaders(OperationContext operationContext, Message request)
-   at ClearMash.ServerAPI.Common.Security.ClientValidationMessageInspector.AfterReceiveRequest(Message&amp; request, IClientChannel channel, InstanceContext instanceContext)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.AfterReceiveRequestCore(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)</p>
-    </div>
-  </body>
-</html>
+{"ErrorInfo":null,"Response":{"Entities":[8429620,14041532,238025,260098,249189],"EntitiesCurrentPageIsLastRelevantPage":false,"EntityTypes":[],"ErrorMessage":null,"FacetFieldResults":[],"QueryRelatedTagIds":[],"Tags":[],"TotalEntities":1392,"TotalTags":0},"Status":0}
 
+
+
+```python
+res = requests.get('https://bh.clearmash.com/API/V5/Services/Search.svc/Search/Saved', headers=REQUEST_HEADERS)
+ethiopian_family_names_saved_search = [s for s in res.json()['Response'] if s['Name'] == 'Ethiopian family names for jewish spotlight'][0]
+```
+
+
+```python
+res = requests.post(
+    'https://bh.clearmash.com/API/V5/Services/Search.svc/Search/Saved/Execute', 
+    json={
+        'SearchId': ethiopian_family_names_saved_search['Id'],
+        'PageNumber': 1,
+        'PageSize': 10,
+        'CommunityId': ethiopian_family_names_saved_search['CommunityId']
+    },
+    headers=REQUEST_HEADERS
+)
+
+display(HTML(res.text))
+```
+
+
+{"ErrorInfo":"unknown error","Response":null,"Status":1}
