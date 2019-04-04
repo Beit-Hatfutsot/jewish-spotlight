@@ -214,11 +214,28 @@ var $ = jQuery,
 			letters_list.find("li[data-letter='" + letter + "']").addClass('active');
 
 			// Loop through all items and expose relavant items
+			var num_displayed_items = 0;
+			var total_items = 0;
 			items.each(function() {
-				if ($(this).attr('data-letter') == letter) {
-					$(this).parent().removeClass('hidden');
+				if ($(this).attr('data-letter') === letter) {
+					if (type !== "familyname" || num_displayed_items < 6) {
+						$(this).parent().removeClass('hidden');
+						num_displayed_items++;
+					}
+					total_items++;
 				}
 			});
+			if (type === "familyname" && total_items > 6) {
+				$('#data-type-section-familyname .load-more').bind('click', function() {
+					$('#data-type-section-familyname .load-more').addClass('hidden');
+					items.each(function() {
+						if ($(this).attr('data-letter') === letter) {
+							$(this).parent().removeClass('hidden');
+								num_displayed_items++;
+						}
+					});
+				});
+			}
 
 			// Update map markers
 			if (type == 'community') {

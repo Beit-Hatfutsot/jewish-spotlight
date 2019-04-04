@@ -41,7 +41,7 @@ if ( ! defined( 'MAP_ZOOM' ) )
     define( 'MAP_ZOOM', 7 );
 
 if ( ! defined( 'TIMELINE_EN' ) )
-    define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/14_ymqMWDTb5oHYp_ZRGNZ38Awv01wLVEESvcQoruMJw/edit?invite=CKfT78QI&ts=578e2a08#gid=0' );
+    define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/1TejpreDsklO7j_1gasuFg6jKK4-PigOzKY0nn1X5yJs/edit' );
 
 if ( ! defined( 'TIMELINE_HE' ) )
     define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );

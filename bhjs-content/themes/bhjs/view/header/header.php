@@ -38,7 +38,7 @@ $data	= dbs()->get_place_sorted_data();
 					<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
 				<?php } ?>
 
-				<h1 <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
+				<h1 <?php echo empty($credit_text[$lang]) ? 'style="margin-top:33px;"' : '' ?> <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
 
 				<?php if ( $data && $credit_text ) { ?>
 					<div id="credit-text"><?php echo $credit_text[$lang]; ?></div>

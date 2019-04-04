@@ -53,4 +53,12 @@ $settings = array(
     <?php } ?>
 
     <p class="notification"><?php echo ( $lang == 'en' ? 'No items found, please try another search' : 'לא נמצאו פריטים, אנא נסו חיפוש אחר' ); ?></p>
+
+    <?php if ( count($data[ $settings['type_id'] ]) > 6 ) { ?>
+		<button class="btn load-more"><?php if ($lang == 'en') {
+		    echo 'Load more';
+        } else {
+            echo 'טען עוד'
+        }</button>
+	<?php } ?>
 </div>

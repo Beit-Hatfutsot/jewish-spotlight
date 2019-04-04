@@ -243,7 +243,7 @@ class dbs {
 				),*/
 
 				// luminary
-				/*'8'					=> array(
+				'8'					=> array(
 					'slug'			=> 'luminary',
 					'menu_title'	=> array(
 						'en'		=> 'Luminaries',
@@ -253,7 +253,7 @@ class dbs {
 						'en'		=> 'Luminaries',
 						'he'		=> 'אישים'
 					)
-				)*/
+				)
 			);
 		};
 
