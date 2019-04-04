@@ -31,7 +31,7 @@
 	<script src="<?php echo JS_DIR; ?>/lib/jquery.waypoints.min.js"></script>
 
 	<!-- general.min.js -->
-	<script src="<?php echo JS_DIR; ?>/general.min.js?v=3"></script>
+	<script src="<?php echo JS_DIR; ?>/general.min.js?v=4"></script>
 
 	<?php include( TEMPLATEPATH . '/view/footer/footer-photoswipe.php' ); ?>
 
