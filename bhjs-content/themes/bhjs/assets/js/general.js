@@ -185,6 +185,17 @@ var $ = jQuery,
 				}
 			});
 
+			// handle load-more event for familyname
+			if (type === 'familyname') {
+				$('#data-type-section-familyname .load-more').bind('click', function() {
+					items.each(function() {
+						if ($(this).attr('data-letter') === BhjsGeneral.familynameCurrentLetter) {
+							$(this).parent().removeClass('hidden');
+						}
+					});
+					$('#data-type-section-familyname .load-more').addClass('hidden');
+				});
+			}
 		},
 
 		/**
@@ -198,6 +209,9 @@ var $ = jQuery,
 		 * @return		N/A
 		 */
 		setIndex : function(type, letter) {
+			if (type === "familyname") {
+				BhjsGeneral.familynameCurrentLetter = letter;
+			}
 
 			var items = $('#data-type-section-' + type).find('.item-preview'),
 				letters_list = $('#data-type-section-' + type).find('.letter-index-container');
@@ -216,6 +230,9 @@ var $ = jQuery,
 			// Loop through all items and expose relavant items
 			var num_displayed_items = 0;
 			var total_items = 0;
+			if (type === "familyname") {
+				$('#data-type-section-familyname .load-more').addClass('hidden');
+			}
 			items.each(function() {
 				if ($(this).attr('data-letter') === letter) {
 					if (type !== "familyname" || num_displayed_items < 6) {
@@ -226,15 +243,7 @@ var $ = jQuery,
 				}
 			});
 			if (type === "familyname" && total_items > 6) {
-				$('#data-type-section-familyname .load-more').bind('click', function() {
-					$('#data-type-section-familyname .load-more').addClass('hidden');
-					items.each(function() {
-						if ($(this).attr('data-letter') === letter) {
-							$(this).parent().removeClass('hidden');
-								num_displayed_items++;
-						}
-					});
-				});
+				$('#data-type-section-familyname .load-more').removeClass('hidden');
 			}
 
 			// Update map markers
