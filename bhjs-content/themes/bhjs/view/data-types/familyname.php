@@ -58,7 +58,7 @@ $settings = array(
 		<button class="btn load-more"><?php if ($lang == 'en') {
 		    echo 'Load more';
         } else {
-            echo 'טען עוד'
-        }</button>
+            echo 'טען עוד';
+        }; ?></button>
 	<?php } ?>
 </div>
