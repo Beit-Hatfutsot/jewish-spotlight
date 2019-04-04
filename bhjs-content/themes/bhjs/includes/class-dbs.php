@@ -217,7 +217,7 @@ class dbs {
 				),*/
 
 				// photo
-				/*'1'					=> array(
+				'1'					=> array(
 					'slug'			=> 'photo',
 					'menu_title'	=> array(
 						'en'		=> 'Gallery',
@@ -227,7 +227,7 @@ class dbs {
 						'en'		=> 'Photo Gallery',
 						'he'		=> 'גלריית תמונות'
 					)
-				),*/
+				),
 
 				// video
 				/*'9'					=> array(
