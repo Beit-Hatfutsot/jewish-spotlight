@@ -30,7 +30,7 @@ $data	= dbs()->get_place_sorted_data();
 	<div id="header-top">
 		<div class="container">
 			<?php if ( $data && $template_logo ) { ?>
-				<div id="logo"><a class="anchor" data-href="top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
+				<div id="logo"><a class="anchor" href="<?php echo "https://spotlight.bh.org.il/".$place_slug."/".$lang ;?>"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
 			<?php } ?>
 
 			<div id="credit">
