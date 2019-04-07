@@ -1,0 +1,1050 @@
+{
+  "bytes": 5625689,
+  "count_of_rows": 1600,
+  "hash": "ca52107d5287595b210020bdb10a510f",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "familyNames",
+      "path": "familyNames.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "LocationInMuseum",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Pictures",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PictureUnitsIds",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "UpdateDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OldUnitId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UpdateUser",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitDisplayStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "PrevPicturePaths",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "TS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "EditorRemarks",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "RightsDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Bibiliography",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText1",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText2",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitPlaces",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "DisplayStatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitHeaderDMSoundex",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureFileNames",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "RightsCode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "IsValueUnit",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "StatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UserLexicon",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Attachments",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "Slug",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Header",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "ForPreview",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "Id",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "places",
+      "path": "places.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "LocationInMuseum",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Pictures",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PictureUnitsIds",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "related",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "UpdateDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OldUnitId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UpdateUser",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureFileNames",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PrevPicturePaths",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PlaceTypeCode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "TS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PlaceTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "EditorRemarks",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "DisplayStatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "RightsDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Bibiliography",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText1",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText2",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitPlaces",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "main_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitHeaderDMSoundex",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitDisplayStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "RightsCode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "IsValueUnit",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "StatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PlaceParentTypeCodeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PlaceParentId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UserLexicon",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Attachments",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "geometry",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Slug",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Header",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "thumbnail_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ForPreview",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "photoUnits",
+      "path": "photoUnits.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "NegativeNumbers",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "IsLandscape",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureUnitsId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ExhibitionIsPreview",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "LocationInMuseum",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Pictures",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "ToScan",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodDateTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "related",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "ExhibitionId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UpdateDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OldPictureNumbers",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OldUnitId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UpdateUser",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PictureLocations",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitDisplayStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "main_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitPeriod",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PrevPicturePaths",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "TS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PictureSources",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitPersonalities",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodStartDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PIctureReceivedIds",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "PeriodDateTypeCode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "RightsDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OrderBy",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "Bibiliography",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText1",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText2",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitPlaces",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PictureFileNames",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "PersonalityIds",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "PeriodNum",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitHeaderDMSoundex",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureFileNames",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "RightsCode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "PeriodTypeCode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "PicId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "IsValueUnit",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "StatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PreviewPics",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PicturePaths",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Attachments",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "UserLexicon",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "EditorRemarks",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Exhibitions",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "ForDisplay",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "DisplayStatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodEndDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PictureTypeCodes",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PictureTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Slug",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Header",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PeriodTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "thumbnail_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ForPreview",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "Resolutions",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "LocationCode",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "personalities",
+      "path": "personalities.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "PeriodDateTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "FirstName",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Title",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "LocationInMuseum",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Pictures",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PictureUnitsIds",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "related",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "Expr2",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Expr1",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UpdateDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "OldUnitId",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "IsMainCreatorType",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PersonTypeCodesDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UpdateUser",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitDisplayStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitText2",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PrevPicturePaths",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "TS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "FamilyNameIds",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitPlaces",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "PictureSources",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodStartDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Slug",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PeriodDateTypeCode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "RightsDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Bibiliography",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UnitText1",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PersonTypeIds",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "MiddleName",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "main_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitStatus",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "LastName",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PeriodDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PersonTypeCodes",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitHeaderDMSoundex",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PrevPictureFileNames",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "RightsCode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "PeriodTypeCode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "IsValueUnit",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "StatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "NickName",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "UserLexicon",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "EditorRemarks",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "Attachments",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "DisplayStatusDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodEndDate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PeriodNum",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "OtherNames",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "Header",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "PeriodTypeDesc",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "thumbnail_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PersonalityId",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "ForPreview",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

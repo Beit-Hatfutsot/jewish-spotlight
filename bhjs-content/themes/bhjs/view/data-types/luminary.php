@@ -29,20 +29,15 @@ $settings = array(
         $heb_slug = $reversed_slug[1] . '/' . $reversed_slug[0];
         $slug = $lang == 'he' ? $heb_slug : str_replace('_', '/', $luminary['Slug']['En']);
         $photo  = '';
-        $pictures = $luminary['Pictures'];
+        $pictures = $luminary['image_urls'];
+        $luminary_photo = $luminary['preview_image_url'];
 
-        if ( count ( $pictures ) ) {
-            foreach ( $pictures as $photo ) {
-                if ( !is_null( $photo['PictureId'] ) && $photo['IsPreview'] == '1' ) {
-                    $luminary_photo = $photo['PictureId'] . '.jpg';
-                }
-            }
-        } ?>
+        ?>
         <div class="col-md-4 col-sm-6 col-xs-12 hidden">
             <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
               <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
                 <div class="thumbnail">
-                  <img src="<?php echo $settings['src_prefix'] . $luminary_photo; ?>" alt="<?php echo $title; ?>"/>
+                  <img src="<?php echo $luminary_photo; ?>" alt="<?php echo $title; ?>"/>
                 </div>
                 <div class="text-part <?php echo count($pictures)>0 ? 'text-part--thumbnail' : 'text-part--nothumb'; ?>">
                     <div class="text <?php echo count($pictures) == 0 ? 'text--nothumb' : ''; ?>">

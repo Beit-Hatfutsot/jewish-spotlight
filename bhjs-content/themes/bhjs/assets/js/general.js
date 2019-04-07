@@ -30,7 +30,7 @@ var $ = jQuery,
 		 */
 		params : {
 
-			photos					: $.parseJSON( _BhjsPhotos ),
+			photos					: (typeof(_BhjsPhotos) === 'undefined') ? null : $.parseJSON( _BhjsPhotos ),
 			active_photos			: 0,
 			photos_columns			: 3,
 			active_column			: 0,
@@ -70,6 +70,7 @@ var $ = jQuery,
 			// Expose first communities and luminaries
 			BhjsGeneral.initIndex('community');
 			BhjsGeneral.initIndex('luminary');
+			BhjsGeneral.initIndex('familyname');
 
 			// Bind click event to letters index
 			$('.letter-index-container li').bind('click', BhjsGeneral.index_letter_click);
@@ -184,6 +185,17 @@ var $ = jQuery,
 				}
 			});
 
+			// handle load-more event for familyname
+			if (type === 'familyname') {
+				$('#data-type-section-familyname .load-more').bind('click', function() {
+					items.each(function() {
+						if ($(this).attr('data-letter') === BhjsGeneral.familynameCurrentLetter) {
+							$(this).parent().removeClass('hidden');
+						}
+					});
+					$('#data-type-section-familyname .load-more').addClass('hidden');
+				});
+			}
 		},
 
 		/**
@@ -197,6 +209,9 @@ var $ = jQuery,
 		 * @return		N/A
 		 */
 		setIndex : function(type, letter) {
+			if (type === "familyname") {
+				BhjsGeneral.familynameCurrentLetter = letter;
+			}
 
 			var items = $('#data-type-section-' + type).find('.item-preview'),
 				letters_list = $('#data-type-section-' + type).find('.letter-index-container');
@@ -213,11 +228,23 @@ var $ = jQuery,
 			letters_list.find("li[data-letter='" + letter + "']").addClass('active');
 
 			// Loop through all items and expose relavant items
+			var num_displayed_items = 0;
+			var total_items = 0;
+			if (type === "familyname") {
+				$('#data-type-section-familyname .load-more').addClass('hidden');
+			}
 			items.each(function() {
-				if ($(this).attr('data-letter') == letter) {
-					$(this).parent().removeClass('hidden');
+				if ($(this).attr('data-letter') === letter) {
+					if (type !== "familyname" || num_displayed_items < 6) {
+						$(this).parent().removeClass('hidden');
+						num_displayed_items++;
+					}
+					total_items++;
 				}
 			});
+			if (type === "familyname" && total_items > 6) {
+				$('#data-type-section-familyname .load-more').removeClass('hidden');
+			}
 
 			// Update map markers
 			if (type == 'community') {
@@ -505,25 +532,27 @@ var $ = jQuery,
 
 			var index, j;
 
-			for (index=offset, j=0 ; j<amount && BhjsGeneral.params.photos.length>index ; index++, j++) {
-				// expose photo
-				var photoItem =
-					'<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +
-						'<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
-							'<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
-						'</a>' +
-						'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '<br><span>' + BhjsGeneral.params.photos[index]['description'] +  '</span></figcaption>' +
-						/*'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['description'] + '</figcaption>' +*/
-					'</figure>'
-					;
+			if (BhjsGeneral.params.photos) {
+                for (index = offset, j = 0; j < amount && BhjsGeneral.params.photos.length > index; index++, j++) {
+                    // expose photo
+                    var photoItem =
+                        '<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +
+                        '<a href="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="contentUrl">' +
+                        '<img src="' + BhjsGeneral.params.photos[index]['photo'] + '" itemprop="thumbnail" alt="' + BhjsGeneral.params.photos[index]['title'] + '" />' +
+                        '</a>' +
+                        '<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['title'] + '<br><span>' + BhjsGeneral.params.photos[index]['description'] + '</span></figcaption>' +
+                        /*'<figcaption itemprop="caption description">' + BhjsGeneral.params.photos[index]['description'] + '</figcaption>' +*/
+                        '</figure>'
+                    ;
 
-				$(photoItem).appendTo( $('.gallery .col' + BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns) );
+                    $(photoItem).appendTo($('.gallery .col' + BhjsGeneral.params.active_column % BhjsGeneral.params.photos_columns));
 
-				// Update active column
-				BhjsGeneral.params.active_column = BhjsGeneral.params.active_column%BhjsGeneral.params.photos_columns + 1;
-			}
+                    // Update active column
+                    BhjsGeneral.params.active_column = BhjsGeneral.params.active_column % BhjsGeneral.params.photos_columns + 1;
+                }
+            }
 
-			if ( index == BhjsGeneral.params.photos.length ) {
+			if ( BhjsGeneral.params.photos && index == BhjsGeneral.params.photos.length ) {
 				// hide more btn
 				$('#data-type-section-photo .load-more').addClass('disabled');
 			} else {

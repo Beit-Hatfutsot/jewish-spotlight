@@ -14,8 +14,10 @@
 
 		if ( $page_template == 'main.php' ) { ?>
 			<!-- Leaflet JavaScript file -->
+			<?php if ( MAP_CENTER_LNG != '' ) { ?>
 			<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
 			<script src="<?php echo JS_DIR; ?>/lib/leafmap.js"></script>
+			<?php } ?>
 
 			<!-- PhotoSwipe - Core JS file -->
 			<script src="<?php echo JS_DIR; ?>/lib/PhotoSwipe/photoswipe.min.js"></script> 
@@ -29,7 +31,7 @@
 	<script src="<?php echo JS_DIR; ?>/lib/jquery.waypoints.min.js"></script>
 
 	<!-- general.min.js -->
-	<script src="<?php echo JS_DIR; ?>/general.min.js"></script>
+	<script src="<?php echo JS_DIR; ?>/general.min.js?v=4"></script>
 
 	<?php include( TEMPLATEPATH . '/view/footer/footer-photoswipe.php' ); ?>
 

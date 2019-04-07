@@ -174,6 +174,89 @@ class dbs {
 
 		$this->set_attribute('place', $place);
 
+		if ($place == 'ethiopia') {
+		    $this->settings['types'] = array(
+
+				//timeline
+				'999'				=> array(
+					'slug'			=> 'timeline',
+					'menu_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Timeline',
+						'he'		=> 'ציר הזמן'
+					)
+				),
+
+				//family names
+				'6' => array(
+				    'slug' => 'familyname',
+				    'menu_title' => array(
+				        'en' => 'Family Names',
+				        'he' => 'שמות משפחה',
+				    ),
+				    'section_title' => array(
+				        'en' => 'Family Names',
+				        'he' => 'שמות משפחה',
+				    )
+				),
+
+				// community
+				/*'5'					=> array(
+					'slug'			=> 'community',
+					'menu_title'	=> array(
+						'en'		=> 'Communities',
+						'he'		=> 'קהילות'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Jewish Communities in {place_name}',
+						'he'		=> 'הקהילות היהודיות ב{place_name}'
+					)
+				),*/
+
+				// photo
+				'1'					=> array(
+					'slug'			=> 'photo',
+					'menu_title'	=> array(
+						'en'		=> 'Gallery',
+						'he'		=> 'גלריה'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Photo Gallery',
+						'he'		=> 'גלריית תמונות'
+					)
+				),
+
+				// video
+				/*'9'					=> array(
+					'slug'			=> 'video',
+					'menu_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Video',
+						'he'		=> 'וידאו'
+					)
+				),*/
+
+				// luminary
+				'8'					=> array(
+					'slug'			=> 'luminary',
+					'menu_title'	=> array(
+						'en'		=> 'Luminaries',
+						'he'		=> 'אישים'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Luminaries',
+						'he'		=> 'אישים'
+					)
+				)
+			);
+		};
+
 	}
 
 	/**
@@ -223,15 +306,25 @@ class dbs {
 		}
 
 		// Get place data
-		$ch = curl_init($url);
+		/*$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 		$json_response_content = curl_exec($ch);
-		curl_close($ch);
+		curl_close($ch);*/
 		
-//		$json_response_content = file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/cached-api.php' );
+		$json_response_content = file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/cached-api.php' );
 
 		$data = json_decode($json_response_content, true);
+
+		/*if ( $this->get_attribute( 'place' ) == 'ethiopeia' ) {
+		    $items = [];
+		    foreach ( $data['items'] as $item ) {
+				if ( $item["UnitTypeDesc"] != "Place" ) {
+				    $items[] = $item;
+				}
+			}
+			$data['items'] = $items;
+		}*/
 
 		if ( ! count($data['items']) )
 			return null;

@@ -1,0 +1,174 @@
+{
+  "bytes": 3444926,
+  "count_of_rows": 592,
+  "hash": "428be597350d62b90575c3058137aeb8",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "czeck-cached-api",
+      "path": "czeck-cached-api.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "header_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "header_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "text_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "text_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "slug_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "slug_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "video_url",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "main_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "preview_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "image_urls",
+            "type": "array"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "ethiopia-cached-api",
+      "path": "ethiopia-cached-api.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "UnitType",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "UnitTypeDesc",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "header_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "header_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "text_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "text_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "slug_en",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "slug_he",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "video_url",
+            "type": "any"
+          },
+          {
+            "format": "default",
+            "name": "main_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "preview_image_url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "image_urls",
+            "type": "array"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

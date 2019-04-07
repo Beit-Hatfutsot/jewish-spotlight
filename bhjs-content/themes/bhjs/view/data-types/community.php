@@ -40,16 +40,8 @@ $markers = array();
         $heb_slug = $reversed_slug[1] . '/' . $reversed_slug[0];
         $slug = $lang == 'he' ? $heb_slug : str_replace('_', '/', $place['Slug']['En']);
         $photo  = '';
-        $pictures = $place['Pictures'];
-        $place_photo = '';
-
-        if ( count ( $pictures ) ) {
-            foreach ( $pictures as $photo ) {
-                if ( !is_null( $photo['PictureId'] ) && $photo['IsPreview'] == '1' ) {
-                    $place_photo = $photo['PictureId'] . '.jpg';
-                }
-            }
-        };
+        $pictures = $place['image_urls'];
+        $place_photo = $place['preview_image_url'];
 
         //to get coordinates
         $coordinates = get_community_coordinates( $place['Header']['En'] );
@@ -72,7 +64,7 @@ $markers = array();
                 
                 <?php if ( $place_photo ) { ?>
                     <div class="thumbnail">
-                      <img src="<?php echo $settings['src_prefix'] . $place_photo; ?>" alt="<?php echo $title; ?>"/>
+                      <img src="<?php echo $place_photo; ?>" alt="<?php echo $title; ?>"/>
                     </div>
                 <?php } ?>
 

@@ -1,0 +1,6 @@
+bhjs-content/themes/bhjs/.sass-cache/
+bhjs-content/themes/bhjs/node_modules/
+bhjs-content/themes/bhjs/assets/css/*.css
+bhjs-content/themes/bhjs/assets/css/*.map
+bhjs-content/themes/bhjs/assets/js/*.min.js
+*.Dockerfile

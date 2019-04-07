@@ -27,7 +27,7 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 
 	<div class="container">
 		<?php if ( $data && $template_logo_small ) { ?>
-			<div id="logo"><img src="<?php echo $template_logo_small; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></div>
+			<div id="logo"><a href="<?php echo "https://spotlight.bh.org.il/".$place_slug."/".$lang ;?>"><img src="<?php echo $template_logo_small; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
 		<?php } ?>
 
 		<div id="credit">
@@ -35,7 +35,7 @@ $about_content = PLACES . '/' . $place_slug . '/about/' . $lang . '.html';
 				<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
 			<?php } ?>
 
-			<h1 <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
+			<h1 <?php echo empty($credit_text[$lang]) ? 'style="margin-top:33px;"' : '' ?> <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
 
 			<?php if ( $data && $credit_text ) { ?>
 				<div id="credit-text"><?php echo $credit_text[$lang]; ?></div>

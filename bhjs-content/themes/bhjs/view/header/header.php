@@ -30,7 +30,7 @@ $data	= dbs()->get_place_sorted_data();
 	<div id="header-top">
 		<div class="container">
 			<?php if ( $data && $template_logo ) { ?>
-				<div id="logo"><a class="anchor" data-href="top"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
+				<div id="logo"><a class="anchor" href="<?php echo "https://spotlight.bh.org.il/".$place_slug."/".$lang ;?>"><img src="<?php echo $template_logo; ?>" alt="<?php echo $template_name[$lang] . ' - ' . $place_name[$lang]; ?>" /></a></div>
 			<?php } ?>
 
 			<div id="credit">
@@ -38,7 +38,7 @@ $data	= dbs()->get_place_sorted_data();
 					<div id="credit-image"><img src="<?php echo $credit_image; ?>" alt="" /></div>
 				<?php } ?>
 
-				<h1 <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
+				<h1 <?php echo empty($credit_text[$lang]) ? 'style="margin-top:33px;"' : '' ?> <?php echo ( ! $data ) ? 'class="vertical-align"' : ''; ?>><?php echo $template_name[$lang] . ( $data ? ': ' . $place_name[$lang] : '' ); ?></h1>
 
 				<?php if ( $data && $credit_text ) { ?>
 					<div id="credit-text"><?php echo $credit_text[$lang]; ?></div>
@@ -80,6 +80,17 @@ $data	= dbs()->get_place_sorted_data();
 										echo '<li><a class="anchor" data-href="' . $types[$id]['slug'] . '">' . $types[$id]['menu_title'][$lang] . '</a></li>';
 									}
 								}
+
+                                if (PLACE_NAME_EN == "Ethiopia") {
+                                    if ($lang == "he") {
+                                        $title = "ערכה חינוכית";
+                                        $url = "https://www.bh.org.il/he/%D7%9E%D7%91%D7%A6%D7%A2-%D7%9E%D7%A9%D7%94-%D7%A9%D7%9C%D7%95%D7%A9%D7%99%D7%9D-%D7%A9%D7%A0%D7%94-%D7%90%D7%97%D7%A8%D7%99-%D7%A2%D7%A8%D7%9B%D7%94-%D7%97%D7%99%D7%A0%D7%95%D7%9B%D7%99%D7%AA/";
+                                    } else {
+                                        $title = "Educational Kit";
+                                        $url = "https://www.bh.org.il/operation-moses-educational-kit/";
+                                    }
+                                    echo '<li><a class="anchor" href="' . $url . '" target="_blank">' . $title . '</a></li>';
+                                }
 							}
 						}
 						elseif ( $data ) {

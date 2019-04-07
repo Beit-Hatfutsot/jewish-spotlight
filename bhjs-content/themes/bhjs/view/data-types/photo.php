@@ -40,15 +40,13 @@ $settings = array(
 
 				$collection_photos	= array();
 
-				if ( count( $collection['Pictures'] ) ) {
-					foreach ( $collection['Pictures'] as $photo ) {
-						if ( ! is_null( $photo['PictureId'] ) ) {
-							$collection_photos[] = array(
-								'title'	=> $title,
-								'description' => $description,
-								'photo'	=> $settings['src_prefix'] . $photo['PictureId'] . '.jpg'
-							);
-						}
+				if ( count( $collection['image_urls'] ) ) {
+					foreach ( $collection['image_urls'] as $photo ) {
+					    $collection_photos[] = array(
+                            'title'	=> $title,
+                            'description' => $description,
+                            'photo'	=> $photo
+                        );
 					}
 				}
 
