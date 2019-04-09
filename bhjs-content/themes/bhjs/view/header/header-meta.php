@@ -30,10 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
 
 	<!-- active theme -->
-	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style_<?php echo CSS_STYLE_SUFFIX; ?>.css?v=8">
+	<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/style_<?php echo CSS_STYLE_SUFFIX; ?>.css?v=9">
 
 	<?php if ( CURR_LANG == 'he' ) { ?>
-		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/rtl.css?v=4">
+		<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/rtl.css?v=9">
 	<?php } ?>
 
 	<!-- PhotoSwipe - Core CSS file -->
