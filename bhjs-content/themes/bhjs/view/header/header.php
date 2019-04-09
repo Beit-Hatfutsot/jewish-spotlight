@@ -90,6 +90,9 @@ $data	= dbs()->get_place_sorted_data();
                                         $url = "https://www.bh.org.il/operation-moses-educational-kit/";
                                     }
                                     echo '<li><a class="anchor" href="' . $url . '" target="_blank">' . $title . '</a></li>';
+									if ($lang == "he") {
+										echo '<li><a class="anchor" href="http://www.ravdori.co.il/%D7%97%D7%99%D7%A4%D7%95%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9E%D7%93%D7%99%D7%A0%D7%95%D7%AA/?country=3562" target="_blank">הקשר הרב דורי</a></li>';
+									}
                                 }
 							}
 						}
