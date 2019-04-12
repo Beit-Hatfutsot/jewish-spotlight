@@ -329,6 +329,13 @@ class dbs {
 		if ( ! count($data['items']) )
 			return null;
 
+        if (file_exists( PLACES . '/' . $this->get_attribute( 'place' ) . '/manual-items.json')) {
+            $manual_data = json_decode(file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/manual-items.json'), true);
+            if (count($manual_data['items'])) {
+                $data['items'] = array_merge($data['items'], $manual_data['items']);
+            }
+        }
+
 		// return
 		return $data;
 

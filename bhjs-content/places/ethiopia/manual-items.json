@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "חרות טקלה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "חרות טקלה לגסה נולדה בשנת 1938 בקווארה, אתיופיה וספגה מאביה, שהיה מורה לעברית, חינוך ציוני. כשהיתה בת 4, אביה נתמנה למזכירו של מושל העיר אזזו הסמוכה לגונדר, והמשפחה עברה לאזזו. בגיל 16 עברה לגונדר יחד עם אחיה, כדי ללמוד, דבר שלא היה מקובל בזמנה. היא סיימה בית ספר תיכון, והמשיכה לבית ספר לאחיות, שם סיימה לימודיה בהצטיינות. טקלה נשלחה לאדיס אבבה מטעם משרד הריאות האתיופי, לעבוד במחלקת ילדים בבית חולים ושם פגשה רופא צעיר ששמו שיברו לגסה, ונישאה לו. הם גרו בשכנות ליונה בוגלה, איש חינוך שפעל למען עליית יהודי אתיופיה. חרות ושיברו עבדו בבתי חולים שונים ברחבי אתיופיה, ונולדו להם שמונה ילדים. אחרי מות בעלה בתאונה, בשנת 1977, טקלה חזרה לאדיס אבבה, והתמנתה למיילדת ראשית, יועצת לתכנון המשפחה ומנהלת טיפת חלב בבית החולים האמריקני בעיר. במקביל שימשה גם כיו\"ר ארגון נשים מקומי.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/herut-takala.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/herut-takala.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/herut-takala.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%97%D7%A8%D7%95%D7%AA-%D7%98%D7%A7%D7%9C%D7%94/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "אסרסי גטו",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "אסרסי גטו סהלו גרמאי נולדה ב 1958 בגיינאה, מחוז גונדר, אתיופיה. היא הצעירה מבין 10 ילדיהם של אמה ואביה, גטו סהלו, שהיה חקלאי וראש הקהילה המקומית, שמנתה 58 משפחות. בשנות ה 1960 פתח בכפר יונה בוגלה בית ספר יהודי. שלא כמקובל באתיופיה, אביה של אסרסי שלח את בנותיו ללימודים. לאחר ארבע שנות לימודים בכפר, אסרסי סירבה להתחתן ושכנעה את הוריה לאפשר לה להשלים 12 שנות לימוד בבית הספר בעיר אזזו. היא המשיכה את לימודיה בבית הספר לאחיות בדברה תבור.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/gato.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/gato.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/gato.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%90%D7%A1%D7%A8%D7%A1%D7%99-%D7%92%D7%98%D7%95/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "פרדה אקלום",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "פרדה יזזאו אקלום (1949 – 2009). נולד בכפר עדי וורבה במחוז תיגראי, אתיופיה. אביו יזזאו אקלום היה אדם אמיד, משכיל ומצליח שהשקיע בהקניית השכלה לכל ילדיו.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/Ferede_Aklum.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/Ferede_Aklum.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/Ferede_Aklum.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%A4%D7%A8%D7%93%D7%94-%D7%90%D7%A7%D7%9C%D7%95%D7%9D/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ברוך טגניה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "נולד ב1944 בכפר ווזבה שבמחוז בגמדר שבאתיופיה. ב 1955 נבחר יחד עם עוד חמישה עשר נערים על ידי יונה בוגלה והרב שמואל בארי ללמוד בכפר בתיה. הקבוצה הגיעה לישראל באוקטובר 1956 ונשלחה לכפר בתיה, לקבל הכשרה בהוראה ולשוב כמורים לקהילותיהם.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/Baruch_Tegegne_Speaking.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/Baruch_Tegegne_Speaking.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/Baruch_Tegegne_Speaking.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%91%D7%A8%D7%95%D7%9A-%D7%98%D7%92%D7%A0%D7%99%D7%94/",
+      "item_url_en": ""
+    }
+  ]
+}

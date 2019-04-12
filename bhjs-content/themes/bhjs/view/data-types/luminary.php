@@ -25,9 +25,14 @@ $settings = array(
     <?php foreach ( $data[ $settings['type_id'] ] as $luminary ) {
         $title  = $luminary['Header'][ucfirst($lang)];
         $desc   = $luminary['UnitText1'][ucfirst($lang)];
-        $reversed_slug = explode("_", $luminary['Slug']['He']);
-        $heb_slug = $reversed_slug[1] . '/' . $reversed_slug[0];
-        $slug = $lang == 'he' ? $heb_slug : str_replace('_', '/', $luminary['Slug']['En']);
+        if (empty($luminary['Slug'][ucfirst($lang)])) {
+            $item_url = $luminary["item_url_".$lang];
+        } else {
+            $reversed_slug = explode("_", $luminary['Slug']['He']);
+            $heb_slug = $reversed_slug[1] . '/' . $reversed_slug[0];
+            $slug = $lang == 'he' ? $heb_slug : str_replace('_', '/', $luminary['Slug']['En']);
+            $item_url = $settings['dbs_prefix'] . $slug;
+        }
         $photo  = '';
         $pictures = $luminary['image_urls'];
         $luminary_photo = $luminary['preview_image_url'];
@@ -35,7 +40,7 @@ $settings = array(
         ?>
         <div class="col-md-4 col-sm-6 col-xs-12 hidden">
             <div class="item-preview" data-letter="<?php echo ucfirst ( mb_substr($title, 0, 1, 'UTF-8') ); ?>">
-              <a href="<?php echo $settings['dbs_prefix'] . $slug; ?>" target="_blank">
+              <a href="<?php echo $item_url; ?>" target="_blank">
                 <div class="thumbnail">
                   <img src="<?php echo $luminary_photo; ?>" alt="<?php echo $title; ?>"/>
                 </div>

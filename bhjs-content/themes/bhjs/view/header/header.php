@@ -69,6 +69,11 @@ $data	= dbs()->get_place_sorted_data();
 
 						<?php if ( $page_template == 'main.php' ) {
 							// main page template
+                            if (PLACE_NAME_EN == "Ethiopia") {
+                                $title = ($lang == "he") ? "אודות" : "About";
+                                $url = "https://spotlight.bh.org.il/ethiopia/".$lang."/about";
+                                echo '<li><a class="anchor" href="' . $url . '">' . $title . '</a></li>';
+                            }
 							if ( ! empty($data) ) {
 								$types = dbs()->get_attribute( 'types' );
 
