@@ -87,6 +87,94 @@
       "image_urls": ["https://www.bh.org.il/wp-content/uploads/Baruch_Tegegne_Speaking.jpg"],
       "item_url_he": "https://www.bh.org.il/he/%D7%91%D7%A8%D7%95%D7%9A-%D7%98%D7%92%D7%A0%D7%99%D7%94/",
       "item_url_en": "https://www.bh.org.il/baruch-tagania/"
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "יונה בוגלה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "יונה בוגלה (יונה (בן) נפתלי) היה מחנך ואיש ציבור יהודי-אתיופי שהיה מנהלה של רשת החינוך של ביתא ישראל באתיופיה. פעל לחיזוק הקשר בין קהילת ביתא ישראל לבין מדינת ישראל ויהודי התפוצות.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/4654D166-89E1-4395-873D-705212C97122.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/4654D166-89E1-4395-873D-705212C97122.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/4654D166-89E1-4395-873D-705212C97122.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%99%D7%95%D7%A0%D7%94-%D7%91%D7%95%D7%92%D7%9C%D7%94/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "תאמרת עמנואל",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "איש ציבור יהודי-אתיופי, פרופסור, רב ומשכיל. אחד האישים הבולטים ביותר שצמחו מקרב קהילת ביתא ישראל בעת החדשה, מכונה לעיתים מבשר התחייה.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/3994DC0E-8A17-4C71-B0BC-DA384AD589D3.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/3994DC0E-8A17-4C71-B0BC-DA384AD589D3.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/3994DC0E-8A17-4C71-B0BC-DA384AD589D3.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%AA%D7%90%D7%9E%D7%A8%D7%AA-%D7%90%D7%9E%D7%A0%D7%95%D7%A2%D7%90%D7%9C/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ממהרי (מורי) קייס יצחק יאסו",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "מנהיגה הרוחני של יהדות אתיופיה במחוז תיגראיי. כיהן כמנהיג רוחני חשוב של ביתא ישראל באיזור תיגראיי ועד מותו בישראל, נקבר בירושלים.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/2102152.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/2102152.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/2102152.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%9E%D7%9E%D7%94%D7%A8%D7%99-%D7%9E%D7%95%D7%A8%D7%99-%D7%A7%D7%99%D7%99%D7%A1-%D7%99%D7%A6%D7%97%D7%A7-%D7%99%D7%90%D7%A1%D7%95/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ליקה כהנת ברהן ברוך",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "ליקה כהנת ברהן ברוך, או בשמו העברי אורי בן ברוך, היה מחשובי מנהיגי ביתא ישראל במאה ה-20. כיהן כמנהיג רוחני חשוב של ביתא ישראל מאמצע שנות השלושים של המאה ה-20 ועד מותו, עסק בפעילות ציבורית רחבה למען עליית קהילתו לישראל.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/%D7%90%D7%95%D7%A8%D7%99_%D7%91%D7%9F_%D7%91%D7%A8%D7%95%D7%9A.jpeg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/%D7%90%D7%95%D7%A8%D7%99_%D7%91%D7%9F_%D7%91%D7%A8%D7%95%D7%9A.jpeg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/%D7%90%D7%95%D7%A8%D7%99_%D7%91%D7%9F_%D7%91%D7%A8%D7%95%D7%9A.jpeg"],
+      "item_url_he": "https://www.bh.org.il/he/%D7%9C%D7%99%D7%A7%D7%94-%D7%9B%D7%94%D7%A0%D7%AA-%D7%91%D7%A8%D7%94%D7%9F-%D7%91%D7%A8%D7%95%D7%9A/",
+      "item_url_en": ""
     }
   ]
 }
