@@ -1,0 +1,19 @@
+{
+  "hide-items": [
+    {
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ריין, ארמאן",
+        "En": "Rein, Armand"
+      }
+    },
+
+    {
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "לסלאו, וולף",
+        "En": "Leslau, Wolf"
+      }
+    }
+  ]
+}

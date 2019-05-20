@@ -56,3 +56,29 @@ Run Jupyter notebooks
 ```
 jupyter lab
 ```
+
+## Deploying
+
+Deployment is done without Docker
+
+Initial setup and installation on the server (some modifications might be required depending on the setup):
+
+```
+JEWISH_SPOTLIGHT_DIR=/path/to/jewish-spotlight
+
+git clone https://github.com/Beit-Hatfutsot/jewish-spotlight.git $JEWISH_SPOTLIGHT_DIR &&\
+echo '#!/usr/bin/env bash' | sudo tee /usr/local/bin/jewish-spotlight-deployment.sh &&\
+echo "
+cd $JEWISH_SPOTLIGHT_DIR &&\\
+sudo -u www-data git pull origin master &&\\
+cd $JEWISH_SPOTLIGHT_DIR/bhjs-content/themes/bhjs/ &&\\
+sudo -u www-data grunt
+" | sudo tee -a /usr/local/bin/jewish-spotlight-deployment.sh &&\
+sudo chmod +x /usr/local/bin/jewish-spotlight-deployment.sh
+```
+
+To deploy (after pushing changes to master branch):
+
+```
+ssh <SSH ARGS> -- jewish-spotlight-deployment.sh
+```

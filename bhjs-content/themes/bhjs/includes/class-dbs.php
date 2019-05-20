@@ -329,11 +329,34 @@ class dbs {
 		if ( ! count($data['items']) )
 			return null;
 
-        if (file_exists( PLACES . '/' . $this->get_attribute( 'place' ) . '/manual-items.json')) {
+        if (file_exists(PLACES . '/' . $this->get_attribute( 'place' ) . '/manual-items.json')) {
             $manual_data = json_decode(file_get_contents( PLACES . '/' . $this->get_attribute( 'place' ) . '/manual-items.json'), true);
             if (count($manual_data['items'])) {
                 $data['items'] = array_merge($data['items'], $manual_data['items']);
             }
+        }
+
+        if (file_exists(PLACES . '/' . $this->get_attribute('place') . '/hide-items.json')) {
+            $hide_items = json_decode(file_get_contents(PLACES . '/' . $this->get_attribute('place') . '/hide-items.json'), true)["hide-items"];
+            $newItems = [];
+            foreach ($data['items'] as $item) {
+                $hide = false;
+                foreach ($hide_items as $hide_item) {
+                    if (array_key_exists('UnitTypeDesc', $item) && array_key_exists("Header", $item)) {
+                        if ($item['UnitTypeDesc'] == $hide_item['UnitTypeDesc']) {
+                            if (array_key_exists("He", $item["Header"]) && $item["Header"]["He"] == $hide_item["Header"]["He"]) {
+                                $hide = true;
+                            } elseif (array_key_exists("En", $item["Header"]) && $item["Header"]["En"] == $hide_item["Header"]["En"]) {
+                                $hide = true;
+                            }
+                        }
+                    }
+                }
+                if (!$hide) {
+                    $newItems[] = $item;
+                }
+            }
+            $data['items'] = $newItems;
         }
 
 		// return
