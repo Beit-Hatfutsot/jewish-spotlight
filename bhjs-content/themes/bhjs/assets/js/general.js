@@ -85,7 +85,7 @@ var $ = jQuery,
 
 			// Bind click event to gallery 'load more' btn
 			$('#data-type-section-photo .load-more').bind('click', function() {
-				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, BhjsGeneral.params.photos_more_interval);
+				BhjsGeneral.lazyLoad(BhjsGeneral.params.active_photos, -1);
 			});
 
 			// PhotoSwipe
@@ -533,7 +533,7 @@ var $ = jQuery,
 			var index, j;
 
 			if (BhjsGeneral.params.photos) {
-                for (index = offset, j = 0; j < amount && BhjsGeneral.params.photos.length > index; index++, j++) {
+                for (index = offset, j = 0; (amount > -1 && j < amount || amount == -1) && BhjsGeneral.params.photos.length > index; index++, j++) {
                     // expose photo
                     var photoItem =
                         '<figure class="gallery-item" data-index="' + index + '" itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">' +

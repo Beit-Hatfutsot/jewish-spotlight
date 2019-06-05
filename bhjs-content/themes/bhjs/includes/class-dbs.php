@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/includes
- * @version		1.0.0
+ * @version		1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -216,19 +216,6 @@ class dbs {
 					)
 				),*/
 
-				// photo
-				'1'					=> array(
-					'slug'			=> 'photo',
-					'menu_title'	=> array(
-						'en'		=> 'Gallery',
-						'he'		=> 'גלריה'
-					),
-					'section_title'	=> array(
-						'en'		=> 'Photo Gallery',
-						'he'		=> 'גלריית תמונות'
-					)
-				),
-
 				// video
 				/*'9'					=> array(
 					'slug'			=> 'video',
@@ -252,6 +239,19 @@ class dbs {
 					'section_title'	=> array(
 						'en'		=> 'Luminaries',
 						'he'		=> 'אישים'
+					)
+				),
+
+				// photo
+				'1'					=> array(
+					'slug'			=> 'photo',
+					'menu_title'	=> array(
+						'en'		=> 'Gallery',
+						'he'		=> 'גלריה'
+					),
+					'section_title'	=> array(
+						'en'		=> 'Photo Gallery',
+						'he'		=> 'גלריית תמונות'
 					)
 				)
 			);
