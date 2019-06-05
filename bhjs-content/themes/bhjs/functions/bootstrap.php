@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/functions
- * @version		1.0.0
+ * @version		1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -86,7 +86,8 @@ final class bhjs_core {
 			'permalink'				=> array(
 				'url'				=> '',
 				'request_uri'		=> '',
-				'lang'				=> ''
+				'lang'				=> '',
+				'page_slug'			=> '',
 			),
 			'page_template'			=> ''
 		);
@@ -298,11 +299,13 @@ final class bhjs_core {
 					// Main page template
 					$path = 'main.php';
 				}
-				elseif ( file_exists( TEMPLATEPATH . '/template/' . $path . '.php' ) ) {
+/*				elseif ( file_exists( TEMPLATEPATH . '/template/' . $path . '.php' ) ) {
 					$path = $path . '.php';
 				}
-				else {
-					$path = '404.php';
+*/				else {
+					// page slug
+					$this->settings['permalink']['page_slug'] = $path;
+					$path = 'page.php';
 				}
 			}
 		}

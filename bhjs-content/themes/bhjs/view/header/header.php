@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/themes/bhjs/view/header
- * @version		1.0.0
+ * @version		1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -69,11 +69,11 @@ $data	= dbs()->get_place_sorted_data();
 
 						<?php if ( $page_template == 'main.php' ) {
 							// main page template
-                            if (PLACE_NAME_EN == "Ethiopia") {
-                                $title = ($lang == "he") ? "אודות" : "About";
-                                $url = "https://spotlight.bh.org.il/ethiopia/".$lang."/about";
-                                echo '<li><a class="anchor" href="' . $url . '">' . $title . '</a></li>';
-                            }
+							if (PLACE_NAME_EN == "Ethiopia") {
+								$title = ($lang == "he") ? "אודות" : "About";
+								$url = "https://spotlight.bh.org.il/ethiopia/".$lang."/about";
+								echo '<li><a class="anchor" href="' . $url . '">' . $title . '</a></li>';
+							}
 							if ( ! empty($data) ) {
 								$types = dbs()->get_attribute( 'types' );
 
@@ -86,19 +86,17 @@ $data	= dbs()->get_place_sorted_data();
 									}
 								}
 
-                                if (PLACE_NAME_EN == "Ethiopia") {
-                                    if ($lang == "he") {
-                                        $title = "ערכה חינוכית";
-                                        $url = "https://www.bh.org.il/he/%D7%9E%D7%91%D7%A6%D7%A2-%D7%9E%D7%A9%D7%94-%D7%A9%D7%9C%D7%95%D7%A9%D7%99%D7%9D-%D7%A9%D7%A0%D7%94-%D7%90%D7%97%D7%A8%D7%99-%D7%A2%D7%A8%D7%9B%D7%94-%D7%97%D7%99%D7%A0%D7%95%D7%9B%D7%99%D7%AA/";
-                                    } else {
-                                        $title = "Educational Kit";
-                                        $url = "https://www.bh.org.il/operation-moses-educational-kit/";
-                                    }
-                                    echo '<li><a class="anchor" href="' . $url . '" target="_blank">' . $title . '</a></li>';
+								if (PLACE_NAME_EN == "Ethiopia") {
+									$title = ($lang == "he") ? "ערכה חינוכית" : "Educational Kit";
+									$url = "https://spotlight.bh.org.il/ethiopia/".$lang."/educational-kit";
+									echo '<li><a class="anchor" href="' . $url . '">' . $title . '</a></li>';
+
 									if ($lang == "he") {
-										echo '<li><a class="anchor" href="http://www.ravdori.co.il/%D7%97%D7%99%D7%A4%D7%95%D7%A9-%D7%9C%D7%A4%D7%99-%D7%9E%D7%93%D7%99%D7%A0%D7%95%D7%AA/?country=3562" target="_blank">הקשר הרב דורי</a></li>';
+										$title = "מידע נוסף";
+										$url = "https://spotlight.bh.org.il/ethiopia/".$lang."/more-info";
+										echo '<li><a class="anchor" href="' . $url . '">' . $title . '</a></li>';
 									}
-                                }
+								}
 							}
 						}
 						elseif ( $data ) {
