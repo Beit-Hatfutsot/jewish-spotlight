@@ -8,3 +8,4 @@ dependencies:
     - dataflows-shell>=0.0.8
     - jupyterlab
     - requests
+    - pyquery

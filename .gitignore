@@ -7,3 +7,6 @@ bhjs-content/themes/bhjs/assets/js/*.min.js
 __pycache__
 *.egg-info
 .dfs-checkpoints
+.data
+.checkpoints
+.ipynb_checkpoints
