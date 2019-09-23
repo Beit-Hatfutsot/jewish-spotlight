@@ -24,6 +24,9 @@ $settings = array(
 
     <?php foreach ( $data[ $settings['type_id'] ] as $luminary ) {
         $title  = $luminary['Header'][ucfirst($lang)];
+        if (empty($title)) {
+            continue;
+        }
         $desc   = $luminary['UnitText1'][ucfirst($lang)];
         if (empty($luminary['Slug'][ucfirst($lang)])) {
             $item_url = $luminary["item_url_".$lang];

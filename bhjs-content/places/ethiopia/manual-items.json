@@ -175,6 +175,182 @@
       "image_urls": ["https://www.bh.org.il/wp-content/uploads/%D7%90%D7%95%D7%A8%D7%99_%D7%91%D7%9F_%D7%91%D7%A8%D7%95%D7%9A.jpeg"],
       "item_url_he": "https://www.bh.org.il/he/%D7%9C%D7%99%D7%A7%D7%94-%D7%9B%D7%94%D7%A0%D7%AA-%D7%91%D7%A8%D7%94%D7%9F-%D7%91%D7%A8%D7%95%D7%9A/",
       "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "אלדד הדני",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "אלדד הדני היה סוחר, נוסע יהודי ותלמיד חכם במאה ה-9. טען כי הוא בן שבט דן וסיפר ספורים ואגדות על עשרת השבטים ועל \"בני משה\". סיפוריו קסמו ללב היהודים ועודדו אותם לשאוף לגאלה ולחיי חירות. אלדד הדני היה נוסע בין הקהילות היהודיות החשובות בבבל, צפון אפריקה וספרד",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "https://www.bh.org.il/he/%d7%90%d7%9c%d7%93%d7%93-%d7%94%d7%93%d7%a0%d7%99-eldad-ha-dani/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "אבא מהרי",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "אבא מהרי היה נזיר יהודי, שחי ופעל באתיופיה במאה ה-19 ושימש כמנהיג הרוחני העליון של קהילת ביתא ישראל באזור קולה ווגרה. אבא מהרי נולד בקווארה שבמחוז אמהרה ושם הוכשר לתפקיד כהן קס ונזיר מלקוסה. לאחר הכשרתו נדד בין יישובי ביתא ישראל השונים, הפזורים בין גורגורה לאמבא גואליט, ופעל בהם כנזיר, לימד תורה והלכות, נשא תפילות בעד בני הקהילה והמבקשים מרפא ותבואה, הקריב קורבנות, הכשיר תלמידים והתדיין עם המיסיונרים הנוצרים. בנדודיו הגיע אבא מהרי עד לדמביה שם פעל בתפקיד מרכזי, כשהוא 'מקדיש את מירב זמנו להשבת המתבוללים אל חיק היהדות' ולמלחמה במסיונריים הנוצרים שהגבירו לחצם על היהודים בבקשם להמיר את דתם",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "https://www.bh.org.il/he/%d7%90%d7%91%d7%90-%d7%9e%d7%94%d7%a8%d7%99/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "יוסף הלוי",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "יוסף הלוי היה יהודי צרפתי שנולד בתורכיה. הוא היה מורה, חוקר, משורר ובלשן. היה פרופסור באוניברסיטת סורבון בצרפת, מזרחן ומומחה לשפות שמיות. בין היתר, הוא דיבר געז ואמהרית",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https%3A//www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg",
+      "preview_image_url": "https%3A//www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg",
+      "image_urls": ["https%3A//www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%d7%99%d7%95%d7%a1%d7%a3-%d7%94%d7%9c%d7%95%d7%99/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "זימנה ברהנה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "היה מחלוצי המאבק להעלאת קהילת \"ביתא ישראל\" למדינת ישראל ולפתיחת שערי הארץ בפניהם. הוא היה איש המוסד למודיעין ולתפקידים מיוחדים שהקים את התשתית הארגונית במחנות הפליטים בסודאן להעלאת יהודי אתיופיה ארצה. ברהנה הנהיג את המאבק הציבורי למען העלאת יהודי אתיופיה מראשיתו. בשנת 1973 נרשמה הצלחה ראשונה, כשהרב עובדיה יוסף, הראשון לציון, פסק כי יהודי אתיופיה הם צאצאי שבטי ישראל וחייבים להצילם",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https%3A//www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F.jpg",
+      "preview_image_url": "https%3A//www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F.jpg",
+      "image_urls": ["https%3A//www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%d7%96%d7%99%d7%9e%d7%a0%d7%94-%d7%91%d7%a8%d7%94%d7%a0%d7%94/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "חזי עובדיה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "חזי עובדיה היה רס\"ר משמעת בצה\"ל ופעיל מרכזי למען עליית ביתא ישראל.נולד ב-1922 בעיר אסמרה בירת אריתריאה, אז מושבה איטלקית, למשפחה שהיגרה למקום מעדן בראשית המאה העשרים לאביו שלמה אשר שימש כרב הראשי בעיר ולאמו רומיה. בילדותו למד בבית הספר המקומי האיטלקי. בשנת 1935 עלתה המשפחה ארצה לארץ ישראל בקבוצה שכללה יהודים ממוצא תימני ומביתא ישראל",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "https://www.bh.org.il/he/%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%94-%d7%97%d7%96%d7%99/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "בליינש זבדיה",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "בליינש נולדה באפריל 1967. דיפלומטית שכיהנה כשגרירת ישראל באתיופיה. מדליקת משואה ביום העצמאות כאשה פורצות דרך. ילידת גונדר באתיופיה, לאב שהיה קס הקהילה",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https%3A//www.bh.org.il/wp-content/uploads/%D7%91%D7%9C%D7%99%D7%99%D7%A0%D7%A9_%D7%96%D7%91%D7%93%D7%99%D7%94-1140x641.jpg",
+      "preview_image_url": "https%3A//www.bh.org.il/wp-content/uploads/%D7%91%D7%9C%D7%99%D7%99%D7%A0%D7%A9_%D7%96%D7%91%D7%93%D7%99%D7%94-1140x641.jpg",
+      "image_urls": ["https%3A//www.bh.org.il/wp-content/uploads/%D7%91%D7%9C%D7%99%D7%99%D7%A0%D7%A9_%D7%96%D7%91%D7%93%D7%99%D7%94-1140x641.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%d7%91%d7%9c%d7%99%d7%99%d7%a0%d7%a9-%d7%96%d7%91%d7%93%d7%99%d7%94/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ד\"ר אברהם יצחק",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "אברהם יצחק (נולד בשנת 1973) הוא קצין בצה\"ל בדרגת אלוף-משנה ורופא, המכהן כמפקד רפואה פיקוד הדרום[1]. קודם לכן שימש בין היתר כראש ענף רפואה מבצעית בחיל הרפואה, כקצין הרפואה של אוגדת עזה, כראש מדור רפואה בפיקוד הדרום וקצין רפואה של חטיבת הנח\"ל. הסטודנט לרפואה הראשון בישראל ממוצא אתיופי והקצין הבכיר ביותר בצה\"ל ממוצא זה (נכון ל-2017). משיא משואת יום העצמאות ה-62 לשנת 2010, כנציג צה\"ל[2]",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "https://www.bh.org.il/he/%d7%93%d7%a8-%d7%90%d7%91%d7%a8%d7%94%d7%9d-%d7%99%d7%a6%d7%97%d7%a7/",
+      "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ייטאייש (טיטי) איינאו",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "נולדה ב-23 ביוני 1991. דוגמנית ומנחת טלוויזיה ישראלית, מלכת היופי של ישראל לשנת 2013. איינאו היא יוצאת אתיופיה הראשונה שזכתה בתואר זה. איינאו נולדה בכפר קטן במחוז גונדר שבאתיופיה",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https%3A//www.bh.org.il/wp-content/uploads/Titi_Aynaw-913x1140.jpg",
+      "preview_image_url": "https%3A//www.bh.org.il/wp-content/uploads/Titi_Aynaw-913x1140.jpg",
+      "image_urls": ["https%3A//www.bh.org.il/wp-content/uploads/Titi_Aynaw-913x1140.jpg"],
+      "item_url_he": "https://www.bh.org.il/he/%d7%99%d7%99%d7%98%d7%90%d7%99%d7%99%d7%a9-%d7%98%d7%99%d7%98%d7%99-%d7%90%d7%99%d7%99%d7%a0%d7%90%d7%95/",
+      "item_url_en": ""
     }
   ]
 }
