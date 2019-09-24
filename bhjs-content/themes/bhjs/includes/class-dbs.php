@@ -195,11 +195,11 @@ class dbs {
 				    'slug' => 'familyname',
 				    'menu_title' => array(
 				        'en' => 'Family Names',
-				        'he' => 'שמות משפחה',
+				        'he' => 'שמות - מקורות ופירושים',
 				    ),
 				    'section_title' => array(
 				        'en' => 'Family Names',
-				        'he' => 'שמות משפחה',
+				        'he' => 'שמות - מקורות ופירושים',
 				    )
 				),
 
