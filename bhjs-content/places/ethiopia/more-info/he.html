@@ -6,4 +6,41 @@
 	<p>
 		<a href="https://dbs.bh.org.il/he/%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94/%D7%9E%D7%A7%D7%95%D7%9D" target="_blank">סיפור הקהילה במאגרי המידע שלנו</a>
 	</p>
+	<?php foreach ([
+		[
+			"title" => "דרך כפר יוזמות חינוך",
+			"logo" => "דרך%20כפר.jpg",
+			"link" => "http://www.derechkfar.org.il/",
+		],
+		[
+			"title" => "סיפור על הדרך",
+			"logo" => "החברה%20למתנסים.jpg",
+			"link" => "http://www.sipur.org.il/index.php",
+		],
+		[
+			"title" => "עולים ביחד",
+			"logo" => "עולים%20ביחד%20לוגו.png",
+			"link" => "http://www.olim-beyahad.org.il/",
+		],
+		[
+			"html" => '<div style="clear:both">&nbsp;</div>',
+		],
+		[
+			"title" => "פורום ירוסלם",
+			"logo" => "פורום%20ירוסלם.jpg",
+			"link" => "https://www.forumyerusalem.org",
+		],
+		[
+			"title" => "עמותת הנני",
+			"logo" => "כפר%20ביתא%20ישראל.jpg",
+			"link" => "https://www.hinneni.org.il",
+		],
+	] as $logo) { ?>
+		<?php if (!empty($logo['html'])) { echo $logo['html']; } else { ?>
+			<div style="float:right;padding:5px;">
+				<p><a href="<?php echo $logo['link']; ?>" target="_blank"><img src="/bhjs-content/places/ethiopia/images/<?php echo $logo['logo']; ?>" alt="לוגו <?php echo $logo['title']; ?>" width="200"/></a></p>
+				<p style="text-align:center;"><a href="<?php echo $logo['link']; ?>" target="_blank"><?php echo $logo['title']; ?></a></p>
+			</div>
+		<?php } ?>
+	<?php } ?>
 </div>
