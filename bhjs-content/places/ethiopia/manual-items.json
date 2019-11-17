@@ -352,6 +352,28 @@
       "image_urls": ["https://www.bh.org.il/wp-content/uploads/Titi_Aynaw-913x1140.jpg"],
       "item_url_he": "https://www.bh.org.il/he/%d7%99%d7%99%d7%98%d7%90%d7%99%d7%99%d7%a9-%d7%98%d7%99%d7%98%d7%99-%d7%90%d7%99%d7%99%d7%a0%d7%90%d7%95/",
       "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "ג'ורג' גוטלמן",
+        "En": ""
+      },
+      "UnitText1": {
+        "He": "ג'ורג' גוטלמן נולד בשנת 1938 להורים שהיגרו מפולין לבלגיה והתיישבו בעיר ליאז'. לאחר פלישת גרמניה הנאצית לבלגיה, החביא אביו של גוטלמן את שני בניו אצל משפחות נוצריות, וכך ניצלו חייהם. אמו נרצחה באושוויץ.",
+        "En": ""
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/1.jpeg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/1.jpeg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/1.jpeg"],
+      "item_url_he": "https://www.bh.org.il/he/%d7%92%d7%95%d7%a8%d7%92-%d7%92%d7%95%d7%98%d7%9c%d7%9e%d7%9f/",
+      "item_url_en": ""
     }
   ]
 }
