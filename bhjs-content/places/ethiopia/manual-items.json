@@ -374,6 +374,94 @@
       "image_urls": ["https://www.bh.org.il/wp-content/uploads/1.jpeg"],
       "item_url_he": "https://www.bh.org.il/he/%d7%92%d7%95%d7%a8%d7%92-%d7%92%d7%95%d7%98%d7%9c%d7%9e%d7%9f/",
       "item_url_en": ""
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "",
+        "En": "Eldad Hadani"
+      },
+      "UnitText1": {
+        "He": "",
+        "En": "Hadani was a Jewish merchant and traveler in the 9th century. There is question as to his being an historical personality, that he wrote in Hebrew (with many Arabic influences) his book on the Laws of Kosher animal slaughter, and that he wrote an epistle which is titled in his name. His place of origin is unknown, but in his writings he wrote that he is a citizen of an “Independent Jewish State” in East Africa. He probably meant modern-day Ethiopia"
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "",
+      "item_url_en": "https://www.bh.org.il/eldad-hadani/"
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "",
+        "En": "Father Mahari"
+      },
+      "UnitText1": {
+        "He": "",
+        "En": "Mahari Sothal , or Mahari Sothal (after his father), better known as Father Mahari , is the name of Malkusa , a Jewish monk , who lived and worked in Ethiopia in the nineteenth century and served as the supreme spiritual leader of the Beta Israel community in the Kola Vagra region. Father Mahari was born in Kwara , Amhara district, where he was trained to serve as a Cohen (Kess) and Monk (Melkusa). After his training, he wandered between the various Beta Israel settlements, scattered between Gurgaore and Amba Guelit , and acted as a monk; He taught Torah and Halachot, preached prayers for members of the community and sought healing and grain, made sacrifices, trained disciples, and litigated with Christian missionaries. During his wanderings, Mahari arrived from the Mountains to Dambia where he played a pivotal role, devoting most of his time to the return of assimilators to the lap of Judaism and to the war on Christian missionaries who increased their pressure on Jews to convert their religion"
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "",
+      "preview_image_url": "",
+      "image_urls": [],
+      "item_url_he": "",
+      "item_url_en": "https://www.bh.org.il/father-mahari/"
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "",
+        "En": "Joseph Halévy"
+      },
+      "UnitText1": {
+        "He": "",
+        "En": "Professor Joseph Halévy; 1827 – 1917 A Frenchman of Ottoman descent, he served as an educator and teacher of Hebrew, a poet, Bible researcher, linguist, orientalist, archaeologist and as a renowned traveler. He was one of the first to recognize the authenticity of the Jews of Ethiopia, and was among those who preceded Eliezer Ben-Yehuda in reviving the Hebrew language. In regard to the revitalization of the Hebrew language for both verbal and literary needs, Halévy preceded Eliezer Ben-Yehuda in teaching Hebrew in the Hebrew language. His main contribution to reviving the language is most prominent in his articles on the topic of expanding the Hebrew language from within it"
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/Joseph_Halevy.jpg"],
+      "item_url_he": "",
+      "item_url_en": "https://www.bh.org.il/joseph-halevy/"
+    },
+    {
+      "UnitType": 8,
+      "UnitTypeDesc": "Personality",
+      "Header": {
+        "He": "",
+        "En": "Zimne Barhana"
+      },
+      "UnitText1": {
+        "He": "",
+        "En": "He was one of the pioneers of the struggle to bring the “Beta Israel” community to the State of Israel and to open the gates of the country to them. Zimana was a member of Intelligence and Special Offices, which established the organizational infrastructure in the refugee camps in Sudan in order to bring Ethiopian Jews to Israel. Barhana led the public struggle for the Aliyah of Ethiopian Jewry, from its inception. In 1973, the first success was recorded, when Rabbi Ovadia Yosef, the Sephardic Chief Rabbi, ruled that Ethiopian Jews are descended from the tribes of Israel and must be saved"
+      },
+      "Slug": {
+        "He": "",
+        "En": ""
+      },
+      "video_url": null,
+      "main_image_url": "https://www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F-1.jpg",
+      "preview_image_url": "https://www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F-1.jpg",
+      "image_urls": ["https://www.bh.org.il/wp-content/uploads/%D7%96%D7%99%D7%9E%D7%A0%D7%94_%D7%91%D7%A8%D7%94%D7%A0%D7%99_%D7%91%D7%90%D7%AA%D7%99%D7%95%D7%A4%D7%99%D7%94_1992_%D7%90%D7%95%D7%A1%D7%A3_%D7%94%D7%A8%D7%91_%D7%9E%D7%A0%D7%97%D7%9D_%D7%95%D7%9C%D7%93%D7%9E%D7%9F-1.jpg"],
+      "item_url_he": "",
+      "item_url_en": "https://www.bh.org.il/46299-2/"
     }
   ]
 }
