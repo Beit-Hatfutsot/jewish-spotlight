@@ -118,7 +118,7 @@ function languages_switcher() {
 	$place_slug	= bhjs_core()->get_attribute( 'place_slug' );
 	$output		= '';
 
-	if ( ! empty($languages) && $place_slug != 'ethiopia' ) {
+	if ( ! empty($languages) ) {
 
 		foreach ( $languages as $l ) {
 			if ( $l['slug'] != $curr_lang ) {
