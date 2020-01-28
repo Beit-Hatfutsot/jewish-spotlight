@@ -150,6 +150,8 @@ function languages_switcher() {
 
 function get_community_coordinates($title) {
 
+    throw new Exception('deprecated: using data from cached_api');
+
 	$url = 'https://nominatim.openstreetmap.org/search?format=json&city=' . $title;
 	$lat = '';
 	$lng = '';

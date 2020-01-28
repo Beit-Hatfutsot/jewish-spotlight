@@ -44,15 +44,15 @@ $markers = array();
         $place_photo = $place['preview_image_url'];
 
         //to get coordinates
-        $coordinates = get_community_coordinates( $place['Header']['En'] );
+        // $coordinates = get_community_coordinates( $place['Header']['En'] );
 
-        if ( $coordinates['lat'] && $coordinates['lng'] ) {
+        if ( $place['lat'] && $place['lng'] ) {
             $markers[] = array(
                 'name_en'   => $place['Header']['En'],
                 'name_he'   => str_replace("'", "", $place['Header']['He']),
                 'url'       => $settings['dbs_prefix'] . $slug,
-                'lat'       => $coordinates['lat'],
-                'lng'       => $coordinates['lng']
+                'lat'       => $place['lat'],
+                'lng'       => $place['lng']
             );
         }
 
