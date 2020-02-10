@@ -16,7 +16,7 @@
 			<!-- Leaflet JavaScript file -->
 			<?php if (MAP_CENTER_LNG != '' ) { ?>
 <!--			<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>-->
-			<script src="<?php echo JS_DIR; ?>/lib/leafmap.js"></script>
+			<script src="<?php echo JS_DIR; ?>/lib/leafmap.js?version=2"></script>
 			<?php } ?>
 
 			<!-- PhotoSwipe - Core JS file -->
