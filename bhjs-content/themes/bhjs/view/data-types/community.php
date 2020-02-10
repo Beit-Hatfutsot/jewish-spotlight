@@ -23,12 +23,9 @@ $markers = array();
 <div class="data-type-section" id="data-type-section-community">
 
     <?php if ( defined('MAP_CENTER_LNG') && MAP_CENTER_LNG != '' && defined('MAP_CENTER_LAT') && MAP_CENTER_LAT != '' && defined('MAP_ZOOM') && MAP_ZOOM != '' ) { ?>
-        <script>
-            var _map_center_lng = <?php echo MAP_CENTER_LNG; ?>,
-                _map_center_lat = <?php echo MAP_CENTER_LAT; ?>,
-                _map_zoom = <?php echo MAP_ZOOM; ?>;
-        </script>
-        <div id="communities_map" style="height: 440px; width: 100%; border: 1px solid #AAA;"></div>
+        <div id="communities_map" style="height: 440px; width: 100%; border: 1px solid #AAA;">
+            <img src="/bhjs-content/places/czech/images/map.png" style="width:100%;height:100%;"/>
+        </div>
     <?php } ?>
 
     <div><?php echo index_generator('community'); ?></div>
