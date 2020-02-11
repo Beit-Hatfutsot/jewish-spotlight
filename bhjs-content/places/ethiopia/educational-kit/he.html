@@ -24,24 +24,34 @@
 
 <form method="post" action="/ethiopia/he/educational-kit-download">
 	<label>
-		שם מלא:
-		<input name="fullname" type="text" value="" size="40"/>
+		* שם פרטי:
+		<input name="firstname" type="text" value="" size="40"/>
 	</label><br/>
 	<label>
-		תפקיד:
+		* שם משפחה:
+		<input name="lastname" type="text" value="" size="40"/>
+	</label><br/>
+	<label>
+		* תפקיד:
 		<input name="role" type="text" value="" size="40"/>
 	</label><br/>
 	<label>
-		מוסד חינוכי:
+		* מוסד חינוכי:
 		<input name="inst" type="text" value="" size="40"/>
 	</label><br/>
 	<label>
-		דוא"ל:
+		* דואר אלקטרוני:
 		<input name="email" type="text" value="" size="80"/>
 	</label><br/>
 	<label>
-		טלפון נייד:
+		* טלפון נייד:
 		<input name="mobile" type="text" value="" size="20"/>
+	</label><br/>
+	<input type="checkbox" name="newsletter" value="newsletter">
+	<label for="newsletter"> מעוניין לקבל ניוזלטר חודשי בעברית</label><br>
+	<label>
+		כיצד שמעת על הזרקור:
+		<textarea name="comments"></textarea>
 	</label><br/>
 	<input type="submit" value="הורדת הטופס"/>
 </form>

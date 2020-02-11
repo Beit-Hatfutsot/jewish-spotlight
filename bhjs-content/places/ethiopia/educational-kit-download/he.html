@@ -5,27 +5,33 @@
 <p>
 <?php
 
-$fullname = $_POST['fullname'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
 $role = $_POST['role'];
 $inst = $_POST['inst'];
 $email = $_POST['email'];
 $mobile = $_POST['mobile'];
+$newsletter = $_POST['newsletter'];
+$comments = $_POST['comments'];
 
 $email_sent = false;
 $email_error_message = '';
 
-if (empty($fullname) or empty($role) or empty($inst) or empty($email) or empty($mobile)) {
-	$email_error_message = 'כל השדות הינם שדות חובה';
+if (empty($firstname) or empty($lastname) or empty($role) or empty($inst) or empty($email) or empty($mobile)) {
+	$email_error_message = 'שדה חובה אחד או יותר חסרים';
 } else {
-	$to = '';
+	$to = 'nir@htmline.com';
 	$subject = 'Jewish Spotlight educational kit download';
 	$headers  = "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-	$message  = 'שם מלא: '.$fullname.'<br/>';
+	$message  = 'שם פרטי: '.$firstname.'<br/>';
+	$message .= 'שם משפחה: '.$lastname.'<br/>';
 	$message .= 'תפקיד: '.$role.'<br/>';
 	$message .= 'מוסד חינוכי: '.$inst.'<br/>';
 	$message .= 'אימייל: '.$email.'<br/>';
 	$message .= 'טלפון נייד: '.$mobile.'<br/>';
+	$message .= $newsletter ? 'מעוניין לקבל ניוזלטר חודשי בעברית<br/>' : '';
+	$message .= $comments ? 'כיצד שמעת על הזרקור: '.$comments.'<br/>' : '';
 	// print('<pre>'.$message.'</pre>');
 	if (mail($to, $subject, $message, $headers)) {
 		$email_sent = true;
