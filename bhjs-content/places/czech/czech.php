@@ -4,7 +4,7 @@
  *
  * @author		Nir Goldberg
  * @package		jewish-spotlight/bhjs-content/places
- * @version		1.0
+ * @version		1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -29,22 +29,25 @@ if ( ! defined( 'PLACE_CREDIT_TEXT_EN' ) )
 	define( 'PLACE_CREDIT_TEXT_EN', 'In honor of Ruth Federmann nee Steckelmacher, presented by the Federmann Family and Dan Hotels Group' );
 
 if ( ! defined( 'PLACE_CREDIT_TEXT_HE' ) )
-    define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן לבית שטקלמכר ע"י משפחת פדרמן וחברת מלונות דן' );
+	define( 'PLACE_CREDIT_TEXT_HE', 'מוקדש לרות פדרמן לבית שטקלמכר ע"י משפחת פדרמן וחברת מלונות דן' );
 
 if ( ! defined( 'MAP_CENTER_LNG' ) )
-    define( 'MAP_CENTER_LNG', 49.81995 );
+	define( 'MAP_CENTER_LNG', 49.81995 );
 
 if ( ! defined( 'MAP_CENTER_LAT' ) )
-    define( 'MAP_CENTER_LAT', 15.47490 );
+	define( 'MAP_CENTER_LAT', 15.47490 );
 
 if ( ! defined( 'MAP_ZOOM' ) )
-    define( 'MAP_ZOOM', 7 );
+	define( 'MAP_ZOOM', 7 );
 
 if ( ! defined( 'TIMELINE_EN' ) )
-    define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/1TejpreDsklO7j_1gasuFg6jKK4-PigOzKY0nn1X5yJs/edit' );
+	define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/1TejpreDsklO7j_1gasuFg6jKK4-PigOzKY0nn1X5yJs/edit' );
 
 if ( ! defined( 'TIMELINE_HE' ) )
-    define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );
+	define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );
 
 if ( ! defined( 'CSS_STYLE_SUFFIX' ) )
-    define( 'CSS_STYLE_SUFFIX', 'default' );
+	define( 'CSS_STYLE_SUFFIX', 'default' );
+
+if ( ! defined( 'GTM_ID' ) )
+	define( 'GTM_ID', 'GTM-K8X3HW7' );
