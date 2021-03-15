@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="icon" href="../../favicon.ico">
+	<link rel="icon" type="image/png" href="<?php echo TEMPLATEURL . '/images/anu-favicon.png'; ?>">
 
 	<title><?php echo TEMPLATE_TITLE; ?></title>
 

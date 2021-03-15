@@ -150,11 +150,11 @@ header {
 			display: block;
 
 			&.en {
-				@include image("logo-bh-en-v2.png", 100%, 50% 50%);
+				@include image("anu-logo-v2.png", 100%, 50% 50%);
 			}
 
 			&.he {
-				@include image("logo-bh-he-v2.png", 100%, 50% 50%);
+				@include image("anu-logo-v2.png", 100%, 50% 50%);
 			}
 		}
 	}
@@ -719,11 +719,11 @@ footer {
 			display: block;
 
 			&.en {
-				@include image("logo-bh-en-v2.png", 100%, 50% 50%);
+				@include image("anu-logo-v2.png", 100%, 50% 50%);
 			}
 
 			&.he {
-				@include image("logo-bh-he-v2.png", 100%, 50% 50%);
+				@include image("anu-logo-v2.png", 100%, 50% 50%);
 			}
 		}
 	}
