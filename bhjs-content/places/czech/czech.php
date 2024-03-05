@@ -44,7 +44,7 @@ if ( ! defined( 'TIMELINE_EN' ) )
 	define( 'TIMELINE_EN', 'https://docs.google.com/spreadsheets/d/1TejpreDsklO7j_1gasuFg6jKK4-PigOzKY0nn1X5yJs/edit' );
 
 if ( ! defined( 'TIMELINE_HE' ) )
-	define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit?invite=CJPix-AO&ts=578e29e9#gid=0' );
+	define( 'TIMELINE_HE', 'https://docs.google.com/spreadsheets/d/1Mo8MFzsdEsU3LYvnds1wXTLpbytDF6-LlffLD0ZsnFE/edit' );
 
 if ( ! defined( 'CSS_STYLE_SUFFIX' ) )
 	define( 'CSS_STYLE_SUFFIX', 'default' );
